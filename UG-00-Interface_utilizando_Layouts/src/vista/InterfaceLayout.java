@@ -62,14 +62,17 @@ public class InterfaceLayout extends Application implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         listViewPerson.setItems(personList);
+
         // Agregar un listener para el evento al presionar Enter en el campo de texto txtIngreso
         txtIngreso.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
+
                 // Agregar el texto ingresado al ListView
                 String nuevoTexto = txtIngreso.getText();
                 personList.add(nuevoTexto);
                 txtIngreso.clear(); // Limpiar el TextField
 
+                // Para imprimir en la Consola
                 System.out.println("Texto ingresado: " + nuevoTexto);
             }
         });
