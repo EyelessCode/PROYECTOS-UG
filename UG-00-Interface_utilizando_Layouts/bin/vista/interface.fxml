@@ -27,23 +27,23 @@
                 <RowConstraints maxHeight="491.0" minHeight="10.0" prefHeight="446.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageView1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imagenes/unknown_man.jpg" />
                      </image></ImageView>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                  <ImageView fx:id="imageView2" fitHeight="65.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../imagenes/unknown_woman.jpg" />
                      </image></ImageView>
-                  <TextField prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" />
-                  <TextField prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtAdornoPrimero" prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtAdornoSegundo" prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: blue;">
          <children>
-            <ListView layoutX="-3.0" layoutY="-5.0" prefHeight="500.0" prefWidth="388.0" />
-            <TextField layoutX="8.0" layoutY="509.0" prefHeight="38.0" prefWidth="356.0" promptText="Texto..." />
+            <ListView fx:id="listViewPerson" layoutX="-3.0" layoutY="-5.0" prefHeight="500.0" prefWidth="388.0" />
+            <TextField fx:id="txtIngreso" layoutX="8.0" layoutY="509.0" prefHeight="38.0" prefWidth="356.0" promptText="Texto..." />
          </children></AnchorPane>
   </items>
 </SplitPane>
