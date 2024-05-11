@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
@@ -24,6 +25,39 @@ public class InterfaceLayout extends Application implements Initializable{
 
     @FXML
     private RowConstraints gpSegundo;
+
+    @FXML
+    private ImageView imageView1;
+
+    @FXML
+    private ImageView imageView11;
+
+    @FXML
+    private ImageView imageView12;
+
+    @FXML
+    private ImageView imageView13;
+
+    @FXML
+    private ImageView imageView131;
+
+    @FXML
+    private ImageView imageView132;
+
+    @FXML
+    private ImageView imageView133;
+
+    @FXML
+    private ImageView imageView1331;
+
+    @FXML
+    private ImageView imageView1332;
+
+    @FXML
+    private ImageView imageView134;
+
+    @FXML
+    private ImageView imageView2;
 
     @FXML
     private ListView<String> listViewPerson; // Cambiado el tipo a String
