@@ -96,7 +96,7 @@
                   </ImageView>
                   <ImageView fx:id="imageView133" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/unknown_woman.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imageView134" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
@@ -136,7 +136,7 @@
                   </ImageView>
                   <ImageView fx:id="imageView1332" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/unknown_woman.jpg" />
                      </image>
                   </ImageView>
                </children>
