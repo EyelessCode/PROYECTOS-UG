@@ -46,12 +46,12 @@
                      </image></ImageView>
                   <ImageView fx:id="imageView11" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/i.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imageView12" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                  <ImageView fx:id="imageView12" fitHeight="62.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/y.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imageView13" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
