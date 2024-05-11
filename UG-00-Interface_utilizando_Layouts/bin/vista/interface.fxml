@@ -56,7 +56,7 @@
                   </ImageView>
                   <ImageView fx:id="imageView13" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/s.jpg" />
                      </image>
                   </ImageView>
                   <Label text="MARCELO ENCEBOLLADO" textAlignment="CENTER" underline="true" GridPane.columnIndex="1">
@@ -86,7 +86,7 @@
                   </Label>
                   <ImageView fx:id="imageView131" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/c.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imageView132" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
