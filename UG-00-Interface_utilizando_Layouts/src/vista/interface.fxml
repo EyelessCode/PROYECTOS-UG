@@ -42,7 +42,7 @@
                      </image></ImageView>
                   <ImageView fx:id="imageView2" fitHeight="65.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@../imagenes/unknown_woman.jpg" />
+                        <Image url="@../imagenes/e.JPEG" />
                      </image></ImageView>
                   <ImageView fx:id="imageView11" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
@@ -101,7 +101,7 @@
                   </ImageView>
                   <ImageView fx:id="imageView134" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imagenes/unknown_man.jpg" />
+                        <Image url="@../imagenes/marsello.jpg" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="ANDRÉS VILLACÍS" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
