@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
@@ -10,21 +11,29 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <SplitPane dividerPositions="0.4098360655737705" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.InterfaceLayout">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="231.0" style="-fx-background-color: gray;">
          <children>
             <ScrollBar orientation="VERTICAL" prefHeight="570.0" prefWidth="14.0" style="-fx-background-color: red;" />
-            <GridPane layoutX="15.0" layoutY="-2.0" prefHeight="570.0" prefWidth="217.0">
+            <GridPane layoutX="15.0" layoutY="-2.0" prefHeight="616.0" prefWidth="217.0" AnchorPane.rightAnchor="15.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="61.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints fx:id="gpPrimero" maxHeight="185.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="gpSegundo" maxHeight="444.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="491.0" minHeight="10.0" prefHeight="446.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="gpPrimero" maxHeight="185.0" minHeight="0.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="gpSegundo" maxHeight="444.0" minHeight="0.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="491.0" minHeight="0.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="0.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="0.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="3.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="491.0" minHeight="0.0" prefHeight="65.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <ImageView fx:id="imageView1" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
@@ -35,8 +44,101 @@
                      <image>
                         <Image url="@../imagenes/unknown_woman.jpg" />
                      </image></ImageView>
-                  <TextField fx:id="txtAdornoPrimero" prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" />
-                  <TextField fx:id="txtAdornoSegundo" prefHeight="26.0" prefWidth="119.0" promptText="(Nombre y apellido)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imageView11" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView12" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView13" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label text="MARCELO ENCEBOLLADO" textAlignment="CENTER" underline="true" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="15.0" prefWidth="167.0" text="ESTHER VERDEZOTO" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" prefHeight="15.0" prefWidth="149.0" text="SEBASTÍAN ÍZA" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="CRISTHIAN GUEDES" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="SAMUEL VITERI" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageView131" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView132" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView133" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView134" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="ANDRÉS VILLACÍS" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="MATÍAS OLGERA" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="SUKUNA MAKGAROT" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="ARMAGGETON YUIDYX" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="154.0" text="LOLCITO EN HD" textAlignment="CENTER" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="Footlight MT Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageView1331" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView1332" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
+                     <image>
+                        <Image url="@../imagenes/unknown_man.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </GridPane>
          </children></AnchorPane>
