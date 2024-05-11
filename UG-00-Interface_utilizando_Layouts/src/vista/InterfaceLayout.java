@@ -29,12 +29,6 @@ public class InterfaceLayout extends Application implements Initializable{
     private ListView<String> listViewPerson; // Cambiado el tipo a String
 
     @FXML
-    private TextField txtAdornoPrimero;
-
-    @FXML
-    private TextField txtAdornoSegundo;
-
-    @FXML
     private TextField txtIngreso;
 
     private ObservableList<String> personList = FXCollections.observableArrayList();
