@@ -40,11 +40,17 @@ public class Interfaz extends Application{
         Label lb4_0=new Label("Etiqueta:");
         Label lb4_1=new Label("Etiqueta");
         Label lb4=new Label("Campo de Texto:");
-        TextField txf=new TextField("Algo de texto...");
+        TextField txf=new TextField();
+        txf.setPromptText("Algo de Texto...");
+
         Label lb5=new Label("Campo de Contraseña:");
         PasswordField psswf=new PasswordField();
+        psswf.setPromptText("Campo de contraseña...");
+
         Label lb6=new Label("Área de texto:");
-        TextArea txa=new TextArea("Este es un texto muy largo, solo envolverá varias líneas.");
+        TextArea txa=new TextArea();
+        txa.setPromptText("Este es un texto muy largo, solo envolverá varias líneas.");
+
         Label lb7=new Label("Indicador de Progreso:");
         ProgressIndicator pi=new ProgressIndicator();
         Label lb8=new Label("Barra de Progreso:");
@@ -82,7 +88,7 @@ public class Interfaz extends Application{
             gp.add(lb9, 0, 11);
             gp.add(sl, 1, 11);
     
-            Scene escena=new Scene(gp,800,600);
+            Scene escena=new Scene(gp,670,600);
             // escena.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             arg0.setTitle("allControls.fxml");
             arg0.setScene(escena);
