@@ -5,11 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -43,7 +46,7 @@ public class InterfazMenu extends Application{
             dialogo.setTitle("NUEVO ARCHIVO");
             dialogo.setHeaderText("CREACIÓN DE UN NUEVO ARCHIVO");
             dialogo.setContentText("NOMBRE DEL ARCHIVO:");
-            dialogo.showAndWait().ifPresent(name -> System.out.println("ARCHIVO CREADO: "+name));
+            dialogo.showAndWait().ifPresent(nombre -> System.out.println("ARCHIVO CREADO: "+nombre));
         });
 
         abrirArchivo.setOnAction(e->{
@@ -67,6 +70,18 @@ public class InterfazMenu extends Application{
                     System.out.println("ERROR AL GUARDAR ESTE ARCHIVO: "+ie.getMessage());
                 }
             }
+        });
+
+        salirArchivo.setOnAction(e->{
+            Alert alerta=new Alert(AlertType.CONFIRMATION);
+            alerta.setTitle("SALIR");
+            alerta.setHeaderText("SALIR DE LA APLICACIÓN");
+            alerta.setContentText("¿SEGURO DE QUE DESEAS SALIR DE LA APLICACIÓN?");
+            alerta.showAndWait().ifPresent(respuesta->{
+                if(respuesta==ButtonType.OK){
+                    arg0.close();
+                }
+            });
         });
     }
 }
