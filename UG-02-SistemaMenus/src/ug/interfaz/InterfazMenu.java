@@ -83,5 +83,13 @@ public class InterfazMenu extends Application{
                 }
             });
         });
+
+        acerca.setOnAction(e->{
+            Alert alerta=new Alert(AlertType.INFORMATION);
+            alerta.setTitle("ACERCA DE");
+            alerta.setHeaderText("ACERCA DE ESTA APLICACIÓN...");
+            alerta.setContentText("SOLAMENTE ES UN CONTEXTO Y APLICACIÓN DE PRUEBA.");
+            alerta.showAndWait();
+        });
     }
 }
