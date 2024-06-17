@@ -20,9 +20,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Interfaz extends Application{
-
+    
     @Override
     public void start(Stage arg0) throws Exception {
+        try{
         Label lb=new Label("Botón:");
         Button btn=new Button("Botón");
         Label lb0=new Label("Comprobador de Caja:");
@@ -51,7 +52,6 @@ public class Interfaz extends Application{
         Label lb9=new Label("Deslizador:");
         Slider sl=new Slider();
 
-        try{
             GridPane gp=new GridPane();
             gp.setHgap(10);
             gp.setVgap(10);
@@ -82,13 +82,18 @@ public class Interfaz extends Application{
             gp.add(lb9, 0, 11);
             gp.add(sl, 1, 11);
     
-            Scene escena=new Scene(gp,600,600);
-            escena.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            Scene escena=new Scene(gp,800,600);
+            // escena.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            arg0.setTitle("allControls.fxml");
             arg0.setScene(escena);
             arg0.show();
-
+            
         }catch(Exception e){
             e.printStackTrace();
         }
     }
+
+    // public static void main(String[] args) {
+    //     launch(args);
+    // }
 }
