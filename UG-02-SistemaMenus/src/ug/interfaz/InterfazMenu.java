@@ -1,9 +1,14 @@
 package ug.interfaz;
 
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.TextInputDialog;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class InterfazMenu extends Application{
@@ -18,6 +23,34 @@ public class InterfazMenu extends Application{
         menuBar.getMenus().addAll(menuArchivo,menuEditar,menuAyuda);
 
         MenuItem archivoNuevo=new MenuItem("NUEVO");
-    }
+        MenuItem abrirArchivo=new MenuItem("ABRIR");
+        MenuItem guardarArchivo=new MenuItem("GUARDAR");
+        MenuItem salirArchivo=new MenuItem("SALIR");
+        menuArchivo.getItems().addAll(archivoNuevo,abrirArchivo,guardarArchivo,new SeparatorMenuItem(),salirArchivo);
 
+        MenuItem cortar=new MenuItem("CORTAR");
+        MenuItem copiar=new MenuItem("COPIAR");
+        MenuItem pegar=new MenuItem("PEGAR");
+        menuEditar.getItems().addAll(cortar,copiar,pegar);
+
+        MenuItem acerca=new MenuItem("ACERCA DE");
+        menuAyuda.getItems().add(acerca);
+
+        archivoNuevo.setOnAction(e -> {
+            TextInputDialog dialogo=new TextInputDialog("ARCHIVO NUEVO");
+            dialogo.setTitle("NUEVO ARCHIVO");
+            dialogo.setHeaderText("CREACIÓN DE UN NUEVO ARCHIVO");
+            dialogo.setContentText("NOMBRE DEL ARCHIVO:");
+            dialogo.showAndWait().ifPresent(name -> System.out.println("ARCHIVO CREADO: "+name));
+        });
+
+        abrirArchivo.setOnAction(e->{
+            FileChooser chooser=new FileChooser();
+            chooser.setTitle("ABRIR ARCHIVO");
+            File f=chooser.showOpenDialog(arg0);
+            if(f!=null){
+                System.out.println("ARCHIVO ABIERTO: "+f.getName());
+            }
+        });
+    }
 }
