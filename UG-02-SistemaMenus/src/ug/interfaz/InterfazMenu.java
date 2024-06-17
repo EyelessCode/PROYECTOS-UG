@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Menu;
@@ -13,6 +14,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -91,5 +93,13 @@ public class InterfazMenu extends Application{
             alerta.setContentText("SOLAMENTE ES UN CONTEXTO Y APLICACIÓN DE PRUEBA.");
             alerta.showAndWait();
         });
+
+        BorderPane root=new BorderPane();
+        root.setTop(menuBar);
+
+        Scene escena=new Scene(root,700,600);
+        arg0.setTitle("EJEMPLOS DE MENÚS");
+        arg0.setScene(escena);
+        arg0.show();
     }
 }
