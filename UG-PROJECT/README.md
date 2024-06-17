@@ -1,1 +1,18 @@
-Veras tienes que crear una base de datos sobre LA FORMULA 1 desde sus inicios de competencia, lo que el profesor te proporciona es un código la cual a ese CÓDIGO tiene que agregar osea crear de ahí tu código el número de vueltas, tiempo de vuelta, ganador de la vuelta, fecha de la carrera, ganador de la temporada y nombre del conductor, piloto o el representante de cada marca de automóvil. Lo de las tablas se refiere a que este ordenado, osea primero fecha, nombre del piloto, marca que representa ejemplo (RED BULL, FERRARI, MCLAREN, ALPINE, ECT), número de vuelta, quien es ganador de la vuelta y quien fue el ganador de la temporada tiene que estar detallado con presión aparte debes agregar un opción para buscar las fechas de la competencia.
+## Getting Started
+
+Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+
+## Folder Structure
+
+The workspace contains two folders by default, where:
+
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
+
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+
+## Dependency Management
+
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
