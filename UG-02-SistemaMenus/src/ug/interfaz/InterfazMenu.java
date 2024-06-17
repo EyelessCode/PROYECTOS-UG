@@ -1,6 +1,8 @@
 package ug.interfaz;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.scene.control.Menu;
@@ -50,6 +52,20 @@ public class InterfazMenu extends Application{
             File f=chooser.showOpenDialog(arg0);
             if(f!=null){
                 System.out.println("ARCHIVO ABIERTO: "+f.getName());
+            }
+        });
+
+        guardarArchivo.setOnAction(e->{
+            FileChooser chooser=new FileChooser();
+            chooser.setTitle("GUARDAR ARCHIVO");
+            File f=chooser.showSaveDialog(arg0);
+            if(f!=null){
+                try(FileWriter escrito=new FileWriter(f)){
+                    escrito.write("UN CONTENIDO DE EJEMPLO.");
+                    System.out.println("EL ARCHIVO HA SIDO GUARDADO: "+f.getName());
+                }catch(IOException ie){
+                    System.out.println("ERROR AL GUARDAR ESTE ARCHIVO: "+ie.getMessage());
+                }
             }
         });
     }
