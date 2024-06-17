@@ -1,6 +1,7 @@
 package ug.interfaz;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.DatePicker;
@@ -35,9 +36,22 @@ public class Interfaz extends Application{
                 Color color=colorPicker.getValue();
                 String nombreColor = getColorName(color);
                 String seleccionarColor="COLOR SELECCIONADO: "+nombreColor;
+
+                System.out.println(escogeFecha);
+                System.out.println(seleccionarColor);
+                
+                seleccion.setText(escogeFecha+"\n"+seleccionarColor);
+
+                arg0.getScene().setFill(colorPicker.getValue());
+            }else{
+                System.out.println("POR FAVOR, SELECCIONE UNA FECHA Y UN COLOR. INTÉNTELO DE NUEVO");
+                seleccion.setText("POR FAVOR, SELECCIONE UNA FECHA Y UN COLOR. INTÉNTELO DE NUEVO");
             }
         });
-
+        Scene escena=new Scene(v,300,250);
+        arg0.setTitle("DATE & COLOR");
+        arg0.setScene(escena);
+        arg0.show();
 
     }
 
