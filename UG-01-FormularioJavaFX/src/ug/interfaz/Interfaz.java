@@ -2,6 +2,7 @@ package ug.interfaz;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
@@ -50,35 +51,44 @@ public class Interfaz extends Application{
         Label lb9=new Label("Deslizador:");
         Slider sl=new Slider();
 
-        GridPane gp=new GridPane();
-        gp.setHgap(10);
-        gp.setVgap(10);
-        gp.setAlignment(Pos.TOP_LEFT);
+        try{
+            GridPane gp=new GridPane();
+            gp.setHgap(10);
+            gp.setVgap(10);
+            gp.setAlignment(Pos.TOP_LEFT);
+    
+            gp.add(lb, 0, 0);
+            gp.add(btn, 1, 0);
+            gp.add(lb0, 0, 1);
+            gp.add(cb, 1, 1);
+            gp.add(lb1, 0, 2);
+            gp.add(hLink, 1, 2);
+            gp.add(lb2, 0, 3);
+            gp.add(tbtn, 1, 3);
+            gp.add(lb3, 0, 4);
+            gp.add(rbtn, 1, 4);
+            gp.add(lb4_0, 0, 5);
+            gp.add(lb4_1, 1, 5);
+            gp.add(lb4, 0, 6);
+            gp.add(txf, 1, 6);
+            gp.add(lb5, 0, 7);
+            gp.add(psswf, 1, 7);
+            gp.add(lb6, 0, 8);
+            gp.add(txa, 1, 8);
+            gp.add(lb7, 0, 9);
+            gp.add(pi, 1, 9);
+            gp.add(lb8, 0, 10);
+            gp.add(pb, 1, 10);
+            gp.add(lb9, 0, 11);
+            gp.add(sl, 1, 11);
+    
+            Scene escena=new Scene(gp,600,600);
+            escena.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            arg0.setScene(escena);
+            arg0.show();
 
-        gp.add(lb, 0, 0);
-        gp.add(btn, 1, 0);
-        gp.add(lb0, 0, 1);
-        gp.add(cb, 1, 1);
-        gp.add(lb1, 0, 2);
-        gp.add(hLink, 1, 2);
-        gp.add(lb2, 0, 3);
-        gp.add(tbtn, 1, 3);
-        gp.add(lb3, 0, 4);
-        gp.add(rbtn, 1, 4);
-        gp.add(lb4_0, 0, 5);
-        gp.add(lb4_1, 1, 5);
-        gp.add(lb4, 0, 6);
-        gp.add(txf, 1, 6);
-        gp.add(lb5, 0, 7);
-        gp.add(psswf, 1, 7);
-        gp.add(lb6, 0, 8);
-        gp.add(txa, 1, 8);
-        gp.add(lb7, 0, 9);
-        gp.add(pi, 1, 9);
-        gp.add(lb8, 0, 10);
-        gp.add(pb, 1, 10);
-        gp.add(lb9, 0, 11);
-        gp.add(sl, 1, 11);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
-
 }
