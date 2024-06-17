@@ -42,19 +42,26 @@ public class Interfaz extends Application{
         Label lb4=new Label("Campo de Texto:");
         TextField txf=new TextField();
         txf.setPromptText("Algo de Texto...");
+        txf.setEditable(false);
 
         Label lb5=new Label("Campo de Contraseña:");
         PasswordField psswf=new PasswordField();
         psswf.setPromptText("Campo de contraseña...");
+        psswf.setEditable(true);
 
         Label lb6=new Label("Área de texto:");
         TextArea txa=new TextArea();
         txa.setPromptText("Este es un texto muy largo, solo envolverá varias líneas.");
+        txa.setEditable(false);
 
         Label lb7=new Label("Indicador de Progreso:");
         ProgressIndicator pi=new ProgressIndicator();
+        pi.setProgress(0.50);
+
         Label lb8=new Label("Barra de Progreso:");
         ProgressBar pb=new ProgressBar();
+        pb.setProgress(0.50);
+
         Label lb9=new Label("Deslizador:");
         Slider sl=new Slider();
 
