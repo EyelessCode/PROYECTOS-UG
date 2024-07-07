@@ -27,12 +27,12 @@ public class DriverResultRepositorio {
 			
 			// Ejecutar la consulta
 			String sql = "SELECT\n"+
-				"r.year,\n"+
-				"d.forename,\n"+
-				"d.surname,\n"+
-				"COUNT(CASE WHEN res.position=1 THEN 1 END) AS wins,\n"+
-				"SUM(res.points) AS total_points,\n"+
-				"RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"+
+				"    r.year,\n"+
+				"    d.forename,\n"+
+				"    d.surname,\n"+
+				"    COUNT(CASE WHEN res.position=1 THEN 1 END) AS wins,\n"+
+				"    SUM(res.points) AS total_points,\n"+
+				"    RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"+
 				"FROM\n"+
 					"results res\n"+
 					"JOIN\n"+
