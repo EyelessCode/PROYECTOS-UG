@@ -26,7 +26,15 @@ public class CircuitRepositorio {
             ResultSet rs=st.executeQuery(sql);
 
             while (rs.next()) {
-                
+                int circuitId=rs.getInt("circuitId");
+                String circuitRef=rs.getString("circuitRef");
+                String name=rs.getString("name");
+                String location=rs.getString("location");
+                String country=rs.getString("country");
+
+                Circuit c=new Circuit(circuitId, circuitRef, name, location, country);
+
+                listCircuits.add(c);
             }
             
         } catch (Exception e) {
