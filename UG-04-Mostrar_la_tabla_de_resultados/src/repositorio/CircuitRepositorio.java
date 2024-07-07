@@ -2,7 +2,9 @@ package repositorio;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,14 @@ public class CircuitRepositorio {
 
         try {
             Connection cnt=DriverManager.getConnection(url, url, contrasenia);
+            
+            String sql="SELECT * FROM circuits";
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                
+            }
             
         } catch (Exception e) {
             e.printStackTrace();
