@@ -2,11 +2,9 @@ package modelo;
 
 public class Season {
     private int year;
-    private String url;
     
-    public Season(int year, String url) {
+    public Season(int year) {
         this.year = year;
-        this.url = url;
     }
 
     public int getYear() {
@@ -15,14 +13,6 @@ public class Season {
 
     public void setYear(int year) {
         this.year = year;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
     
 }   
