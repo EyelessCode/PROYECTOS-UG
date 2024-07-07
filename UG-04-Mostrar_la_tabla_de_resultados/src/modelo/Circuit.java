@@ -6,22 +6,13 @@ public class Circuit {
     private String name;
     private String location;
     private String country;
-    private float lat;
-    private float lng;
-    private float alt;
-    private String url;
     
-     Circuit(int circuitId, String circuitRef, String name, String location, String country, float lat, float lng,
-            float alt, String url) {
+    public Circuit(int circuitId, String circuitRef, String name, String location, String country) {
         this.circuitId = circuitId;
         this.circuitRef = circuitRef;
         this.name = name;
         this.location = location;
         this.country = country;
-        this.lat = lat;
-        this.lng = lng;
-        this.alt = alt;
-        this.url = url;
     }
 
     public int getCircuitId() {
@@ -63,36 +54,4 @@ public class Circuit {
     public void setCountry(String country) {
         this.country = country;
     }
-
-    public float getLat() {
-        return lat;
-    }
-
-    public void setLat(float lat) {
-        this.lat = lat;
-    }
-
-    public float getLng() {
-        return lng;
-    }
-
-    public void setLng(float lng) {
-        this.lng = lng;
-    }
-
-    public float getAlt() {
-        return alt;
-    }
-
-    public void setAlt(float alt) {
-        this.alt = alt;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    } 
 }   
