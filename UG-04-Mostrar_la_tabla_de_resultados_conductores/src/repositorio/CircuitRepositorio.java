@@ -15,13 +15,13 @@ public class CircuitRepositorio {
     String usuario="cristhian";
     String contrasenia="cris03022";
 
-    public List<Circuit> libroGeneral() throws SQLException{
+    public List<Circuit> circuitsGeneral() throws SQLException{
         List<Circuit> listCircuits=new ArrayList<Circuit>();
 
         try {
-            Connection cnt=DriverManager.getConnection(url, url, contrasenia);
+            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
             
-            String sql="SELECT * FROM circuits";
+            String sql="SELECT * FROM `circuits`";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
