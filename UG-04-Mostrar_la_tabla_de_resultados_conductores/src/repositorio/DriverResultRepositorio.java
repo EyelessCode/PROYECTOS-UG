@@ -20,7 +20,6 @@ public class DriverResultRepositorio {
 
 		try{
 			Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
-			System.out.println("=".repeat(30)+"¡BASE DE DATOS CONECTADA!"+"=".repeat(30));
 			
 			// cnt.createStatement().execute("SET @curRank := 0");
             // cnt.createStatement().execute("SET @prevPoints := NULL");

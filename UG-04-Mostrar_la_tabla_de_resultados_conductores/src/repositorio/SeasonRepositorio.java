@@ -2,6 +2,8 @@ package repositorio;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +19,18 @@ public class SeasonRepositorio {
 
         try {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+
+            String sql="SELECT * FROM season";
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                
+            }
         } catch (Exception e) {
             e.printStackTrace();
 			System.out.println("=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30));
         }
-        return null;
+        return listSeasons;
     }
 }
