@@ -1,5 +1,7 @@
 package repositorio;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,13 @@ public class SeasonRepositorio {
 
     public List<Season> anioGeneral(){
         List<Season> listSeasons=new ArrayList<Season>();
+
+        try {
+            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+        } catch (Exception e) {
+            e.printStackTrace();
+			System.out.println("=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30));
+        }
         return null;
     }
 }
