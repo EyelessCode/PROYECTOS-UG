@@ -42,7 +42,7 @@ public class App {
 
         //! SEASON REPOSITORIO
         SeasonRepositorio sr=new SeasonRepositorio();
-        List<Season> sList=sr.anioGeneral();
+        List<Season> sList=sr.yearGeneral();
 
         for (Season season : sList) {
             System.out.printf("\n--> %d\t--> %s", season.getYear(),season.getUrl());
