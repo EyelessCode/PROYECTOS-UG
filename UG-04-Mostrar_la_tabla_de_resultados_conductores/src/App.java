@@ -22,7 +22,7 @@ public class App {
         //! CIRCUIT BY COUNTRY REPOSITORIO
         List<Circuit> cByCountryList=cr.circuitsByCountry("Spain");
         
-        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CIRCUITS' ESTABLECIDA!"+"=".repeat(30));
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CIRCUITS' POR PAÍS ESTABLECIDA!"+"=".repeat(30));
         for (Circuit circuit : cByCountryList) {
             System.out.printf("\n--> %s\t--> %s\t--> %s\n",circuit.getCountry(),circuit.getName(),circuit.getLocation());
         }
@@ -32,7 +32,7 @@ public class App {
         DriverResultRepositorio dr = new DriverResultRepositorio();
         List<DriverResult> results = dr.resultadoByYearList(2009);
         
-        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'DRIVER_RESULTS' ESTABLECIDA!"+"=".repeat(30));
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'DRIVER_RESULTS' POR AÑO ESTABLECIDA!"+"=".repeat(30));
         for (DriverResult rs : results) {
             System.out.printf("\n--> %s \t--> %d \t--> %d \t --> %d \n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
         }
