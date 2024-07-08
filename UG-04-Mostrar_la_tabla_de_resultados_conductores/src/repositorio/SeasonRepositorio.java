@@ -40,7 +40,19 @@ public class SeasonRepositorio {
     }
 
     public List<Season> yearOrderBy(){
-        
+        List<Season> listSeasons=new ArrayList<Season>();
+
+        try {
+            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+
+            String sql="SELECT * FROM `seasons`\n"
+                    +"ORDER BY year;";
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("\n\n"+"=".repeat(70)+"\nFALLO EN LA BASE DE DATOS, INTÉNTELO DE NUEVO O MÁS TARDE!\n"+"=".repeat(70));
+        }
         return null;
     }
 }
