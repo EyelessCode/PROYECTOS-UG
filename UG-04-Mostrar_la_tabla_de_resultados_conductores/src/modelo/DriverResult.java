@@ -14,8 +14,6 @@ public class DriverResult {
 		this.totalPoints = totalPoints;
 		this.rank = rank;
 	}
-	
-	
 	public String getDriverName() {
 		return driverName;
 	}

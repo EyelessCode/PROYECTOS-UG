@@ -21,7 +21,7 @@ public class CircuitRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
             
-            String sql="SELECT * FROM `circuits`";
+            String sql="SELECT * FROM `circuits` limit 5;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
