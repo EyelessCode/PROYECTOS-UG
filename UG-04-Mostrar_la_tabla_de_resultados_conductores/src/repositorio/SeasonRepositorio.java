@@ -20,7 +20,7 @@ public class SeasonRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
 
-            String sql="SELECT * FROM season";
+            String sql="SELECT * FROM `seasons`";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
