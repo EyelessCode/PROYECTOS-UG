@@ -17,15 +17,14 @@ public class DriverResultRepositorio {
 
 	public List<DriverResult> resultadoByYearList(int year) throws SQLException{
 		List<DriverResult> listaDriverResults=new ArrayList<DriverResult>();
-		// List<Driver> listaDriver=new ArrayList<Driver>();
 
 		try{
 			Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
 			System.out.println("=".repeat(30)+"¡BASE DE DATOS CONECTADA!"+"=".repeat(30));
 			
-			cnt.createStatement().execute("SET @curRank := 0");
-            cnt.createStatement().execute("SET @prevPoints := NULL");
-            cnt.createStatement().execute("SET @rankCounter := 0");
+			// cnt.createStatement().execute("SET @curRank := 0");
+            // cnt.createStatement().execute("SET @prevPoints := NULL");
+            // cnt.createStatement().execute("SET @rankCounter := 0");
 
 			String sql = "SELECT\n"
 					+ "    r.year,\n"
@@ -61,7 +60,6 @@ public class DriverResultRepositorio {
 					
 					DriverResult dr = new DriverResult(forename + " " + surname, wins, total_points, season_rank);
                 listaDriverResults.add(dr);
-				// listaDriver.add(d);
 			}
 		}catch (Exception ex) {
 			ex.printStackTrace();
