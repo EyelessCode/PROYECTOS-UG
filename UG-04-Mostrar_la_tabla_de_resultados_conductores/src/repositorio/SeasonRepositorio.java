@@ -25,7 +25,12 @@ public class SeasonRepositorio {
             ResultSet rs=st.executeQuery(sql);
 
             while (rs.next()) {
-                
+                int year=rs.getInt("year");
+                String url=rs.getString("url");
+
+                Season s=new Season(year, url);
+
+                listSeasons.add(s);
             }
         } catch (Exception e) {
             e.printStackTrace();
