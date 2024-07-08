@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.Circuit;
 
 public class CircuitRepositorio {
-    String url="jdbc:mysql://127.0.0.1:3306/formula_01";
+    String url="jdbc:mysql://127.0.0.1:3306/formula1";
     String usuario="cristhian";
     String contrasenia="cris03022";
 
@@ -35,6 +35,28 @@ public class CircuitRepositorio {
                 Circuit c=new Circuit(circuitId, circuitRef, name, location, country);
 
                 listCircuits.add(c);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("\n\n"+"=".repeat(70)+"\nFALLO EN LA BASE DE DATOS, INTÉNTELO DE NUEVO O MÁS TARDE!\n"+"=".repeat(70));
+        }
+        
+        return listCircuits;
+    }
+    
+    public List<Circuit> circuitsByCountry(String paramCountry){
+        List<Circuit> listCircuits=new ArrayList<Circuit>();
+        
+        try {
+            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+            
+            String sql="SELECT * FROM `circuits` WHERE country='"+paramCountry+"'";
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                
             }
             
         } catch (Exception e) {

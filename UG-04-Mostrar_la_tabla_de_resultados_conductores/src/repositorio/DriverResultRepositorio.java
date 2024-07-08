@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.Driver;
 import modelo.DriverResult;
 
 public class DriverResultRepositorio {
@@ -73,58 +72,4 @@ public class DriverResultRepositorio {
 		return listaDriverResults;
 	}
 
-	public List<Driver> conductoresList() throws SQLException{
-		// List<DriverResult> listaDriverResults=new ArrayList<DriverResult>();
-		List<Driver> listaDriver=new ArrayList<Driver>();
-
-		try{
-			Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
-			System.out.println("=".repeat(30)+"¡BASE DE DATOS CONECTADA!"+"=".repeat(30));
-
-			String sql = "SELECT\n"+
-							"r.year,\n"+
-							"d.forename,\n"+
-							"d.surname,\n"+
-							"COUNT(CASE WHEN res.position=1 THEN 1 END) AS wins,\n"+
-							"SUM(res.points) AS total_points,\n"+
-							"RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"+
-							"FROM\n"+
-								"results res\n"+
-									"JOIN\n"+
-										"races r ON res.raceId=r.raceId\n"+
-									"JOIN\n"+
-										"drivers d ON res.driverId=d.driverId\n"+
-										"\n"+
-									"WHERE\n"+
-										"r.year= ?\n"+
-									"GROUP BY\n"+
-										"r.year, d.driverId,d.forename,d.surname\n"+
-									"ORDER BY\n"+
-										"r.year,season_rank;";
-			
-			PreparedStatement ps=cnt.prepareStatement(sql);
-			ResultSet rs=ps.executeQuery();
-
-			while (rs.next()) {
-				String forename=rs.getString("forename");
-				String surname=rs.getString("surname");
-				// String driverName=rs.getString("driverName");
-				// int wins=rs.getInt("wins");
-				// int totalPoints=rs.getInt("totalPoints");
-				// int rank=rs.getInt("rank");
-
-				Driver d=new Driver(forename, surname);
-				// DriverResult dr=new DriverResult(driverName, wins, totalPoints, rank);
-
-				// listaDriverResults.add(dr);
-				listaDriver.add(d);
-			}
-		}catch (Exception ex) {
-			ex.printStackTrace();
-			System.out.println("=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30));
-
-		}
-
-		return listaDriver;
-	}
 }
