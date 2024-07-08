@@ -8,7 +8,7 @@ import repositorio.DriverResultRepositorio;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //? CIRCUIT REPOSITORIO
+        //! CIRCUIT REPOSITORIO
         CircuitRepositorio cr=new CircuitRepositorio();
         
         List<Circuit> cList=cr.circuitsGeneral();
@@ -19,7 +19,16 @@ public class App {
         }
         System.out.println("=".repeat(90));
         
-        //? DRIVER_RESULT REPOSITORIO
+        //! CIRCUIT BY COUNTRY REPOSITORIO
+        List<Circuit> cByCountryList=cr.circuitsByCountry("Spain");
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CIRCUITS' ESTABLECIDA!"+"=".repeat(30));
+        for (Circuit circuit : cByCountryList) {
+            System.out.printf("\n--> %s\t--> %s\t--> %s\n",circuit.getCountry(),circuit.getName(),circuit.getLocation());
+        }
+        System.out.println("=".repeat(90));
+        
+        //! DRIVER_RESULT REPOSITORIO
         DriverResultRepositorio dr = new DriverResultRepositorio();
         List<DriverResult> results = dr.resultadoByYearList(2009);
         
@@ -28,6 +37,5 @@ public class App {
             System.out.printf("\n--> %s \t--> %d \t--> %d \t --> %d \n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
         }
         System.out.println("=".repeat(90));
-
     }
 }
