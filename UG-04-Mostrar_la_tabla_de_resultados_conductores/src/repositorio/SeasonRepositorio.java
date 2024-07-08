@@ -49,10 +49,19 @@ public class SeasonRepositorio {
                     +"ORDER BY year;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                int year=rs.getInt("year");
+                String url=rs.getString("url");
+
+                Season s=new Season(year, url);
+
+                listSeasons.add(s);
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("\n\n"+"=".repeat(70)+"\nFALLO EN LA BASE DE DATOS, INTÉNTELO DE NUEVO O MÁS TARDE!\n"+"=".repeat(70));
         }
-        return null;
+        return listSeasons;
     }
 }
