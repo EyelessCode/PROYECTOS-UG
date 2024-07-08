@@ -3,8 +3,10 @@ import java.util.List;
 import modelo.Circuit;
 // import modelo.Driver;
 import modelo.DriverResult;
+import modelo.Season;
 import repositorio.CircuitRepositorio;
 import repositorio.DriverResultRepositorio;
+import repositorio.SeasonRepositorio;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -30,15 +32,20 @@ public class App {
         
         //! DRIVER_RESULT REPOSITORIO
         DriverResultRepositorio dr = new DriverResultRepositorio();
-        List<DriverResult> results = dr.resultadoByYearList(2009);
+        List<DriverResult> drList = dr.resultadoByYearList(2009);
         
         System.out.println("=".repeat(30)+"¡BASE DE DATOS 'DRIVER_RESULTS' POR AÑO ESTABLECIDA!"+"=".repeat(30));
-        for (DriverResult rs : results) {
+        for (DriverResult rs : drList) {
             System.out.printf("\n--> %s \t--> %d \t--> %d \t --> %d \n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
         }
         System.out.println("=".repeat(90));
 
         //! SEASON REPOSITORIO
-        
+        SeasonRepositorio sr=new SeasonRepositorio();
+        List<Season> sList=sr.anioGeneral();
+
+        for (Season season : sList) {
+            System.out.printf("\n--> %d\t--> %s", season.getYear(),season.getUrl());
+        }
     }
 }
