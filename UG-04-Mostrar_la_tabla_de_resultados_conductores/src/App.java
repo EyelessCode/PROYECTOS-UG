@@ -36,16 +36,27 @@ public class App {
         
         System.out.println("=".repeat(30)+"¡BASE DE DATOS 'DRIVER_RESULTS' POR AÑO ESTABLECIDA!"+"=".repeat(30));
         for (DriverResult rs : drList) {
-            System.out.printf("\n--> %s \t--> %d \t--> %d \t --> %d \n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
+            System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
         }
         System.out.println("=".repeat(90));
-
+        
         //! SEASON REPOSITORIO
         SeasonRepositorio sr=new SeasonRepositorio();
         List<Season> sList=sr.yearGeneral();
-
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'SEASON' ESTABLECIDA!"+"=".repeat(30));
         for (Season season : sList) {
             System.out.printf("\n--> %d\t--> %s", season.getYear(),season.getUrl());
         }
+        System.out.println("\n"+"=".repeat(90)+"\n");
+        
+        //! SEASON ORDER BY YEAR REPOSITORIO
+        List<Season> sOrderYearList=sr.yearOrderBy();
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'SEASON' ORDENADA DE '<' A '>' ESTABLECIDA!"+"=".repeat(30));
+        for (Season season : sOrderYearList) {
+            System.out.printf("\n--> %d\t--> %s", season.getYear(),season.getUrl());
+        }
+        System.out.println("\n"+"=".repeat(90)+"\n");
     }
 }

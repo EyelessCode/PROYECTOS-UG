@@ -46,7 +46,7 @@ public class SeasonRepositorio {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
 
             String sql="SELECT * FROM `seasons`\n"
-                    +"ORDER BY year;";
+                    +"ORDER BY year DESC;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
