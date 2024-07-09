@@ -38,4 +38,30 @@ public class SeasonRepositorio {
         }
         return seasonList;
     }
+
+    public List<Season> seasonOrderByYear(){
+        List<Season> seasonList=new ArrayList<Season>();
+
+        try {
+            Connection cnt=DriverManager.getConnection(url, user, password);
+
+            String sql="SELECT * FROM `seasons`\n"
+                    +"ORDER BY year DESC;";
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                int year=rs.getInt("year");
+                String url=rs.getString("url");
+
+                Season s=new Season(year, url);
+
+                seasonList.add(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+			System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
+        }
+        return seasonList;
+    }
 }
