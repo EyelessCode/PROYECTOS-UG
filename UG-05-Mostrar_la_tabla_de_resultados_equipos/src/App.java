@@ -1,7 +1,9 @@
 import java.util.List;
 
+import modelo.ConstructorResult;
 import modelo.DriverResult;
 import modelo.Season;
+import repositorio.ConstructorResultRepositorio;
 import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
 
@@ -33,6 +35,16 @@ public class App {
         System.out.println("=".repeat(30)+"¡BASE DE DATOS 'DRIVER_RESULTS' POR AÑO ESTABLECIDA!"+"=".repeat(30));
         for (DriverResult rs : drList) {
             System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",rs.getDriverName(), rs.getWins(), rs.getTotalPoints(), rs.getRank());
+        }
+        System.out.println("\n"+"=".repeat(90)+"\n");
+
+        //! CONSTRUCTOR_RESULT REPOSITORIO
+        ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
+        List<ConstructorResult> crList = crr.ResultByYear(1985);
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
+        for (ConstructorResult cr : crList) {
+            System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",cr.getName(), cr.getWins(), cr.getTotalPoints(), cr.getRank());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
     }
