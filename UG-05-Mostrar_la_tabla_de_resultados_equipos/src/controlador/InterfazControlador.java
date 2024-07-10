@@ -46,6 +46,12 @@ public class InterfazControlador extends Application{
         //? CUARTA COLUMNA
         TableColumn<ConstructorResult,Integer>rankColumn=new TableColumn<>("RANGO");
         rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+
+        //? SE AGREGA LAS COLUMNAS
+        constructorTableView.getColumns().add(nameColumn);
+        constructorTableView.getColumns().add(winsColumn);
+        constructorTableView.getColumns().add(pointsColumn);
+        constructorTableView.getColumns().add(rankColumn);
     }
 
 }
