@@ -89,11 +89,17 @@ public class InterfazControlador extends Application{
         VBox v=new VBox(contenedor,constructorTableView);
 
         //? RESOLUCIÓN DE LA INTERFAZ
-        Scene ventana=new Scene(v,800,600);
+        Scene ventana=new Scene(v,650,400);
 
         arg0.setScene(ventana);
         arg0.setTitle("VENTANA PARA LA PRESENTACIÓN DE LOS DATOS DE UNA TABLA XD");
         arg0.show();
+
+        // //! CARGO DE DATO INICIAL
+        // if (!comboBoxYear.getItems().isEmpty()) {
+        //     comboBoxYear.setValue(comboBoxYear.getItems().get(0));
+        //     comboBoxYear.getOnAction().handle(null);
+        // }
     }
 
 }
