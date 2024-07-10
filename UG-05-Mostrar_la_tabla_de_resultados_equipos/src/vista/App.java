@@ -1,3 +1,4 @@
+package vista;
 import java.util.List;
 
 import modelo.ConstructorResult;
@@ -48,4 +49,5 @@ public class App {
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
     }
+
 }
