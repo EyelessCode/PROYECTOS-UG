@@ -5,10 +5,16 @@ import java.util.List;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import modelo.ConstructorResult;
 import modelo.Season;
@@ -23,7 +29,7 @@ public class InterfazControlador extends Application{
 
 	@Override
 	public void start(Stage arg0) throws Exception {
-        //! PARA EL COMBOBOX Y SU IMPLEMENTACIÓN A LA PRESENTACIÓN
+        //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
         List<Season> sList=sr.seasonAll();
         
@@ -52,6 +58,44 @@ public class InterfazControlador extends Application{
         constructorTableView.getColumns().add(winsColumn);
         constructorTableView.getColumns().add(pointsColumn);
         constructorTableView.getColumns().add(rankColumn);
+
+        //! ACCIÓN DE COMBOBOX
+        comboBoxYear.setOnAction(ev->{
+            try {
+                //? SELECCIÓN DEL AÑO
+                int seleccion=comboBoxYear.getValue();
+                
+                //? LLAMADO DEL REPOSITORIO PARA ESTABLECER EL AÑO
+                List<ConstructorResult> constructorResultsList=crr.ResultByYear(seleccion);
+            
+                //? OBTENCIÓN DEL LISTADO
+                constructorTableView.getItems().setAll(constructorResultsList);
+            } catch (Exception e) {
+                e.printStackTrace();
+			    System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
+
+                //? VENTANA DE ERROR
+                Alert alert=new Alert(AlertType.ERROR);
+                alert.setTitle("ERROR EN LA CONEXIÓN DE LA BASE DE DATOS");
+                alert.setHeaderText("HUBO UN PROBLEMA");
+                alert.setContentText("VULEVA A INTENTARLO MÁS TARDE");
+                alert.showAndWait();
+            }
+        });
+
+        //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
+        HBox contenedor=new HBox(comboBoxYear);
+        contenedor.setAlignment(Pos.CENTER);
+
+        //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
+        VBox v=new VBox(contenedor,constructorTableView);
+
+        //? RESOLUCIÓN DE LA INTERFAZ
+        Scene ventana=new Scene(v,800,600);
+
+        arg0.setScene(ventana);
+        arg0.setTitle("VENTANA PARA LA PRESENTACIÓN DE LOS DATOS DE UNA TABLA XD");
+        arg0.show();
     }
 
 }
