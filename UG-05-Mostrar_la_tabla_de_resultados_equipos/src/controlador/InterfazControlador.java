@@ -19,12 +19,10 @@ import javafx.stage.Stage;
 import modelo.ConstructorResult;
 import modelo.Season;
 import repositorio.ConstructorResultRepositorio;
-import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
 
 public class InterfazControlador extends Application{
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
-    private DriverResultRepositorio drr=new DriverResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
 
 	@Override

@@ -1,6 +1,9 @@
 package vista;
 import java.util.List;
 
+import controlador.InterfazControlador;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import modelo.ConstructorResult;
 import modelo.DriverResult;
 import modelo.Season;
@@ -8,7 +11,14 @@ import repositorio.ConstructorResultRepositorio;
 import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
 
-public class App {
+public class App extends Application{
+    @Override
+    public void start(Stage arg1) throws Exception {
+        //! INSTANCIA DEL CONTROLADOR DE LA INTERFAZ
+        InterfazControlador ic=new InterfazControlador();
+        ic.start(arg1);
+    }
+
     public static void main(String[] args) throws Exception {
         //! SEASON REPOSITORIO
         SeasonRepositorio sr=new SeasonRepositorio();
@@ -48,6 +58,8 @@ public class App {
             System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",cr.getName(), cr.getWins(), cr.getTotalPoints(), cr.getRank());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
-    }
 
+        //! LLAMADO A LA INTERFAZ
+        launch(args);
+    }
 }
