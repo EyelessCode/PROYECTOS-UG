@@ -3,6 +3,8 @@ package controlador;
 import java.util.List;
 
 import javafx.application.Application;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -53,5 +55,27 @@ public class InterfazController extends Application{
         tableView.getColumns().add(pointsColumn);
         tableView.getColumns().add(rankColumn);
         
+        comboBox.setOnAction(ev->{
+            try {
+                //? SELECCIÓN DEL AÑO
+                int seleccion=comboBox.getValue();
+
+                //? LLAMADO DEL REPOSITORIO PARA ESTABLECER EL AÑO
+                List<DriverResult> listDriverResults=drr.resultadoByYearList(seleccion);
+                
+                //? OBTENCIÓN DEL LISTADO
+                tableView.getItems().setAll(listDriverResults);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
+
+                //? VENTANA DE INFORMACIÓN
+                Alert alert=new Alert(AlertType.INFORMATION);
+                alert.setTitle("ERROR EN LA CONEXIÓN DE LA BASE DE DATOS");
+                alert.setHeaderText("HUBO UN PROBLEMA");
+                alert.setContentText("VULEVA A INTENTARLO");
+                alert.showAndWait();
+            }
+        });
 	}
 }
