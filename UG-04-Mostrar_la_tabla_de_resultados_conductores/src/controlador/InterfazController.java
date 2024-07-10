@@ -46,5 +46,12 @@ public class InterfazController extends Application{
         TableColumn<DriverResult,Integer>rankColumn=new TableColumn<>("RANGO");
         rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
 
+        //? SE AGREGA LAS COLUMNAS
+        tableView.getColumns().add(nameColumn);
+        tableView.getColumns().add(lastnameColumn);
+        tableView.getColumns().add(winsColumn);
+        tableView.getColumns().add(pointsColumn);
+        tableView.getColumns().add(rankColumn);
+        
 	}
 }
