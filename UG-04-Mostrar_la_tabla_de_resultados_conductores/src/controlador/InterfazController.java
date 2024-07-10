@@ -3,12 +3,16 @@ package controlador;
 import java.util.List;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import modelo.DriverResult;
 import modelo.Season;
@@ -77,5 +81,20 @@ public class InterfazController extends Application{
                 alert.showAndWait();
             }
         });
+
+        //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
+        HBox hBox=new HBox(comboBox);
+        hBox.setAlignment(Pos.CENTER);
+
+        //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
+        VBox vBox=new VBox(hBox,tableView);
+
+        //? RESOLUCIÓN DE LA INTERFAZ
+        Scene ventaScene=new Scene(vBox,650,400);
+
+        //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
+        arg0.setTitle("LISTA DE TABLA PARA PRESENTACIÓN DE DATOS DE UNA TABLA XDXDXD");
+        arg0.setScene(ventaScene);
+        arg0.show();
 	}
 }
