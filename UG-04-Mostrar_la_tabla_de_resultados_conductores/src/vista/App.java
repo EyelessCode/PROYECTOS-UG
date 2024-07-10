@@ -1,6 +1,9 @@
 package vista;
 import java.util.List;
 
+import controlador.InterfazController;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import modelo.Circuit;
 // import modelo.Driver;
 import modelo.DriverResult;
@@ -9,7 +12,14 @@ import repositorio.CircuitRepositorio;
 import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
 
-public class App {
+public class App extends Application{
+    @Override
+    public void start(Stage arg0) throws Exception {
+        //! INSTANCIA DEL CONTROLADOR DE LA INTERFAZ
+        InterfazController ic=new InterfazController();
+        ic.start(arg0);
+    }
+
     public static void main(String[] args) throws Exception {
         //! CIRCUIT REPOSITORIO
         CircuitRepositorio cr=new CircuitRepositorio();
@@ -59,5 +69,9 @@ public class App {
             System.out.printf("\n--> %d\t--> %s", season.getYear(),season.getUrl());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
+
+        //! LLAMADO A LA INTERFAZ
+        launch(args);
     }
+
 }
