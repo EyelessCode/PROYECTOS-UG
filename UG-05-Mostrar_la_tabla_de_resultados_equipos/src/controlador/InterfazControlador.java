@@ -72,11 +72,11 @@ public class InterfazControlador extends Application{
                 e.printStackTrace();
 			    System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
 
-                //? VENTANA DE ERROR
-                Alert alert=new Alert(AlertType.ERROR);
+                //? VENTANA DE INFORMACIÓN
+                Alert alert=new Alert(AlertType.INFORMATION);
                 alert.setTitle("ERROR EN LA CONEXIÓN DE LA BASE DE DATOS");
                 alert.setHeaderText("HUBO UN PROBLEMA");
-                alert.setContentText("VULEVA A INTENTARLO MÁS TARDE");
+                alert.setContentText("VULEVA A INTENTARLO");
                 alert.showAndWait();
             }
         });
