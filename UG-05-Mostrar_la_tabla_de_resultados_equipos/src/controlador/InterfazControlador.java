@@ -91,6 +91,7 @@ public class InterfazControlador extends Application{
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,650,400);
 
+        //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
         arg0.setScene(ventana);
         arg0.setTitle("VENTANA PARA LA PRESENTACIÓN DE LOS DATOS DE UNA TABLA XD");
         arg0.show();
