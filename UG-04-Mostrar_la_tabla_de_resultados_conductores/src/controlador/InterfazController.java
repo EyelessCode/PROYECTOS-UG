@@ -37,24 +37,20 @@ public class InterfazController extends Application{
         TableView<DriverResult>tableView=new TableView<>();
 
         //? IMPLEMENTACIÓN DE LA COLUMNAS - PRIMERA COLUMNA
-        TableColumn<DriverResult,String>nameColumn=new TableColumn<>("NOMBRE");
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("forname"));
+        TableColumn<DriverResult,String>nameColumn=new TableColumn<>("NOMBRE / APELLIDO");
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("driverName"));
         //? SEGUNDA COLUMNA
-        TableColumn<DriverResult,String>lastnameColumn=new TableColumn<>("APELLIDO");
-        lastnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
-        //? TERCERA COLUMNA
         TableColumn<DriverResult,Integer>winsColumn=new TableColumn<>("VICTORIAS");
         winsColumn.setCellValueFactory(new PropertyValueFactory<>("wins"));
-        //? CUARTA COLUMNA
+        //? TERCERA COLUMNA
         TableColumn<DriverResult,Integer>pointsColumn=new TableColumn<>("PUNTOS TOTALES");
         pointsColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
-        //? QUINTA COLUMNA
+        //? CUARTA COLUMNA
         TableColumn<DriverResult,Integer>rankColumn=new TableColumn<>("RANGO");
         rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
 
         //? SE AGREGA LAS COLUMNAS
         tableView.getColumns().add(nameColumn);
-        tableView.getColumns().add(lastnameColumn);
         tableView.getColumns().add(winsColumn);
         tableView.getColumns().add(pointsColumn);
         tableView.getColumns().add(rankColumn);
