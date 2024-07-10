@@ -89,7 +89,7 @@ public class InterfazController extends Application{
         Scene ventaScene=new Scene(vBox,650,400);
 
         //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
-        arg0.setTitle("LISTA DE TABLA PARA PRESENTACIÓN DE DATOS DE UNA TABLA XDXDXD");
+        arg0.setTitle("LISTA DE DATOS PARA PRESENTACIÓN DE DATOS DE CAMPO DE UNA TABLA XDXDXD");
         arg0.setScene(ventaScene);
         arg0.show();
 	}
