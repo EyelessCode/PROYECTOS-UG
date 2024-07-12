@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     static class PrediccionPrecio {
         public int dia;
@@ -17,5 +20,10 @@ public class App {
         return inteLineal(x0, y0, x1, y1, x);
     }
     public static void main(String[] args) throws Exception {
+        List<PrediccionPrecio> preciosList = new ArrayList<>();
+        preciosList.add(new PrediccionPrecio(1, 50.0));
+        preciosList.add(new PrediccionPrecio(2, 55.0));
+        preciosList.add(new PrediccionPrecio(3, 53.0));
+        preciosList.add(new PrediccionPrecio(4, 57.0));
     }
 }
