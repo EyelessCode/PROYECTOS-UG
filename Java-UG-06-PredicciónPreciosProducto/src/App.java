@@ -27,11 +27,11 @@ public class App {
         preciosList.add(new PrediccionPrecio(4, 57.0));
 
         double interpoPrecio = inteLineal(3, 53.0, 4, 57.0, 5);
-        System.out.println("Interpolated price for day 5: " + interpoPrecio);
+        System.out.println("Precio de Interpolación del día 5: " + interpoPrecio);
 
         // Extrapolación de precio futuro (por ejemplo, día 6)
         double extrapoPrecio = extrapolateLinear(3, 53.0, 4, 57.0, 6);
-        System.out.println("Extrapolated price for day 6: " + extrapoPrecio);
+        System.out.println("Precio de Extrapolación del día 6: " + extrapoPrecio);
     }
 
 }
