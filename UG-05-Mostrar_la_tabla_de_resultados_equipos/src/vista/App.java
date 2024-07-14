@@ -4,10 +4,12 @@ import java.util.List;
 import controlador.InterfazControlador;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import modelo.ConstructorPoints;
 import modelo.ConstructorResult;
 import modelo.DriverPoints;
 import modelo.DriverResult;
 import modelo.Season;
+import repositorio.ConstructorPointsRepositorio;
 import repositorio.ConstructorResultRepositorio;
 import repositorio.DriverPointsRepositorio;
 import repositorio.DriverResultRepositorio;
@@ -41,6 +43,9 @@ public class App extends Application{
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
 
+
+
+
         //! DRIVER_RESULT REPOSITORIO
         DriverResultRepositorio dr = new DriverResultRepositorio();
         List<DriverResult> drList = dr.resultByYear(1999);
@@ -51,6 +56,9 @@ public class App extends Application{
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
 
+
+
+
         //! CONSTRUCTOR_RESULT REPOSITORIO
         ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
         List<ConstructorResult> crList = crr.ResultByYear(2009);
@@ -60,6 +68,9 @@ public class App extends Application{
             System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",cr.getName(), cr.getWins(), cr.getTotalPoints(), cr.getRank());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
+
+
+
         
         //! DIRVER_POINTS REPOSITORIO
         DriverPointsRepositorio dpr=new DriverPointsRepositorio();
@@ -70,8 +81,24 @@ public class App extends Application{
             System.out.printf("\n--> %s\t--> %d\n", driverPoints.getDriverName(),driverPoints.getTotalPoints());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
+        
+        
+        
+        
+        //! CONSTRUCTOR_POINTS REPOSITORIO
+        ConstructorPointsRepositorio cpr=new ConstructorPointsRepositorio();
+        List<ConstructorPoints> cpList=cpr.orderTotalPoints();
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
+        for (ConstructorPoints constructorPoints : cpList) {
+            System.out.printf("\n--> %s\t--> %d\n", constructorPoints.getName(),constructorPoints.getTotalPoints());
+        }
+        System.out.println("\n"+"=".repeat(90)+"\n");
 
-        //! LLAMADO A LA INTERFAZ
+
+
+
+        //! LLAMADA A LA INTERFAZ
         launch(args);
     }
 }
