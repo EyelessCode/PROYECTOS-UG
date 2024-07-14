@@ -10,7 +10,7 @@ import java.util.List;
 import modelo.Season;
 
 public class SeasonRepositorio {
-    String url="jdbc:mysql://127.0.0.1:3306/formula1";
+    String url="jdbc:postgresql://localhost:5432/ug_formula01";
     String user="cristhian";
     String password="cris03022";
 
@@ -20,7 +20,7 @@ public class SeasonRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, user, password);
 
-            String sql="SELECT * FROM `seasons`;";
+            String sql="SELECT * FROM seasons;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
@@ -45,7 +45,7 @@ public class SeasonRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, user, password);
 
-            String sql="SELECT * FROM `seasons`\n"
+            String sql="SELECT * FROM seasons\n"
                     +"ORDER BY year DESC;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);

@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.DriverResult;
 
 public class DriverResultRepositorio {
-	String url="jdbc:mysql://127.0.0.1:3306/formula1";
+	String url="jdbc:postgresql://localhost:5432/ug_formula01";
 	String usuario="cristhian";
 	String contrasenia="cris03022";
 
@@ -21,25 +21,24 @@ public class DriverResultRepositorio {
 		try{
 			Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
 
-			String sql = "SELECT\n"
-					+ "    r.year,\n"
-					+ "    d.forename,\n"
-					+ "    d.surname,\n"
-					+ "    COUNT(CASE WHEN res.position = 1 THEN 1 END) AS wins,\n"
-					+ "    SUM(res.points) AS total_points,\n"
-					+ "    RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"
-					+ "FROM\n"
-					+ "    results res\n"
-					+ "JOIN\n"
-					+ "    races r ON res.raceId = r.raceId\n"
-					+ "JOIN\n"
-					+ "    drivers d ON res.driverId = d.driverId\n"
-					+ "\n"
-					+ "WHERE r.year = ? \n"
-					+ "GROUP BY\n"
-					+ "    r.year, d.driverId, d.forename, d.surname\n"
-					+ "ORDER BY\n"
-					+ "    r.year, season_rank;"; 
+			String sql = "SELECT\n"+
+			"			r.year,\n"+
+			"			d.forename,\n"+
+			"			d.surname,\n"+
+			"			COUNT(CASE WHEN res.position = 1 THEN 1 END) AS wins,\n"+
+			"			SUM(res.points) AS total_points,\n"+
+			"			RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank \n"+
+			"		FROM\n"+
+			"			results res\n"+
+			"		JOIN\n"+
+			"			races r ON res.race_id = r.race_id\n"+
+			"		JOIN\n"+
+			"			drivers d ON res.driver_id = d.driver_id\n"+
+			"		WHERE r.year = ?\n"+
+			"		GROUP BY\n"+
+			"			r.year, d.driver_id, d.forename, d.surname\n"+
+			"		ORDER BY\n"+
+			"			r.year, season_rank;";
 
 				PreparedStatement ps = cnt.prepareStatement(sql);
 				ps.setInt(1, year);

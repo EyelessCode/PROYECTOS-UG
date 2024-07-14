@@ -10,7 +10,7 @@ import java.util.List;
 import modelo.ConstructorResult;
 
 public class ConstructorResultRepositorio {
-    String url="jdbc:mysql://127.0.0.1:3306/formula1";
+    String url="jdbc:postgresql://localhost:5432/ug_formula01";
     String usuario="cristhian";
     String contrasenia="cris03022";
     
@@ -22,24 +22,24 @@ public class ConstructorResultRepositorio {
  	    try{
 			Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
 
-            String sql = "SELECT\n"
-                    + "    r.year,\n"
-                    + "    co.name,\n"
-                    + "    COUNT(CASE WHEN res.position = 1 THEN 1 END) AS wins,\n"
-                    + "    SUM(res.points) AS total_points,\n"
-                    + "    RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"
-                    + "FROM\n"
-                    + "    results res\n"
-                    + "JOIN\n"
-                    + "    races r ON res.raceId = r.raceId\n"
-                    + "JOIN\n"
-                    + "    constructors co ON res.constructorId = co.constructorId\n"
-                    + "\n"
-                    + "WHERE r.year = ?\n"
-                    + "GROUP BY\n"
-                    + "    r.year, co.constructorId, co.name\n"
-                    + "ORDER BY\n"
-                    + "    r.year, season_rank;";
+			String sql = "SELECT\n"
+			+ "    r.year,\n"
+			+ "    co.name,\n"
+			+ "    COUNT(CASE WHEN res.position = 1 THEN 1 END) AS wins,\n"
+			+ "    SUM(res.points) AS total_points,\n"
+			+ "    RANK() OVER (PARTITION BY r.year ORDER BY SUM(res.points) DESC) AS season_rank\n"
+			+ "FROM\n"
+			+ "    results res\n"
+			+ "JOIN\n"
+			+ "    races r ON res.race_id = r.race_id\n"
+			+ "JOIN\n"
+			+ "    constructors co ON res.constructor_id = co.constructor_id\n"
+			+ "\n"
+			+ "WHERE r.year = ?\n"
+			+ "GROUP BY\n"
+			+ "    r.year, co.constructor_id, co.name\n"
+			+ "ORDER BY\n"
+			+ "    r.year, season_rank;";
 
 			PreparedStatement ps=cnt.prepareStatement(sql);
 			ps.setInt(1, year);

@@ -29,7 +29,7 @@ public class InterfazControlador extends Application{
 	public void start(Stage arg0) throws Exception {
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
-        List<Season> sList=sr.seasonAll();
+        List<Season> sList=sr.seasonOrderByYear();
         
         for (Season season : sList) {
             comboBoxYear.getItems().add(season.getYear());
