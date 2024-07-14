@@ -5,9 +5,11 @@ import controlador.InterfazControlador;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import modelo.ConstructorResult;
+import modelo.DriverPoints;
 import modelo.DriverResult;
 import modelo.Season;
 import repositorio.ConstructorResultRepositorio;
+import repositorio.DriverPointsRepositorio;
 import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
 
@@ -56,6 +58,16 @@ public class App extends Application{
         System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
         for (ConstructorResult cr : crList) {
             System.out.printf("\n--> %s\t--> %d\t--> %d\t --> %d\n",cr.getName(), cr.getWins(), cr.getTotalPoints(), cr.getRank());
+        }
+        System.out.println("\n"+"=".repeat(90)+"\n");
+        
+        //! DIRVER_POINTS REPOSITORIO
+        DriverPointsRepositorio dpr=new DriverPointsRepositorio();
+        List<DriverPoints> dpList=dpr.totalPointsOrder();
+        
+        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
+        for (DriverPoints driverPoints : dpList) {
+            System.out.printf("\n--> %s\t--> %d\n", driverPoints.getDriverName(),driverPoints.getTotalPoints());
         }
         System.out.println("\n"+"=".repeat(90)+"\n");
 

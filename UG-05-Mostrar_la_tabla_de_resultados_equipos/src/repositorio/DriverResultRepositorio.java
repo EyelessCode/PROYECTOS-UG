@@ -51,6 +51,7 @@ public class DriverResultRepositorio {
 					int wins = rs.getInt("wins");
 					int total_points = rs.getInt("total_points");
 					int season_rank = rs.getInt("season_rank");
+					// int yearSeason=rs.getInt("year");
 					
 					DriverResult dr = new DriverResult(forename + " " + surname, wins, total_points, season_rank);
                     driverResultslList.add(dr);
