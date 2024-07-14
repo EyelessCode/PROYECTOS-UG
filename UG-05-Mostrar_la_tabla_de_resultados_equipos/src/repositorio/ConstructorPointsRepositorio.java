@@ -32,7 +32,7 @@ public class ConstructorPointsRepositorio {
              "GROUP BY\n" +
              "    co.constructor_id, co.name\n" +
              "ORDER BY\n" +
-             "    total_points DESC;";
+             "    total_points DESC LIMIT 10;";
 
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
