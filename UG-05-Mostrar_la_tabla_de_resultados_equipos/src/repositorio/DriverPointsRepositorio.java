@@ -38,7 +38,15 @@ public class DriverPointsRepositorio {
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
-            
+            while (rs.next()) {
+                String forname=rs.getString("forname");
+                String surname=rs.getString("surname");
+                int totalPoints=rs.getInt("totalPoints");
+
+                DriverPoints dp=new DriverPoints(forname +" "+surname, totalPoints);
+
+                listDriverPoints.add(dp);
+            }            
         } catch (Exception e) {
             e.printStackTrace();
 			System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
