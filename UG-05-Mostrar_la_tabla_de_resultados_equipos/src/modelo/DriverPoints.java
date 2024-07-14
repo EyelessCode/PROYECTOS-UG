@@ -3,7 +3,7 @@ package modelo;
 public class DriverPoints {
     private String driverName;
     private int totalPoints;
-    
+
     public DriverPoints(String driverName, int totalPoints) {
         this.driverName = driverName;
         this.totalPoints = totalPoints;
