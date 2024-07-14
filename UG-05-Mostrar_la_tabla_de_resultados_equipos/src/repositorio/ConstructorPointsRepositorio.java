@@ -37,7 +37,14 @@ public class ConstructorPointsRepositorio {
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
-            
+            while (rs.next()) {
+                String name=rs.getString("name");
+                int totalPoints=rs.getInt("totalPoints");
+
+                ConstructorPoints cp=new ConstructorPoints(name, totalPoints);
+
+                listConstructorPoints.add(cp);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
