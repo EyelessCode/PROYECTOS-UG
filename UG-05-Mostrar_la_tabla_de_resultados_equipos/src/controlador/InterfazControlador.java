@@ -1,5 +1,6 @@
 package controlador;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javafx.application.Application;
@@ -18,13 +19,17 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import modelo.ConstructorResult;
+import modelo.DriverPoints;
 import modelo.Season;
 import repositorio.ConstructorResultRepositorio;
+import repositorio.DriverPointsRepositorio;
 import repositorio.SeasonRepositorio;
 
 public class InterfazControlador extends Application{
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
+    private DriverPointsRepositorio dpr=new DriverPointsRepositorio();
+    
     private BarChart<String,Number>barChart;
 
 	@Override
@@ -36,6 +41,18 @@ public class InterfazControlador extends Application{
         for (Season season : sList) {
             comboBoxYear.getItems().add(season.getYear());
         }
+
+        //! IMPLEMENTACIÓN DE LAS TABLAS AL COMBOBOX
+        ComboBox<String>comboBoxPoints=new ComboBox<>();
+        comboBoxPoints.getItems().addAll("CONDUCTORES","EQUIPO");
+        comboBoxPoints.setValue("Drivers");
+        comboBoxPoints.setOnAction(ev->{
+            try {
+                actualizacion(comboBoxPoints.getValue());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
         
         //! PARA EL TABLEVIEW Y SU IMPLEMENTACIÓN A LA PRESENTACIÓN
         TableView<ConstructorResult> constructorTableView=new TableView<>();
@@ -105,6 +122,8 @@ public class InterfazControlador extends Application{
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,650,400);
 
+        //! MÉTODO DE ACTUALIZACIÓN DE GRÁFICO DE BARRA
+        
         //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
         arg0.setScene(ventana);
         arg0.setTitle("VENTANA PARA LA PRESENTACIÓN DE LOS DATOS DE UNA TABLA XD");
@@ -115,6 +134,13 @@ public class InterfazControlador extends Application{
         //     comboBoxYear.setValue(comboBoxYear.getItems().get(0));
         //     comboBoxYear.getOnAction().handle(null);
         // }
+    }
+
+    private void actualizacion(String seleccion)throws SQLException{
+        barChart.getData().clear();
+        if (seleccion.equals("Drivers")) {
+            List<DriverPoints> listDriverPoints=dpr.totalPointsOrder();
+        }
     }
 
 }
