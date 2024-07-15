@@ -7,6 +7,8 @@ import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -24,6 +26,7 @@ import repositorio.SeasonRepositorio;
 public class InterfazControlador extends Application{
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
+    private BarChart<String,Number>barChart;
 
 	@Override
 	public void start(Stage arg0) throws Exception {
@@ -56,7 +59,7 @@ public class InterfazControlador extends Application{
         constructorTableView.getColumns().add(winsColumn);
         constructorTableView.getColumns().add(pointsColumn);
         constructorTableView.getColumns().add(rankColumn);
-
+        
         //! ACCIÓN DE COMBOBOX
         comboBoxYear.setOnAction(ev->{
             try {
@@ -80,13 +83,21 @@ public class InterfazControlador extends Application{
                 alert.showAndWait();
             }
         });
-
+        
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
         HBox contenedor=new HBox(comboBoxYear);
         contenedor.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
         VBox v=new VBox(contenedor,constructorTableView);
+        
+        //! IMPLEMENTACIÓN DEL GRÁFICO DE BARRA
+        //? ESTABLECIENDO EL EJE 'X'
+        CategoryAxis x=new CategoryAxis();
+        x.setLabel("NOMBRE/APELLIDO");
+        //? ESTABLECIENDO EL EJE 'Y'
+        CategoryAxis y=new CategoryAxis();
+        y.setLabel("PUNTAJE TOTAL");
 
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,650,400);
