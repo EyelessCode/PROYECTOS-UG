@@ -19,9 +19,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import modelo.ConstructorPoints;
 import modelo.ConstructorResult;
 import modelo.DriverPoints;
 import modelo.Season;
+import repositorio.ConstructorPointsRepositorio;
 import repositorio.ConstructorResultRepositorio;
 import repositorio.DriverPointsRepositorio;
 import repositorio.SeasonRepositorio;
@@ -29,6 +31,7 @@ import repositorio.SeasonRepositorio;
 public class InterfazControlador extends Application{
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
+    private ConstructorPointsRepositorio cpr=new ConstructorPointsRepositorio();
     private DriverPointsRepositorio dpr=new DriverPointsRepositorio();
 
     private BarChart<String,Number>barChart;
@@ -146,6 +149,14 @@ public class InterfazControlador extends Application{
                 serie.getData().add(new XYChart.Data<>(driverPoints.getDriverName(),driverPoints.getTotalPoints()));
             }
             serie.setName("CONDUCTORES");
+            barChart.getData().add(serie);
+        }else if(seleccion.equals("Constructors")){
+            List<ConstructorPoints>cpList=cpr.orderTotalPoints();
+            XYChart.Series<String,Number>serie=new XYChart.Series<>();
+            for (ConstructorPoints constructorPoints : cpList) {
+                serie.getData().add(new XYChart.Data<>(constructorPoints.getName(),constructorPoints.getTotalPoints()));
+            }
+            serie.setName("EQUIPO");
             barChart.getData().add(serie);
         }
     }
