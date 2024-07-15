@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -29,7 +30,7 @@ public class InterfazControlador extends Application{
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
     private DriverPointsRepositorio dpr=new DriverPointsRepositorio();
-    
+
     private BarChart<String,Number>barChart;
 
 	@Override
@@ -140,6 +141,12 @@ public class InterfazControlador extends Application{
         barChart.getData().clear();
         if (seleccion.equals("Drivers")) {
             List<DriverPoints> listDriverPoints=dpr.totalPointsOrder();
+            XYChart.Series<String,Number>serie=new XYChart.Series<>();
+            for (DriverPoints driverPoints : listDriverPoints) {
+                serie.getData().add(new XYChart.Data<>(driverPoints.getDriverName(),driverPoints.getTotalPoints()));
+            }
+            serie.setName("CONDUCTORES");
+            barChart.getData().add(serie);
         }
     }
 
