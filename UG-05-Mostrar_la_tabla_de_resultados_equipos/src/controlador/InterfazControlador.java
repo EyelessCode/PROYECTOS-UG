@@ -83,6 +83,18 @@ public class InterfazControlador extends Application{
                 alert.showAndWait();
             }
         });
+
+        //! IMPLEMENTACIÓN DE LOS EJES
+        //? ESTABLECIENDO EL EJE 'X'
+        CategoryAxis x=new CategoryAxis();
+        x.setLabel("NOMBRE/APELLIDO");
+        //? ESTABLECIENDO EL EJE 'Y'
+        CategoryAxis y=new CategoryAxis();
+        y.setLabel("PUNTAJE TOTAL");
+
+        //! IMPLEMENTACIÓN DE LOS GRÁFICOS DE BARRAS
+        barChart=new BarChart<>(x, y);
+        barChart.setTitle("PUNTOS TOTALES");
         
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
         HBox contenedor=new HBox(comboBoxYear);
@@ -91,14 +103,6 @@ public class InterfazControlador extends Application{
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
         VBox v=new VBox(contenedor,constructorTableView);
         
-        //! IMPLEMENTACIÓN DEL GRÁFICO DE BARRA
-        //? ESTABLECIENDO EL EJE 'X'
-        CategoryAxis x=new CategoryAxis();
-        x.setLabel("NOMBRE/APELLIDO");
-        //? ESTABLECIENDO EL EJE 'Y'
-        CategoryAxis y=new CategoryAxis();
-        y.setLabel("PUNTAJE TOTAL");
-
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,650,400);
 
