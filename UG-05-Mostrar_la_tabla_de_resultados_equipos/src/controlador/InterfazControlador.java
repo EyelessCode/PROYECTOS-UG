@@ -2,13 +2,12 @@ package controlador;
 
 import java.util.List;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
-
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -89,11 +88,11 @@ public class InterfazControlador extends Application{
         CategoryAxis x=new CategoryAxis();
         x.setLabel("NOMBRE/APELLIDO");
         //? ESTABLECIENDO EL EJE 'Y'
-        CategoryAxis y=new CategoryAxis();
+        NumberAxis y=new NumberAxis();
         y.setLabel("PUNTAJE TOTAL");
 
         //! IMPLEMENTACIÓN DE LOS GRÁFICOS DE BARRAS
-        barChart=new BarChart<>(x, y);
+        barChart=new BarChart<String,Number>(x, y);
         barChart.setTitle("PUNTOS TOTALES");
         
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
