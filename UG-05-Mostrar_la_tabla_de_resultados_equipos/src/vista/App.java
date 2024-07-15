@@ -26,7 +26,7 @@ public class App extends Application{
     public static void main(String[] args) throws Exception {
         //! SEASON REPOSITORIO
         SeasonRepositorio sr=new SeasonRepositorio();
-        List<Season> sList=sr.seasonAll();
+        List<Season> sList=sr.seasonLimit();
 
         System.out.println("=".repeat(30)+"¡BASE DE DATOS 'SEASON' ESTABLECIDA!"+"=".repeat(30));
         for (Season season : sList) {
@@ -35,7 +35,7 @@ public class App extends Application{
         System.out.println("\n"+"=".repeat(90)+"\n");
         
         //? SEASON ORDENAR POR AÑO DE MENOR A MAYOR 
-        List<Season> sListOrderByYear=sr.seasonOrderByYear();
+        List<Season> sListOrderByYear=sr.seasonOrderByYearLimit();
         
         System.out.println("=".repeat(10)+"¡BASE DE DATOS 'SEASON' ORDENADO POR AÑO DE MAYOR A MENOR ESTABLECIDA!"+"=".repeat(10));
         for (Season season : sListOrderByYear) {
