@@ -10,11 +10,10 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -39,25 +38,20 @@ public class InterfazControlador extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
+        Label tituloYear=new Label("AÑO: ");
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
         List<Season> sList=sr.seasonOrderByYear();
         
         for (Season season : sList) {
             comboBoxYear.getItems().add(season.getYear());
         }
-
-        //! IMPLEMENTACIÓN DE LAS TABLAS AL COMBOBOX
-        ComboBox<String>comboBoxPoints=new ComboBox<>();
-        comboBoxPoints.getItems().addAll("CONDUCTORES","EQUIPO");
-        comboBoxPoints.setValue("Drivers");
-        comboBoxPoints.setOnAction(ev->{
-            try {
-                actualizacion(comboBoxPoints.getValue());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
         
+        //! IMPLEMENTACIÓN DE GRÁFICO DE BARRAS AL COMBOBOX
+        Label tituloTabla=new Label("TABLA: ");
+        ComboBox<String>comboBoxPoints=new ComboBox<>();
+        comboBoxPoints.getItems().addAll("Drivers","Constructors");
+        comboBoxPoints.setValue("Drivers");
+
         //! PARA EL TABLEVIEW Y SU IMPLEMENTACIÓN A LA PRESENTACIÓN
         TableView<ConstructorResult> constructorTableView=new TableView<>();
 
@@ -80,7 +74,7 @@ public class InterfazControlador extends Application{
         constructorTableView.getColumns().add(pointsColumn);
         constructorTableView.getColumns().add(rankColumn);
         
-        //! ACCIÓN DE COMBOBOX
+        //! ACCIÓN DE COMBOBOX DE AÑO
         comboBoxYear.setOnAction(ev->{
             try {
                 //? SELECCIÓN DEL AÑO
@@ -93,14 +87,15 @@ public class InterfazControlador extends Application{
                 constructorTableView.getItems().setAll(constructorResultsList);
             } catch (Exception e) {
                 e.printStackTrace();
-			    System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
+            }
+        });
 
-                //? VENTANA DE INFORMACIÓN
-                Alert alert=new Alert(AlertType.INFORMATION);
-                alert.setTitle("ERROR EN LA CONEXIÓN DE LA BASE DE DATOS");
-                alert.setHeaderText("HUBO UN PROBLEMA");
-                alert.setContentText("VULEVA A INTENTARLO");
-                alert.showAndWait();
+        //! ACCIÓN DE COMBOBOX DE GRÁFICO DE BARRAS
+        comboBoxPoints.setOnAction(ev->{
+            try {
+                actualizacion(comboBoxPoints.getValue());
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
 
@@ -111,22 +106,22 @@ public class InterfazControlador extends Application{
         //? ESTABLECIENDO EL EJE 'Y'
         NumberAxis y=new NumberAxis();
         y.setLabel("PUNTAJE TOTAL");
-
+        
         //! IMPLEMENTACIÓN DE LOS GRÁFICOS DE BARRAS
         barChart=new BarChart<String,Number>(x, y);
-        barChart.setTitle("PUNTOS TOTALES");
+        barChart.setTitle("TABLA DE POSICIONES HORIZONTAL");
         
-        //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
-        HBox contenedor=new HBox(comboBoxYear);
-        contenedor.setAlignment(Pos.CENTER);
+        //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DE LOS COMBOBOXs
+        HBox contenedorYear=new HBox(tituloYear,comboBoxYear);
+        contenedorYear.setAlignment(Pos.CENTER);
+        HBox contenedorTabla=new HBox(tituloTabla,comboBoxPoints);
+        contenedorTabla.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
-        VBox v=new VBox(contenedor,constructorTableView);
+        VBox v=new VBox(contenedorYear,constructorTableView,contenedorTabla,barChart);
         
         //? RESOLUCIÓN DE LA INTERFAZ
-        Scene ventana=new Scene(v,650,400);
-
-        //! MÉTODO DE ACTUALIZACIÓN DE GRÁFICO DE BARRA
+        Scene ventana=new Scene(v,800,800);
         
         //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
         arg0.setScene(ventana);
@@ -140,6 +135,7 @@ public class InterfazControlador extends Application{
         // }
     }
 
+    //! MÉTODO DE ACTUALIZACIÓN DE GRÁFICO DE BARRA
     private void actualizacion(String seleccion)throws SQLException{
         barChart.getData().clear();
         if (seleccion.equals("Drivers")) {
