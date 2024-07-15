@@ -39,7 +39,7 @@ public class ConstructorPointsRepositorio {
 
             while (rs.next()) {
                 String name=rs.getString("name");
-                int totalPoints=rs.getInt("totalPoints");
+                int totalPoints=rs.getInt("total_points");
 
                 ConstructorPoints cp=new ConstructorPoints(name, totalPoints);
 

@@ -76,7 +76,7 @@ public class App extends Application{
         DriverPointsRepositorio dpr=new DriverPointsRepositorio();
         List<DriverPoints> dpList=dpr.totalPointsOrder();
         
-        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
+        System.out.println("=".repeat(20)+"¡BASE DE DATOS 'DIRVER_POINTS' POR PUNTAJE DE MAYOR A MENOR ESTABLECIDA!"+"=".repeat(20));
         for (DriverPoints driverPoints : dpList) {
             System.out.printf("\n--> %s\t--> %d\n", driverPoints.getDriverName(),driverPoints.getTotalPoints());
         }
@@ -89,7 +89,7 @@ public class App extends Application{
         ConstructorPointsRepositorio cpr=new ConstructorPointsRepositorio();
         List<ConstructorPoints> cpList=cpr.orderTotalPoints();
         
-        System.out.println("=".repeat(30)+"¡BASE DE DATOS 'CONSTRUCTOR_RESULT' POR AÑO ESTABLECIDA!"+"=".repeat(30));
+        System.out.println("=".repeat(20)+"¡BASE DE DATOS 'CONSTRUCTOR_POINTS' POR PUNTAJE DE MAYOR A MENOR ESTABLECIDA!"+"=".repeat(20));
         for (ConstructorPoints constructorPoints : cpList) {
             System.out.printf("\n--> %s\t--> %d\n", constructorPoints.getName(),constructorPoints.getTotalPoints());
         }
