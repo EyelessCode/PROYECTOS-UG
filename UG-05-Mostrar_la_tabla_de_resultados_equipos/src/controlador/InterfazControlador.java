@@ -49,8 +49,8 @@ public class InterfazControlador extends Application{
         //! IMPLEMENTACIÓN DE GRÁFICO DE BARRAS AL COMBOBOX
         Label tituloTabla=new Label("TABLA: ");
         ComboBox<String>comboBoxPoints=new ComboBox<>();
-        comboBoxPoints.getItems().addAll("Drivers","Constructors");
-        comboBoxPoints.setValue("Drivers");
+        comboBoxPoints.getItems().addAll("CONDUCTORES","EQUIPO");
+        comboBoxPoints.setValue("Filtre una tabla");
 
         //! PARA EL TABLEVIEW Y SU IMPLEMENTACIÓN A LA PRESENTACIÓN
         TableView<ConstructorResult> constructorTableView=new TableView<>();
@@ -138,7 +138,7 @@ public class InterfazControlador extends Application{
     //! MÉTODO DE ACTUALIZACIÓN DE GRÁFICO DE BARRA
     private void actualizacion(String seleccion)throws SQLException{
         barChart.getData().clear();
-        if (seleccion.equals("Drivers")) {
+        if (seleccion.equals("CONDUCTORES")) {
             List<DriverPoints> listDriverPoints=dpr.totalPointsOrder();
             XYChart.Series<String,Number>serie=new XYChart.Series<>();
             for (DriverPoints driverPoints : listDriverPoints) {
@@ -146,7 +146,7 @@ public class InterfazControlador extends Application{
             }
             serie.setName("CONDUCTORES");
             barChart.getData().add(serie);
-        }else if(seleccion.equals("Constructors")){
+        }else if(seleccion.equals("EQUIPO")){
             List<ConstructorPoints>cpList=cpr.orderTotalPoints();
             XYChart.Series<String,Number>serie=new XYChart.Series<>();
             for (ConstructorPoints constructorPoints : cpList) {
