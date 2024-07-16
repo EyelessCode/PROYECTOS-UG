@@ -102,7 +102,7 @@ public class InterfazControlador extends Application{
         //! IMPLEMENTACIÓN DE LOS EJES
         //? ESTABLECIENDO EL EJE 'X'
         CategoryAxis x=new CategoryAxis();
-        x.setLabel("NOMBRE/APELLIDO");
+        x.setLabel("PARTICIPANTES");
         //? ESTABLECIENDO EL EJE 'Y'
         NumberAxis y=new NumberAxis();
         y.setLabel("PUNTAJE TOTAL");
