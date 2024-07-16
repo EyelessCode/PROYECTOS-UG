@@ -14,31 +14,37 @@ public class DriverResult {
 		this.totalPoints = totalPoints;
 		this.rank = rank;
 	}
+
 	public String getDriverName() {
 		return driverName;
 	}
+
 	public void setDriverName(String driverName) {
 		this.driverName = driverName;
 	}
+
 	public int getWins() {
 		return wins;
 	}
+
 	public void setWins(int wins) {
 		this.wins = wins;
 	}
+
 	public int getTotalPoints() {
 		return totalPoints;
 	}
+
 	public void setTotalPoints(int totalPoints) {
 		this.totalPoints = totalPoints;
 	}
+
 	public int getRank() {
 		return rank;
 	}
+
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
-	
-	
 	
 }
