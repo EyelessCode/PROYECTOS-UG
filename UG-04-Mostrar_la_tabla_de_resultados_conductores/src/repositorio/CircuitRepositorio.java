@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.Circuit;
 
 public class CircuitRepositorio {
-    String url="jdbc:mysql://127.0.0.1:3306/formula1";
+    String url="jdbc:postgresql://localhost:5432/ug_formula01";
     String usuario="cristhian";
     String contrasenia="cris03022";
 
@@ -21,7 +21,7 @@ public class CircuitRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
             
-            String sql="SELECT * FROM `circuits` limit 5;";
+            String sql="SELECT * FROM circuits limit 10;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
@@ -51,7 +51,7 @@ public class CircuitRepositorio {
         try {
             Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
             
-            String sql="SELECT * FROM `circuits` WHERE country='"+paramCountry+"'";
+            String sql="SELECT * FROM circuits WHERE country='"+paramCountry+"'";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
