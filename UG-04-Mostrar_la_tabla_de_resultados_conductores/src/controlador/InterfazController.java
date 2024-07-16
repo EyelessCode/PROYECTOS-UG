@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,9 +27,10 @@ public class InterfazController extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
+        Label etiquetaYear=new Label("AÑO: ");
         ComboBox<Integer>comboBox=new ComboBox<>();
 
-        List<Season> driverResultsList=sr.yearGeneral();
+        List<Season> driverResultsList=sr.seasonOrderByYear();
         for (Season season : driverResultsList) {
             comboBox.getItems().addAll(season.getYear());
         }
@@ -79,7 +81,7 @@ public class InterfazController extends Application{
         });
 
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DEL AÑO EN EL COMBOBOX
-        HBox hBox=new HBox(comboBox);
+        HBox hBox=new HBox(etiquetaYear,comboBox);
         hBox.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX

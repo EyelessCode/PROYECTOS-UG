@@ -26,8 +26,8 @@ public class CircuitRepositorio {
             ResultSet rs=st.executeQuery(sql);
 
             while (rs.next()) {
-                int circuitId=rs.getInt("circuitId");
-                String circuitRef=rs.getString("circuitRef");
+                int circuitId=rs.getInt("circuit_id");
+                String circuitRef=rs.getString("circuit_ref");
                 String name=rs.getString("name");
                 String location=rs.getString("location");
                 String country=rs.getString("country");
@@ -56,8 +56,8 @@ public class CircuitRepositorio {
             ResultSet rs=st.executeQuery(sql);
 
             while (rs.next()) {
-                int circuitid = rs.getInt("circuitid");
-				String circuitref = rs.getString("circuitref");
+                int circuitid = rs.getInt("circuit_id");
+				String circuitref = rs.getString("circuit_ref");
 				String name = rs.getString("name");
 				String location = rs.getString("location");
 				String country = rs.getString("country");
