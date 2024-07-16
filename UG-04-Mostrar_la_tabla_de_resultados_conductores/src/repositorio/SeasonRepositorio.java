@@ -10,17 +10,18 @@ import java.util.List;
 import modelo.Season;
 
 public class SeasonRepositorio {
-    String url="jdbc:mysql://127.0.0.1:3306/formula1";
-    String usuario="cristhian";
-    String contrasenia="cris03022";
+    String url="jdbc:postgresql://localhost:5432/ug_formula01";
+    String user="cristhian";
+    String password="cris03022";
 
-    public List<Season> yearGeneral(){
-        List<Season> listSeasons=new ArrayList<Season>();
+    public List<Season> seasonLimit(){
+        List<Season> seasonList=new ArrayList<Season>();
 
         try {
-            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+            Connection cnt=DriverManager.getConnection(url, user, password);
 
-            String sql="SELECT * FROM `seasons`;";
+            String sql="SELECT * FROM seasons\n"+
+            "   LIMIT 10;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
@@ -30,23 +31,24 @@ public class SeasonRepositorio {
 
                 Season s=new Season(year, url);
 
-                listSeasons.add(s);
+                seasonList.add(s);
             }
         } catch (Exception e) {
             e.printStackTrace();
-			System.out.println("=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30));
+			System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
         }
-        return listSeasons;
+        return seasonList;
     }
 
-    public List<Season> yearOrderBy(){
-        List<Season> listSeasons=new ArrayList<Season>();
+    public List<Season> seasonOrderByYearLimit(){
+        List<Season> seasonList=new ArrayList<Season>();
 
         try {
-            Connection cnt=DriverManager.getConnection(url, usuario, contrasenia);
+            Connection cnt=DriverManager.getConnection(url, user, password);
 
-            String sql="SELECT * FROM `seasons`\n"
-                    +"ORDER BY year DESC;";
+            String sql="SELECT * FROM seasons\n"
+            +"  ORDER BY year DESC\n"
+            +"  LIMIT 10;";
             Statement st=cnt.createStatement();
             ResultSet rs=st.executeQuery(sql);
 
@@ -56,12 +58,41 @@ public class SeasonRepositorio {
 
                 Season s=new Season(year, url);
 
-                listSeasons.add(s);
+                seasonList.add(s);
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            System.out.println("\n\n"+"=".repeat(70)+"\nFALLO EN LA BASE DE DATOS, INTÉNTELO DE NUEVO O MÁS TARDE!\n"+"=".repeat(70));
+        } catch (Exception e) {
+            e.printStackTrace();
+			System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
         }
-        return listSeasons;
+        return seasonList;
+
     }
+
+    public List<Season> seasonOrderByYear(){
+        List<Season> seasonList=new ArrayList<Season>();
+
+        try {
+            Connection cnt=DriverManager.getConnection(url, user, password);
+
+            String sql="SELECT * FROM seasons\n"
+            +"  ORDER BY year DESC";
+
+            Statement st=cnt.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+
+            while (rs.next()) {
+                int year=rs.getInt("year");
+                String url=rs.getString("url");
+
+                Season s=new Season(year, url);
+
+                seasonList.add(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+			System.out.println("\n"+"=".repeat(30)+"¡ERROR EN LA BASE DE DATOS!"+"=".repeat(30)+"\n");
+        }
+        return seasonList;
+    }
+    
 }
