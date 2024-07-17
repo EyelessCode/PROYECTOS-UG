@@ -1,7 +1,7 @@
 package vista;
 import java.util.List;
 
-import controlador.InterfazControlador;
+import controlador.InterfazMainPrueba;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import modelo.ConstructorPoints;
@@ -19,8 +19,8 @@ public class App extends Application{
     @Override
     public void start(Stage arg1) throws Exception {
         //! INSTANCIA DEL CONTROLADOR DE LA INTERFAZ
-        InterfazControlador ic=new InterfazControlador();
-        ic.start(arg1);
+        InterfazMainPrueba imp=new InterfazMainPrueba();
+        imp.start(arg1);
     }
 
     public static void main(String[] args) throws Exception {
