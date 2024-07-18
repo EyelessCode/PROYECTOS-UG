@@ -16,7 +16,7 @@ public class InterfazMainPrueba extends Application{
         StackPane root=new StackPane();
         root.getChildren().add(btn);
 
-        Scene ventana=new Scene(root,300,200);
+        Scene ventana=new Scene(root,500,200);
         arg0.setTitle("VENTANA PRINCIPAL");
         arg0.setScene(ventana);
         arg0.show();

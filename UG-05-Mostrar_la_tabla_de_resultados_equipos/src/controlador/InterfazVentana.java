@@ -23,7 +23,6 @@ public class InterfazVentana {
 
 
 	public void ventanaEmergente(){
-        Stage ss=new Stage();
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
         Label tituloYear=new Label("AÑO: ");
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
@@ -69,7 +68,7 @@ public class InterfazVentana {
                 
                 //? LLAMADO DEL REPOSITORIO PARA ESTABLECER EL AÑO
                 List<ConstructorResult> constructorResultsList=crr.ResultByYear(seleccion);
-            
+                
                 //? OBTENCIÓN DEL LISTADO
                 constructorTableView.getItems().setAll(constructorResultsList);
             } catch (Exception e) {
@@ -88,7 +87,8 @@ public class InterfazVentana {
         VBox v=new VBox(contenedorYear,constructorTableView);
         
         //? RESOLUCIÓN DE LA INTERFAZ
-        Scene ventana=new Scene(v,800,800);
+        Scene ventana=new Scene(v,400,300);
+        Stage ss=new Stage();
 
         ss.setTitle("a");
         ss.setScene(ventana);
