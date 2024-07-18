@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InterfazMainPrueba",
+            "request": "launch",
+            "mainClass": "controlador.InterfazMainPrueba",
+            "vmArgs": "--module-path C:\\Users\\Cristhian\\Documents\\javafx-sdk-22.0.1\\lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "UG-05-Mostrar_la_tabla_de_resultados_equipos_a0dbe8b2"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "vista.App",

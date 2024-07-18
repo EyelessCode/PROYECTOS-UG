@@ -12,8 +12,7 @@ public class InterfazMainPrueba extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
         Button btn=new Button("ABRIR VENTANA EMERGENTE");
-        btn.setOnAction(ev->{
-            abrirVentana();
+        btn.setOnAction(ev->abrirVentana());
             StackPane root=new StackPane();
             root.getChildren().add(btn);
 
@@ -21,11 +20,14 @@ public class InterfazMainPrueba extends Application{
             arg0.setTitle("VENTANA PRINCIPAL");
             arg0.setScene(ventana);
             arg0.show();
-        });
     }
 
     private void abrirVentana(){
         iv=new InterfazVentana();
         iv.display();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
