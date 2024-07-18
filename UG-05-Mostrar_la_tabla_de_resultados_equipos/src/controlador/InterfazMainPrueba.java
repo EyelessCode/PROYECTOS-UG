@@ -24,7 +24,7 @@ public class InterfazMainPrueba extends Application{
 
     private void abrirVentana(){
         iv=new InterfazVentana();
-        iv.display();
+        iv.ventanaEmergente();
     }
 
     public static void main(String[] args) {

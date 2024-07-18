@@ -1,15 +1,9 @@
 package controlador;
 
-import java.sql.SQLException;
 import java.util.List;
 
-import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -18,25 +12,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import modelo.ConstructorPoints;
 import modelo.ConstructorResult;
-import modelo.DriverPoints;
 import modelo.Season;
-import repositorio.ConstructorPointsRepositorio;
 import repositorio.ConstructorResultRepositorio;
-import repositorio.DriverPointsRepositorio;
 import repositorio.SeasonRepositorio;
 
-public class InterfazVentana extends Application{
+public class InterfazVentana {
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
-    private ConstructorPointsRepositorio cpr=new ConstructorPointsRepositorio();
-    private DriverPointsRepositorio dpr=new DriverPointsRepositorio();
 
-    private BarChart<String,Number>barChart;
 
-	@Override
-	public void start(Stage arg0) throws Exception {
+	public void ventanaEmergente(){
+        Stage ss=new Stage();
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
         Label tituloYear=new Label("AÑO: ");
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
@@ -90,26 +77,6 @@ public class InterfazVentana extends Application{
             }
         });
 
-        //! ACCIÓN DE COMBOBOX DE GRÁFICO DE BARRAS
-        comboBoxPoints.setOnAction(ev->{
-            try {
-                actualizacion(comboBoxPoints.getValue());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        //! IMPLEMENTACIÓN DE LOS EJES
-        //? ESTABLECIENDO EL EJE 'X'
-        CategoryAxis x=new CategoryAxis();
-        x.setLabel("NOMBRES/APELLIDOS - PARTICIPANTES");
-        //? ESTABLECIENDO EL EJE 'Y'
-        NumberAxis y=new NumberAxis();
-        y.setLabel("PUNTAJE TOTAL");
-        
-        //! IMPLEMENTACIÓN DE LOS GRÁFICOS DE BARRAS
-        barChart=new BarChart<String,Number>(x, y);
-        barChart.setTitle("TABLA DE POSICIONES HORIZONTAL");
         
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DE LOS COMBOBOXs
         HBox contenedorYear=new HBox(tituloYear,comboBoxYear);
@@ -118,43 +85,22 @@ public class InterfazVentana extends Application{
         contenedorTabla.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
-        VBox v=new VBox(contenedorYear,constructorTableView,contenedorTabla,barChart);
+        VBox v=new VBox(contenedorYear,constructorTableView);
         
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,800,800);
+
+        ss.setTitle("a");
+        ss.setScene(ventana);
+        ss.show();
         
         //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
-        arg0.setScene(ventana);
-        arg0.setTitle("VENTANA PARA LA PRESENTACIÓN DE LOS DATOS DE UNA TABLA XD");
-        arg0.show();
 
         // //! CARGO DE DATO INICIAL
         // if (!comboBoxYear.getItems().isEmpty()) {
         //     comboBoxYear.setValue(comboBoxYear.getItems().get(0));
         //     comboBoxYear.getOnAction().handle(null);
         // }
-    }
-
-    //! MÉTODO DE ACTUALIZACIÓN DE GRÁFICO DE BARRA
-    private void actualizacion(String seleccion)throws SQLException{
-        barChart.getData().clear();
-        if (seleccion.equals("CONDUCTORES")) {
-            List<DriverPoints> listDriverPoints=dpr.totalPointsOrder();
-            XYChart.Series<String,Number>serie=new XYChart.Series<>();
-            for (DriverPoints driverPoints : listDriverPoints) {
-                serie.getData().add(new XYChart.Data<>(driverPoints.getDriverName(),driverPoints.getTotalPoints()));
-            }
-            serie.setName("CONDUCTORES");
-            barChart.getData().add(serie);
-        }else if(seleccion.equals("EQUIPO")){
-            List<ConstructorPoints>cpList=cpr.orderTotalPoints();
-            XYChart.Series<String,Number>serie=new XYChart.Series<>();
-            for (ConstructorPoints constructorPoints : cpList) {
-                serie.getData().add(new XYChart.Data<>(constructorPoints.getName(),constructorPoints.getTotalPoints()));
-            }
-            serie.setName("EQUIPO");
-            barChart.getData().add(serie);
-        }
     }
 
 }
