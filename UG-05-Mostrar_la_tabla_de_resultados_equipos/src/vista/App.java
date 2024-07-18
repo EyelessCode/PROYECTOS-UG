@@ -19,8 +19,8 @@ public class App extends Application{
     @Override
     public void start(Stage arg1) throws Exception {
         //! INSTANCIA DEL CONTROLADOR DE LA INTERFAZ
-        InterfazMainPrueba imp=new InterfazMainPrueba();
-        imp.start(arg1);
+        VentanaPrincipal vp=new VentanaPrincipal();
+        vp.start(arg1);
     }
 
     public static void main(String[] args) throws Exception {
