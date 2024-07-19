@@ -40,8 +40,8 @@ public class VentanaPrincipal extends Application {
         btnTableConstructors.setPrefHeight(45);
         btnTableConstructors.setPrefWidth(220);
         
-        btnBarrasConstructors.setLayoutX(160);
-        btnBarrasConstructors.setLayoutY(258);
+        btnBarrasConstructors.setLayoutX(174);
+        btnBarrasConstructors.setLayoutY(257);
         btnBarrasConstructors.setPrefHeight(45);
         btnBarrasConstructors.setPrefWidth(260);
         
@@ -62,10 +62,6 @@ public class VentanaPrincipal extends Application {
         arg0.setTitle("YA QUIERO DORMIR");
         arg0.setScene(stage);
         arg0.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }
