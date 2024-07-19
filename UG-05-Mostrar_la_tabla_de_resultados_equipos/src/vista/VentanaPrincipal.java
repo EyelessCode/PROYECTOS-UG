@@ -25,15 +25,15 @@ public class VentanaPrincipal extends Application {
 
         Pane root=new Pane();
 
-        // btnTableDrivers.setLayoutX(360);
-        // btnTableDrivers.setLayoutY(90);
-        // btnTableDrivers.setPrefHeight(45);
-        // btnTableDrivers.setPrefWidth(150);
+        btnTableDrivers.setLayoutX(230);
+        btnTableDrivers.setLayoutY(90);
+        btnTableDrivers.setPrefHeight(45);
+        btnTableDrivers.setPrefWidth(150);
         
-        // btnBarrasDrivers.setLayoutX(85);
-        // btnBarrasDrivers.setLayoutY(90);
-        // btnBarrasDrivers.setPrefHeight(45);
-        // btnBarrasDrivers.setPrefWidth(220);
+        btnBarrasDrivers.setLayoutX(194);
+        btnBarrasDrivers.setLayoutY(145);
+        btnBarrasDrivers.setPrefHeight(45);
+        btnBarrasDrivers.setPrefWidth(220);
         
         // VBox v=new VBox(btnTableDrivers,btnBarrasDrivers,btnTableConstructors,btnBarrasConstructors);
         // v.setAlignment(Pos.BOTTOM_CENTER);
