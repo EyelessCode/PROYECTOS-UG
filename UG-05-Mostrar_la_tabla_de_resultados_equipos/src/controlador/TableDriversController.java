@@ -31,12 +31,6 @@ public class TableDriversController {
         for (Season season : sList) {
             comboBoxYear.getItems().add(season.getYear());
         }
-        
-        //! IMPLEMENTACIÓN DE GRÁFICO DE BARRAS AL COMBOBOX
-        Label tituloTabla=new Label("TABLA: ");
-        ComboBox<String>comboBoxPoints=new ComboBox<>();
-        comboBoxPoints.getItems().addAll("CONDUCTORES","EQUIPO");
-        comboBoxPoints.setValue("Filtre una tabla");
 
         //! PARA EL TABLEVIEW Y SU IMPLEMENTACIÓN A LA PRESENTACIÓN
         TableView<ConstructorResult> constructorTableView=new TableView<>();
@@ -80,8 +74,6 @@ public class TableDriversController {
         //! IMPLEMENTACIÓN DE LA PRESENTACIÓN DE LOS COMBOBOXs
         HBox contenedorYear=new HBox(tituloYear,comboBoxYear);
         contenedorYear.setAlignment(Pos.CENTER);
-        HBox contenedorTabla=new HBox(tituloTabla,comboBoxPoints);
-        contenedorTabla.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
         VBox v=new VBox(contenedorYear,constructorTableView);
@@ -93,8 +85,6 @@ public class TableDriversController {
         ss.setTitle("a");
         ss.setScene(ventana);
         ss.show();
-        
-        //! IMPLEMENTACIÓN DEL TÍTULO Y SE MUESTRA LA INTERFAZ EN PANTALLA
 
         // //! CARGO DE DATO INICIAL
         // if (!comboBoxYear.getItems().isEmpty()) {
