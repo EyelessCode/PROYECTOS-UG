@@ -27,7 +27,7 @@ public class PruebaIAVetnana extends Application {
         
         // Configurar las posiciones de los botones
         BorderPane.setAlignment(btnTDrivers, Pos.TOP_LEFT);
-        BorderPane.setMargin(btnTDrivers, new javafx.geometry.Insets(10, 0, 0, 10));
+        BorderPane.setMargin(btnTDrivers, new javafx.geometry.Insets(10, 0, 10, 10));
         borderPane.setTop(btnTDrivers);
 
         BorderPane.setAlignment(btnTConstructors, Pos.TOP_RIGHT);
@@ -51,7 +51,7 @@ public class PruebaIAVetnana extends Application {
         root.getChildren().addAll(borderPane, btnTDrivers, btnTConstructors, btnBDrivers, btnBConstructors);
 
         // Cargar la imagen de fondo desde el directorio resources
-        Image imagen = new Image(getClass().getResource("/fondo.jpg").toExternalForm());
+        Image imagen = new Image(getClass().getResource("/resources/formula1.JPG").toExternalForm());
         BackgroundImage fondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, false, true));
         root.setBackground(new Background(fondo));
 
