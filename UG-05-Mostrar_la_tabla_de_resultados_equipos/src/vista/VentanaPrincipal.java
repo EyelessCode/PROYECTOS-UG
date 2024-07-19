@@ -5,12 +5,16 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class VentanaPrincipal extends Application{
@@ -29,17 +33,22 @@ public class VentanaPrincipal extends Application{
 
         // HBox filaLeft=new HBox(btnBDrivers);
         // filaLeft.setAlignment(Pos.CENTER_LEFT);
-        Pane ventanita=new Pane(btnTDrivers,btnTConstructors,btnBDrivers,btnBConstructors);
+        AnchorPane ventanita=new AnchorPane(btnTDrivers,btnTConstructors,btnBDrivers,btnBConstructors);
 
-        Image imagen=new Image(getClass().getResourceAsStream("C:\\Users\\Cristhian\\Documents\\GitHub\\PROYECTOS-UG\\UG-05-Mostrar_la_tabla_de_resultados_equipos\\src\\imagenes○\\formula1.jpg"));
-            BackgroundImage fondo=new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO,true, true, false, true));
+        Image imagen = new Image(getClass().getResource("/resources/formula1.JPG").toExternalForm());
+        BackgroundImage fondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, false, true));
         ventanita.setBackground(new Background(fondo));
         
-        Scene scene=new Scene(ventanita);
+        // HBox h=new HBox(ventanita);
+
+        Scene scene=new Scene(ventanita,525,350);
         arg0.setTitle("VENTANA PRINCIPAL XD");
         arg0.setScene(scene);
         arg0.show();
                 
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
