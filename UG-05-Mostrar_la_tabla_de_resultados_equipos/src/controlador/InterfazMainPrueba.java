@@ -7,7 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class InterfazMainPrueba extends Application{
-    private InterfazVentana iv;
+    private TableDriversController iv;
 
 	@Override
 	public void start(Stage arg0) throws Exception {
@@ -23,7 +23,7 @@ public class InterfazMainPrueba extends Application{
     }
 
     private void abrirVentana(){
-        iv=new InterfazVentana();
+        iv=new TableDriversController();
         iv.ventanaEmergente();
     }
 

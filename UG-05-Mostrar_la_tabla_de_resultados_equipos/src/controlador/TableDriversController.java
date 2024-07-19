@@ -17,7 +17,7 @@ import modelo.Season;
 import repositorio.ConstructorResultRepositorio;
 import repositorio.SeasonRepositorio;
 
-public class InterfazVentana {
+public class TableDriversController {
     private ConstructorResultRepositorio crr=new ConstructorResultRepositorio();
     private SeasonRepositorio sr=new SeasonRepositorio();
 
