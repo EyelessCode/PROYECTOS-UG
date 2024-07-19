@@ -34,6 +34,16 @@ public class VentanaPrincipal extends Application {
         btnBarrasDrivers.setLayoutY(145);
         btnBarrasDrivers.setPrefHeight(45);
         btnBarrasDrivers.setPrefWidth(220);
+
+        btnTableConstructors.setLayoutX(194);
+        btnTableConstructors.setLayoutY(201);
+        btnTableConstructors.setPrefHeight(45);
+        btnTableConstructors.setPrefWidth(220);
+        
+        btnBarrasConstructors.setLayoutX(160);
+        btnBarrasConstructors.setLayoutY(258);
+        btnBarrasConstructors.setPrefHeight(45);
+        btnBarrasConstructors.setPrefWidth(260);
         
         // VBox v=new VBox(btnTableDrivers,btnBarrasDrivers,btnTableConstructors,btnBarrasConstructors);
         // v.setAlignment(Pos.BOTTOM_CENTER);
