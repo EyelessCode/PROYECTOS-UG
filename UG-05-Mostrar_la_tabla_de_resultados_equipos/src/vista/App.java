@@ -1,7 +1,6 @@
 package vista;
 import java.util.List;
 
-import controlador.InterfazMainPrueba;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import modelo.ConstructorPoints;
