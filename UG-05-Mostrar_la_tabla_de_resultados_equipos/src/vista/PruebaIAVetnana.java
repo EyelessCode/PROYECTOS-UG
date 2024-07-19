@@ -1,7 +1,6 @@
 package vista;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -19,36 +18,26 @@ public class PruebaIAVetnana extends Application {
         Button btnBDrivers = new Button("GRÁFICO DE BARRA 'DRIVERS'");
         Button btnBConstructors = new Button("GRÁFICO DE BARRA 'CONSTRUCTORS'");
 
-        // Crear un StackPane para colocar los botones y el fondo
-        StackPane root = new StackPane();
+        // Crear un Pane para colocar los botones
+        Pane root = new Pane();
 
-        // Crear un BorderPane para posicionar los botones
-        BorderPane borderPane = new BorderPane();
+        // Posicionar los botones manualmente
+        btnTDrivers.setLayoutX(385); // X position
+        btnTDrivers.setLayoutY(88); // Y position
+        btnTDrivers.setPrefWidth(150);
+        btnTDrivers.setPrefHeight(40);
         
-        // Configurar las posiciones de los botones
-        BorderPane.setAlignment(btnTDrivers, Pos.TOP_LEFT);
-        BorderPane.setMargin(btnTDrivers, new javafx.geometry.Insets(10, 0, 10, 10));
-        borderPane.setTop(btnTDrivers);
+        btnTConstructors.setLayoutX(300); // X position
+        btnTConstructors.setLayoutY(10); // Y position
+        
+        btnBDrivers.setLayoutX(105); // X position
+        btnBDrivers.setLayoutY(88); // Y position
+        
+        btnBConstructors.setLayoutX(300); // X position
+        btnBConstructors.setLayoutY(300); // Y position
 
-        BorderPane.setAlignment(btnTConstructors, Pos.TOP_RIGHT);
-        BorderPane.setMargin(btnTConstructors, new javafx.geometry.Insets(10, 10, 0, 0));
-        borderPane.setTop(btnTConstructors);
-
-        BorderPane.setAlignment(btnBDrivers, Pos.BOTTOM_LEFT);
-        BorderPane.setMargin(btnBDrivers, new javafx.geometry.Insets(0, 0, 10, 10));
-        borderPane.setBottom(btnBDrivers);
-
-        BorderPane.setAlignment(btnBConstructors, Pos.BOTTOM_RIGHT);
-        BorderPane.setMargin(btnBConstructors, new javafx.geometry.Insets(0, 10, 10, 0));
-        borderPane.setBottom(btnBConstructors);
-
-        // Agregar los botones al BorderPane
-        StackPane.setAlignment(btnTDrivers, Pos.TOP_LEFT);
-        StackPane.setAlignment(btnTConstructors, Pos.TOP_RIGHT);
-        StackPane.setAlignment(btnBDrivers, Pos.BOTTOM_LEFT);
-        StackPane.setAlignment(btnBConstructors, Pos.BOTTOM_RIGHT);
-
-        root.getChildren().addAll(borderPane, btnTDrivers, btnTConstructors, btnBDrivers, btnBConstructors);
+        // Agregar los botones al Pane
+        root.getChildren().addAll(btnTDrivers, btnTConstructors, btnBDrivers, btnBConstructors);
 
         // Cargar la imagen de fondo desde el directorio resources
         Image imagen = new Image(getClass().getResource("/resources/formula1.JPG").toExternalForm());
