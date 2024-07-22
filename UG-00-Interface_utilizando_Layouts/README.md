@@ -1,18 +1,23 @@
-## Getting Started
+# PROYECTOS-UG
+Mi proyecto es una aplicación de interfaz gráfica desarrollada en Java utilizando JavaFX. Está diseñado para gestionar una lista de personas de una manera interactiva y visualmente atractiva.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+La interfaz de usuario se compone de varios elementos, incluyendo imágenes, un campo de texto para ingresar nuevos nombres y una lista desplegable que muestra los nombres de las personas ingresadas.
 
-## Folder Structure
+El diseño de la interfaz es limpio y organizado, con imágenes distribuidas de manera estética y un esquema de color agradable a la vista. Las imágenes se utilizan probablemente para mejorar la apariencia visual de la aplicación y proporcionar una experiencia más atractiva al usuario.
 
-The workspace contains two folders by default, where:
+El funcionamiento de la aplicación es intuitivo: al ingresar un nombre en el campo de texto y presionar Enter, el nombre se agrega a la lista de personas que se muestra en la interfaz. Esto se logra mediante el uso de listeners para eventos de teclado que capturan la pulsación de la tecla Enter y agregan el texto ingresado a la lista.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+El código está bien estructurado y sigue las mejores prácticas de programación JavaFX. Se utilizan clases y métodos apropiados, y se hace un buen uso de las funcionalidades proporcionadas por la biblioteca JavaFX.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Se definirá en resumen:
+1. Imagen de fondo: Utiliza imágenes (ImageViews) para decorar la interfaz, lo que le da un aspecto visual agradable.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+2. Lista de personas: Hay un componente ListView que muestra una lista de personas. Esta lista se puede actualizar dinámicamente.
 
-## Dependency Management
+3. Campo de ingreso de texto: Hay un TextField donde el usuario puede ingresar el nombre de una persona. Al presionar la tecla Enter, el nombre ingresado se agrega automáticamente a la lista de personas y se borra el campo de texto.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+4. Función de limpieza: Después de agregar una persona a la lista, el campo de texto se limpia automáticamente para facilitar el ingreso de nombres adicionales.
+
+5. Consola de depuración: Se imprime un mensaje en la consola cada vez que se agrega un nuevo nombre a la lista, lo que facilita el seguimiento de las acciones del usuario.
+
+En resumen, mi proyecto es una aplicación de interfaz gráfica desarrollada en JavaFX que permite gestionar una lista de personas de manera fácil e intuitiva, con una interfaz limpia y atractiva para el usuario.
