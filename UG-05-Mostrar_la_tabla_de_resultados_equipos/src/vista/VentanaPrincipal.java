@@ -3,7 +3,6 @@ package vista;
 import controlador.GraphicsDriversController;
 import controlador.TableDriversController;
 import javafx.application.Application;
-import javafx.css.Style;
 // import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
