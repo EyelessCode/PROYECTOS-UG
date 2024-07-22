@@ -2,6 +2,7 @@ package controlador;
 
 import java.util.List;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -39,6 +40,7 @@ public class GraphicsConstructorsController {
         }
 
         VBox v=new VBox(etiquetaBarras,barras);
+        v.setAlignment(Pos.CENTER);
 
         Scene ventana=new Scene(v);
 
