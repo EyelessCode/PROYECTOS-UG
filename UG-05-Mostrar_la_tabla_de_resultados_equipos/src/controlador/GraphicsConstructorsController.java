@@ -30,7 +30,7 @@ public class GraphicsConstructorsController {
         barras.setTitle("TABLA DE POSICIONES HORIZONTAL");
 
         Font fuente=new Font("Gill Sans Ultra Bold", 36);
-        Label etiquetaBarras=new Label("GRÁFICO DE BARRAS DE CONDUCTORES");
+        Label etiquetaBarras=new Label("GRÁFICO DE BARRAS DE EQUIPO");
         etiquetaBarras.setFont(fuente);
 
         try {
