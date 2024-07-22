@@ -29,7 +29,7 @@ public class TableDriversController {
         Label etiquetaTabla=new Label("LISTA DE TABLA DE CONDUCTORES");
         etiquetaTabla.setFont(fuente);
 
-        Font fuente1=new Font("Centaur", 12);
+        Font fuente1=new Font("Poor Richard", 12);
         Label tituloYear=new Label("AÑO: ");
         tituloYear.setFont(fuente1);
 

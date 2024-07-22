@@ -3,6 +3,7 @@ package vista;
 import controlador.GraphicsDriversController;
 import controlador.TableDriversController;
 import javafx.application.Application;
+import javafx.css.Style;
 // import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +14,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 // import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,6 +24,8 @@ public class VentanaPrincipal extends Application {
 
     @Override
     public void start(Stage arg0) throws Exception {
+        Font fuente=new Font("Imprint MT Shadow", 12);
+        
         Button btnTableDrivers=new Button("TABLEVIEW DE 'DRIVERS'");
         Button btnBarrasDrivers=new Button("GRÁFICO DE BARRAS DE 'DRIVERS'");
         Button btnTableConstructors=new Button("TABLEVIEW DE 'CONSTRUCTORS'");
@@ -29,25 +33,32 @@ public class VentanaPrincipal extends Application {
 
         Pane root=new Pane();
 
-        btnTableDrivers.setLayoutX(230);
+        btnTableDrivers.setFont(fuente);
+        btnTableDrivers.setLayoutX(210);
         btnTableDrivers.setLayoutY(90);
         btnTableDrivers.setPrefHeight(45);
-        btnTableDrivers.setPrefWidth(150);
-        
-        btnBarrasDrivers.setLayoutX(194);
+        // btnTableDrivers.setPrefWidth(150);
+
+
+        btnBarrasDrivers.setFont(fuente);
+        btnBarrasDrivers.setLayoutX(180);
         btnBarrasDrivers.setLayoutY(145);
         btnBarrasDrivers.setPrefHeight(45);
-        btnBarrasDrivers.setPrefWidth(220);
+        // btnBarrasDrivers.setPrefWidth(220);
+        
 
-        btnTableConstructors.setLayoutX(194);
+        btnTableConstructors.setFont(fuente);
+        btnTableConstructors.setLayoutX(185);
         btnTableConstructors.setLayoutY(201);
         btnTableConstructors.setPrefHeight(45);
-        btnTableConstructors.setPrefWidth(220);
+        // btnTableConstructors.setPrefWidth(220);
         
-        btnBarrasConstructors.setLayoutX(174);
+
+        btnBarrasConstructors.setFont(fuente);
+        btnBarrasConstructors.setLayoutX(155);
         btnBarrasConstructors.setLayoutY(257);
         btnBarrasConstructors.setPrefHeight(45);
-        btnBarrasConstructors.setPrefWidth(260);
+        // btnBarrasConstructors.setPrefWidth(260);
 
         btnTableDrivers.setOnAction(ev->td.ventanaEmergente());
         btnBarrasDrivers.setOnAction(ev->gdc.ventanaEmergente());
@@ -66,7 +77,7 @@ public class VentanaPrincipal extends Application {
         Scene stage=new Scene(root,600,400);
         // Scene stage=new Scene(v,600,400);
 
-        arg0.setTitle("YA QUIERO DORMIR");
+        arg0.setTitle("(╯°□°）╯︵ ┻━┻");
         arg0.setScene(stage);
         arg0.show();
     }
