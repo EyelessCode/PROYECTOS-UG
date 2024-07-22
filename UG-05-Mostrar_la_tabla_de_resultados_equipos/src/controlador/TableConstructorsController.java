@@ -6,6 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Font;
 import modelo.ConstructorPoints;
 import modelo.ConstructorResult;
@@ -39,5 +40,15 @@ public class TableConstructorsController {
         TableColumn columnVictorias=new TableColumn<>("VICTORIAS");
         TableColumn columnPuntos=new TableColumn<>("PUNTAJE TOTAL");
         TableColumn columnRango=new TableColumn<>("RANGO");
+
+        columnNombre.setCellValueFactory(new PropertyValueFactory<>("name"));
+        columnVictorias.setCellValueFactory(new PropertyValueFactory<>("wins"));
+        columnPuntos.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
+        columnRango.setCellValueFactory(new PropertyValueFactory<>("rank"));
+
+        tabla.getColumns().add(columnNombre);
+        tabla.getColumns().add(columnVictorias);
+        tabla.getColumns().add(columnPuntos);
+        tabla.getColumns().add(columnRango);
     }    
 }
