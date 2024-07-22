@@ -3,6 +3,7 @@ package controlador;
 import java.sql.SQLException;
 import java.util.List;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -21,8 +22,8 @@ public class GraphicsDriversController {
 
     public void ventanaEmergente(){
         Font fuente=new Font("Gill Sans Ultra Bold", 36);
-        Label etiqueGrafico=new Label("GRÁFICO DE BARRAS DE CONDUCTORES");
-        etiqueGrafico.setFont(fuente);
+        Label etiquetaGrafico=new Label("GRÁFICO DE BARRAS DE CONDUCTORES");
+        etiquetaGrafico.setFont(fuente);
 
         CategoryAxis x=new CategoryAxis();
         x.setLabel("NOMBRES/APELLIDOS");
@@ -39,7 +40,8 @@ public class GraphicsDriversController {
             ex.printStackTrace();
         }
 
-        VBox v=new VBox(etiqueGrafico,barras);
+        VBox v=new VBox(etiquetaGrafico,barras);
+        v.setAlignment(Pos.CENTER);
 
         Scene escena=new Scene(v);
 

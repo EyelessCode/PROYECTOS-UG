@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import modelo.ConstructorResult;
 import modelo.Season;
@@ -24,7 +25,14 @@ public class TableDriversController {
 
 	public void ventanaEmergente(){
         //! IMPLEMENTACIÓN DE LOS AÑOS AL COMBOBOX
+        Font fuente=new Font("Gill Sans Ultra Bold", 18);
+        Label etiquetaTabla=new Label("LISTA DE TABLA DE CONDUCTORES");
+        etiquetaTabla.setFont(fuente);
+
+        Font fuente1=new Font("Centaur", 12);
         Label tituloYear=new Label("AÑO: ");
+        tituloYear.setFont(fuente1);
+
         ComboBox<Integer> comboBoxYear=new ComboBox<>();
         List<Season> sList=sr.seasonOrderByYear();
         
@@ -76,13 +84,14 @@ public class TableDriversController {
         contenedorYear.setAlignment(Pos.CENTER);
 
         //! IMPLEMENTACIÓN EN LA INTERFAZ POR VBOX
-        VBox v=new VBox(contenedorYear,constructorTableView);
+        VBox v=new VBox(etiquetaTabla,contenedorYear,constructorTableView);
+        v.setAlignment(Pos.CENTER);
         
         //? RESOLUCIÓN DE LA INTERFAZ
-        Scene ventana=new Scene(v,400,300);
+        Scene ventana=new Scene(v,600,300);
         Stage ss=new Stage();
 
-        ss.setTitle("a");
+        ss.setTitle("LISTA DE TABLA DE CONDUCTORES (❁´◡`❁)");
         ss.setScene(ventana);
         ss.show();
 
