@@ -46,6 +46,6 @@ APLICA LOS MISMO PARA 'CRONSTRUCTORS'.
 ![image](https://github.com/user-attachments/assets/9125b650-0a73-4b7b-b109-9dad864f9f6b)
 
 4. PARA 'CONSTRUCTORS':
-![image](https://github.com/user-attachments/assets/7f82116a-0e41-4347-b35e-6878814cc43a)
+![image](https://github.com/user-attachments/assets/bc310e2e-7eed-4db0-94c5-48dec8eb400a)
 
 ESO SERÍA ABSOLUTAMENTE TODO, GRACIAS POR SU ATENCIÓN.
