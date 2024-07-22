@@ -58,7 +58,7 @@ public class VentanaPrincipal extends Application {
         
 
         btnBarrasConstructors.setFont(fuente);
-        btnBarrasConstructors.setLayoutX(155);
+        btnBarrasConstructors.setLayoutX(156);
         btnBarrasConstructors.setLayoutY(257);
         btnBarrasConstructors.setPrefHeight(45);
         // btnBarrasConstructors.setPrefWidth(260);
