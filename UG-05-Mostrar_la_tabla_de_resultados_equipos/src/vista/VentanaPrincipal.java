@@ -1,5 +1,6 @@
 package vista;
 
+import controlador.GraphicsDriversController;
 import controlador.TableDriversController;
 import javafx.application.Application;
 // import javafx.geometry.Pos;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 
 public class VentanaPrincipal extends Application {
     private TableDriversController td=new TableDriversController(); 
+    private GraphicsDriversController gdc=new GraphicsDriversController();
 
     @Override
     public void start(Stage arg0) throws Exception {
@@ -48,6 +50,7 @@ public class VentanaPrincipal extends Application {
         btnBarrasConstructors.setPrefWidth(260);
 
         btnTableDrivers.setOnAction(ev->td.ventanaEmergente());
+        btnBarrasDrivers.setOnAction(ev->gdc.ventanaEmergente());
         
         // VBox v=new VBox(btnTableDrivers,btnBarrasDrivers,btnTableConstructors,btnBarrasConstructors);
         // v.setAlignment(Pos.BOTTOM_CENTER);
