@@ -89,11 +89,11 @@ public class TableDriversController {
         
         //? RESOLUCIÓN DE LA INTERFAZ
         Scene ventana=new Scene(v,600,300);
-        Stage ss=new Stage();
+        Stage escenario=new Stage();
 
-        ss.setTitle("LISTA DE TABLA DE CONDUCTORES (❁´◡`❁)");
-        ss.setScene(ventana);
-        ss.show();
+        escenario.setTitle("LISTA DE TABLA DE CONDUCTORES (❁´◡`❁)");
+        escenario.setScene(ventana);
+        escenario.show();
 
         // //! CARGO DE DATO INICIAL
         // if (!comboBoxYear.getItems().isEmpty()) {
