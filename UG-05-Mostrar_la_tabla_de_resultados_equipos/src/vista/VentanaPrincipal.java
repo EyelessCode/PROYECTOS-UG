@@ -2,6 +2,7 @@ package vista;
 
 import controlador.GraphicsConstructorsController;
 import controlador.GraphicsDriversController;
+import controlador.TableConstructorsController;
 import controlador.TableDriversController;
 import javafx.application.Application;
 // import javafx.geometry.Pos;
@@ -22,6 +23,7 @@ public class VentanaPrincipal extends Application {
     private TableDriversController td=new TableDriversController(); 
     private GraphicsDriversController gdc=new GraphicsDriversController();
     private GraphicsConstructorsController gcc=new GraphicsConstructorsController();
+    private TableConstructorsController tcc=new TableConstructorsController();
 
     @Override
     public void start(Stage arg0) throws Exception {
@@ -63,6 +65,7 @@ public class VentanaPrincipal extends Application {
 
         btnTableDrivers.setOnAction(ev->td.ventanaEmergente());
         btnBarrasDrivers.setOnAction(ev->gdc.ventanaEmergente());
+        btnTableConstructors.setOnAction(ev->tcc.ventanaEmergente());
         btnBarrasConstructors.setOnAction(ev->gcc.ventanaEmergente());
         
         // VBox v=new VBox(btnTableDrivers,btnBarrasDrivers,btnTableConstructors,btnBarrasConstructors);

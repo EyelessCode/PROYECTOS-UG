@@ -70,10 +70,10 @@ public class TableConstructorsController {
         HBox h=new HBox(tituloYear,comboBox);
         h.setAlignment(Pos.CENTER);
         
-        VBox v=new VBox(etiquetaTabla,tabla,h);
+        VBox v=new VBox(etiquetaTabla,h,tabla);
         v.setAlignment(Pos.CENTER);
 
-        Scene ventana=new Scene(v);
+        Scene ventana=new Scene(v,600,300);
         Stage escenario=new Stage();
         escenario.setTitle("LISTA DE TABLA (⌐■_■)");
         escenario.setScene(ventana);
