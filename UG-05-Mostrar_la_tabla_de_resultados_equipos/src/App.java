@@ -12,6 +12,7 @@ import repositorio.ConstructorResultRepositorio;
 import repositorio.DriverPointsRepositorio;
 import repositorio.DriverResultRepositorio;
 import repositorio.SeasonRepositorio;
+import vista.VentanaPrincipal;
 
 public class App extends Application{
     @Override
