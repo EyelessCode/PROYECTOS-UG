@@ -1,6 +1,6 @@
 # PROYECTOS-UG
 
-¡Bienvenido a mi repositorio "PROYECTOS-UG"! Aquí encontrarás una colección de mis proyectos personales. Cada proyecto tiene su propia carpeta con detalles y ejemplos.
+¡Bienvenido a mi repositorio "PROYECTOS-UG-PROGRAMACION_AMBIENTES_GRAFICOS"! Aquí encontrarás una colección de mis proyectos personales. Cada proyecto tiene su propia carpeta con detalles y ejemplos.
 
 ## Estructura del Repositorio
 
@@ -18,4 +18,4 @@ Este repositorio está bajo la licencia MIT.
 
 Puedes contactarme en cristhianjosue03@outlook.com o seguirme en Twitter @EyelessCode.
 
-¡Gracias por visitar "PROYECTOS-UG"! 🚀.
+¡Gracias por visitar "PROYECTOS-UG-PROGRAMACION_AMBIENTES_GRAFICOS"! 🚀.
