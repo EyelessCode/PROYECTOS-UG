@@ -16,6 +16,6 @@ Este repositorio está bajo la licencia MIT.
 
 ## Contacto
 
-Puedes contactarme en cristhianjosue03@outlook.com o seguirme en Twitter @EyelessCode.
+Puedes contactarme en cristhianjosue03@outlook.com o seguirme en X como @EyelessCode.
 
 ¡Gracias por visitar "PROYECTOS-UG-APP_WEBS"! 🚀.
