@@ -1,0 +1,30 @@
+
+header{
+    background-color: aquamarine;
+    width: 1200px;
+    height: 200px;
+    /* medidas absolutas que son aplicadas a tamaños realizados*/
+}
+
+aside{
+    background-color: coral;
+    width: 40%;
+    height: 80%;
+}
+
+footer{
+    background-color: lightblue;
+    width: 100vw;
+    height: 10vh;
+}
+
+img{
+    width: 900px;
+    height: 100px;
+}
+
+.icon{
+    width: 64px;
+    height: 64px;
+    /* Gracias al punto (.) lo diferencio como una clase */
+}
