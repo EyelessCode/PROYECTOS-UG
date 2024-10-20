@@ -1,29 +1,32 @@
-
-header{
+header {
     background-color: aquamarine;
     width: 1200px;
     height: 200px;
+    /* los px son absolutas */
     /* medidas absolutas que son aplicadas a tamaños realizados*/
+    /* medidas relativas son las que se adaptan al dispositivo */
 }
 
-aside{
+aside {
     background-color: coral;
     width: 40%;
     height: 80%;
+    /* los porcentajes son relativas */
 }
 
-footer{
+footer {
     background-color: lightblue;
     width: 100vw;
-    height: 10vh;
+    height: 11vh;
+    /* 'vh' y 'vw' son medidas relativas */
 }
 
-img{
-    width: 900px;
-    height: 100px;
+img {
+    width: 680px;
+    height: 150px;
 }
 
-.icon{
+.icon {
     width: 64px;
     height: 64px;
     /* Gracias al punto (.) lo diferencio como una clase */
