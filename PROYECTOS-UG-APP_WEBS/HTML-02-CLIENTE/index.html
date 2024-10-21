@@ -8,42 +8,96 @@
     <link rel="stylesheet" href="styles/main.css" />
     <title>TRABAJANDO CON HTML</title>
     <style>
+        /* Estos son selectores, ya que está aplicado a nivel de nodos o elementos */
         h2 {
+            /* (nivel de id, nivel de clase, nivel de elemento/etiqueta) (0,0,1) */
+            /*
             color: blue;
+            padding-top: 1px;
+            padding-bottom: 0px;
+            padding-left: 15px;
+            padding-right: 5px;
+            */
+            padding: 5px 15px 10px 25px;
         }
 
         #ctx-footer {
             background-color: rgb(95, 191, 255);
+            border: 3px solid magenta;
+        }
+
+        .icono {
+            width: 64px;
+            height: 64px;
+        }
+
+        .borde_rojo {
+            border: 3px solid red;
+        }
+
+        pre {
+            border-color: crimson;
+            /* border-style: dashed; */
+            border-style: solid;
+            border-radius: 30px;
+        }
+
+        /* Los'*' aplican a elementos generales, a todos */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: content-box;
+            /* 'box sizing' es el tamaño de la caja */
+            /* el 'border box' se ajusta a su contenedor padre*/
+            /* el 'content box' se sale del contenedor padre */
         }
     </style>
 </head>
 
 <body>
     <!--LOS 'div' SIRVEN PARA AGRUPAR CONJUNTOS DE ELEMENTOS, ETC. LOS 'div' TAMBIEN SON LLAMADOS CONTENEDORE-->
-    <div id="ctx-header">
+    <div id="ctx-header" class="borde_rojo">
         <img src="images/banner1.png" width="1850" alt="Tecnologías Cliente" />
         <!--EL 'alt' ES UNA DESCRIPCIÓN-->
     </div>
 
     <div id="ctx-content">
         <h2>Tecnologías Cliente</h2>
-        <ul>
+
+        <!-- El 'a' es un 'hipervínculo' donde puedes agregar otra página -->
+        <!-- <ul>
             <strong>
                 <li>Las tecnologías cliente trabajn del lado del browser, se clasifican:</li>
                 <li><a href="contenido.html">HTML</a> - Se encarga de la estructura, contenido y visualización.</li>
-                <!-- El 'a' es un 'hipervínculo' donde puedes agregar otra página -->
+                
                 <li><a href="disenio.html">CSS</a> - Se encarga del diseño visual para atractividad.</li>
                 <li><a href="interaccion.html">JAVASCRIPT</a> - Interacción y lógica para que el usuario pueda interactuar.</li>
                 
             </strong>
-        </ul>
-        <!-- <pre style="font-size: 14px">
+        </ul> -->
+
+        <!-- El 'pre' es idéntico a su hermano tal vez 'p' sólo que este es preformateado y cuenta los espacios. -->
+        <pre style="font-size: 14px">
             Las tecnologías cliente trabajn del lado del browser, se clasifican:
-            HTML - Se encarga de la estructura, contenido y visualización.
-            CSS - Se encarga del diseño visual para atractividad.
-            JavaScript - Interacción y lógica para que el usuario pueda interactuar.
-        </pre -->
+            <a href="contenido.html">HTML</a> - Se encarga de la estructura, contenido y visualización.
+            <a href="disenio.html">CSS</a> - Se encarga de la estructura, contenido y visualización.
+            <a href="interaccion.html">JAVASCRIPT</a> - Interacción y lógica para que el usuario pueda interactuar.
+
+        </pre>
     </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi animi incidunt nemo eum esse, autem tempora
+    repellendus modi ea deserunt necessitatibus totam reiciendis cumque ut vel ratione distinctio amet laboriosam.
+    Quae vel ut velit sequi et aliquid quaerat cupiditate ea nam, illo similique accusamus iusto error! Dolorum, minima
+    est autem similique quaerat eius nam nemo, qui ipsum repudiandae, consectetur vitae.
+    Veritatis ratione voluptatibus inventore? Minus aperiam perspiciatis voluptatum quidem vitae et fugit consequuntur
+    ipsam cumque voluptate molestias facere illo placeat laboriosam, quaerat repudiandae tempore ab aspernatur illum
+    nemo excepturi nesciunt.
+    Minima eius, sunt exercitationem laudantium provident placeat libero a pariatur sapiente sequi assumenda adipisci
+    molestiae quasi tempore dolorum laborum eligendi. Eos consequuntur harum iusto! Magnam laboriosam vitae libero
+    inventore iusto.
+    Vero nihil vitae possimus! Qui, dolorem quod. Quo corporis perferendis deleniti? Ipsam minima vitae inventore fugit
+    quis culpa ullam necessitatibus aperiam illum odit facere ea voluptate hic dignissimos, quae illo.
 
     <div id="ctx-content2">
         <h2>Protocolo HTTP</h2>
@@ -61,11 +115,11 @@
         </ol>
     </div>
 
-    <div id="ctx-footer">
+    <div id="ctx-footer" class="borde_rojo">
         <p>Universidad de Guayaquil - 2024</p>
-        <img src="images/facebook.png" alt="Red Social Facebook" />
-        <img src="images/instagram.png" alt="Red Social Instagram" />
-        <img src="images/x.png" alt="Red Social X" />
+        <img class="icon borde_rojo" src="images/facebook.png" alt="Red Social Facebook" />
+        <img class="icon" src="images/instagram.png" alt="Red Social Instagram" />
+        <img class="icon" src="images/x.png" alt="Red Social X" />
     </div>
 </body>
 
