@@ -1,0 +1,15 @@
+div p{
+    background-color: aqua;
+}
+
+div > p{
+    color: brown;
+}
+
+div + p{
+    font-size: 48px;
+}
+
+div ~ p{
+    border: 2px solid red;
+}

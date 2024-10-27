@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cristhian Guedes">
+    <title>FORMULARIOS</title>
+</head>
+
+<body>
+    <form action="procesar.html" method="post">
+        <label for="txtNombre">Nombres: </label>
+        <input type="text" name="nombre" id="txtNombre" maxlength="30" placeholder="Ingresar Nombre">
+        <br>
+
+        <label for="cmbLenguaje">Lenguajes:</label>
+        <select id="cmbLenguaje">
+            <option value="10">Java</option>
+            <option value="20">NodeJS</option>
+            <option value="30">Golang</option>
+            <option value="40">Rust</option>
+        </select>
+        <br>
+
+        <label for="txtEdad">Edad: </label>
+        <input type="text" name="edad" id="txtEdad" maxlength="2" placeholder="Ingresar Edad">
+        <br>
+
+        <button type="submit">
+            Enviar formularios
+        </button>
+
+    </form>
+</body>
+
+</html>
