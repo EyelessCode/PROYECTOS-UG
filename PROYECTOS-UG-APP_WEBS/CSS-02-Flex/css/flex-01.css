@@ -1,0 +1,15 @@
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px dashed;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+span{
+    border: 1px solid;
+    padding: 0.5em 1em;
+    background-color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

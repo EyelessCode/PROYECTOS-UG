@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+}
+
+nav{
+    /* display: flex; */
+    margin: 5px;
+    border: 2px dashed blue;
+    padding: 10px;
+}
+
+a{
+    border: 2px solid blue;
+    background-color: aqua;
+    color: black;
+    margin: 5px;
+    font-size: 24px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+a:hover{
+    background-color: blueviolet;
+    color: white;
+    border-color: deeppink;
+}

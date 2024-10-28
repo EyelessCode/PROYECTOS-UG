@@ -1,0 +1,31 @@
+section{
+    display: flex;
+    border: 2px dodgerblue solid;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 16px;
+}
+
+span{
+    border-radius: 18px;
+    background-color: aqua;
+    padding: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    margin: 5px;
+}
+
+span a{
+    text-decoration: none;
+    border: 1px;
+
+}
+
+span a:hover{
+    text-decoration: underline;
+    background-color: blueviolet;
+    color: mediumspringgreen;
+    padding:  1em;
+    
+}
