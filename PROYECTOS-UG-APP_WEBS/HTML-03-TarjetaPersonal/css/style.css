@@ -154,17 +154,22 @@ body{
 .footer-card{
     background-color: deepskyblue;
     overflow: hidden;
-    transition: all 0.3s ease;
     position: relative;
     text-align: center;
+    border-radius: 0 0 18px 18px;
+    padding: 10px;
+    transition: all 0.3s ease;
+
 }
 
 .footer-card:hover{
     background-color: darkblue;
     text-shadow: 0 0 8px white;
     color: white;
-    border-top: 2px solid blueviolet;
+    border-top: 4px solid blueviolet;
     border-radius: 18px;
+    font-size: 36px;
+
 }
 
 
@@ -181,22 +186,7 @@ body{
     color: white;
 } */
 
-.footer-card .subtext{
-    display: none;
-    font-size: 26px;
-    color: white;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 5px;
-}
-
-.footer-card:hover .subtext{
-    display: block;
-}
-
-.footer-card h2{
+/* .footer-card h2{
     color: black;
 
 
@@ -208,6 +198,6 @@ body{
     font-size: 36px;
     color: white;
     border-top: 2px;
-}
+} */
 
 
