@@ -51,6 +51,7 @@ body{
     overflow: hidden;
     transition: all 0.3s ease;
     backdrop-filter: blur(90px);
+
 }
 
 .header-card .logo-left img:hover{
@@ -73,7 +74,10 @@ body{
     border-radius: 0 18%;
     overflow: hidden;
 
+}
 
+.logo-right{
+    margin-right: 8px;
 }
 
 
@@ -110,7 +114,7 @@ body{
 .description h3{
     font-weight: 900;
     transition: all 0.3s ease;
-    color:  aqua;
+    color:  darkblue;
 
 
 
