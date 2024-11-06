@@ -23,7 +23,7 @@ body{
     /* border: 18px dashed blue; */
     margin: -80px 0 -40px;
     border-radius: 20px;
-    transition: all 0.3s linear;
+    transition: all 0.3s ease;
     backdrop-filter: blur(18px);
     box-shadow: 0 0 50px black;
 
@@ -39,6 +39,8 @@ body{
     display: flex;
     justify-content: space-between;
     /* border: 18px dashed red; */
+    transition: all 0.3s ease;
+
 }
 
 .header-card img{
@@ -47,7 +49,7 @@ body{
     height: 100px;
     border-radius: 18px 18px 0 0 ;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
     backdrop-filter: blur(90px);
 }
 
@@ -58,6 +60,7 @@ body{
     box-shadow: 0 0 80px blue;
     background-color: aquamarine;
     border-radius: 18% 0;
+    overflow: hidden;
 
 }
 
@@ -68,6 +71,7 @@ body{
     box-shadow: 0 0 80px blue;
     background-color: aquamarine;
     border-radius: 0 18%;
+    overflow: hidden;
 
 
 }
@@ -83,7 +87,7 @@ body{
     border: 2px solid white;
     /* box-shadow: 0 0 80px blue; */
     overflow: hidden;
-    transition: all 0.3s linear;
+    transition: all 0.3s ease;
 
 
 }
@@ -105,7 +109,7 @@ body{
 
 .description h3{
     font-weight: 900;
-    transition: all 0.3s linear;
+    transition: all 0.3s ease;
     color:  aqua;
 
 
@@ -118,7 +122,7 @@ body{
 }
 
 .description p{
-    transition: color 0.3s linear, font-size 0.2s linear;
+    transition: color 0.3s ease, font-size 0.2s ease;
     color: black;
 
 
@@ -135,32 +139,61 @@ body{
 .description div{
     border-top: 3px solid blue;
     border-radius: 18px;
-    transition: font-size ease-in;
+    transition: font-size ease;
     color: aquamarine;
 
 }
 
 .description div:hover{
     font-size: 26px;
+    border-color: blueviolet;
 }
 
 
 
 .footer-card{
-    background-color: rgb(44, 105, 236);
+    background-color: deepskyblue;
     overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
 }
 
 .footer-card:hover{
     background-color: darkblue;
     text-shadow: 0 0 8px white;
     color: white;
+    border-top: 2px solid blueviolet;
+    border-radius: 18px;
+}
+
+
+
+/* .footer-card h4{
+    font-size: 1px;
+    color: black;
+    transition: color 0.3s ease, font-size 0.2s linear;
 
 }
 
-.footer-card h2:hover{
+.footer-card h4:hover{
     font-size: 46px;
     color: white;
+} */
+
+.footer-card .subtext{
+    display: none;
+    font-size: 26px;
+    color: white;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+}
+
+.footer-card:hover .subtext{
+    display: block;
 }
 
 .footer-card h2{
@@ -170,4 +203,11 @@ body{
     font-weight: 900;
     transition: all 0.3s ease;
 }
+
+.footer-card h2:hover{
+    font-size: 36px;
+    color: white;
+    border-top: 2px;
+}
+
 
