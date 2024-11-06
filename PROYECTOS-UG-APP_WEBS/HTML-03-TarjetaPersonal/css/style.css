@@ -45,25 +45,30 @@ body{
     width: auto;
     /* border: 18px dashed yellow; */
     height: 100px;
-    border-radius: 18px;
+    border-radius: 18px 18px 0 0 ;
     overflow: hidden;
-    border: 2px solid white;
     transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(90px);
 }
 
 .header-card .logo-left img:hover{
-    border: 8px solid blue;
+    border: 2px solid blue;
     width: auto;
     height: 120px;
     box-shadow: 0 0 80px blue;
+    background-color: aquamarine;
+    border-radius: 18% 0;
 
 }
 
 .header-card .logo-right img:hover{
-    border: 8px solid blue;
+    border: 2px solid blue;
     width: auto;
     height: 120px;
     box-shadow: 0 0 80px blue;
+    background-color: aquamarine;
+    border-radius: 0 18%;
+
 
 }
 
@@ -75,7 +80,7 @@ body{
     height: 19vh;
     justify-content: center;
     border-radius: 100px;
-    border: 2px solid blue;
+    border: 2px solid white;
     /* box-shadow: 0 0 80px blue; */
     overflow: hidden;
     transition: all 0.3s linear;
@@ -87,6 +92,7 @@ body{
     box-shadow: 0 0 80px blue;
     width: 35%;
     height: 25vh;
+    border: 2px solid blue;
 
 }
 
