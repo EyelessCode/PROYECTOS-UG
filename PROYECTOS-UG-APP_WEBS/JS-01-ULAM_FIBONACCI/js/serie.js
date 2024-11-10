@@ -5,14 +5,14 @@ export function ulam(numero){
 
     while(numero > 1){
         if(numero % 2 == 0){
-        numero = numero / 2;
+            numero = numero / 2;
         }else{
-        numero = numero * 3 + 1;
+            numero = numero * 3 + 1;
         }
         cadenaSerie = cadenaSerie + String(numero) + " ";
     }
     return cadenaSerie;
-    }
+}
 
 export function fibonacci(limite){
     //todo x 0 y 1 ----> 0 1 1 2 3 5 8
