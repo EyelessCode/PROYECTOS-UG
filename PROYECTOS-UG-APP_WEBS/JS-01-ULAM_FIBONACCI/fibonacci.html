@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Cristhian Guedes">
+    <script type="module" src="js/fibonacci.js"></script>
+    <title>FIBONACCI</title>
 </head>
 <body>
-    
+    <form action="">
+        <fieldset>
+            <legend>Serie de FIBONACCI</legend>
+            <div>
+                <label for="txtNumero">Numero: <input type="text" id="txtNumero" maxlength="8"></label>
+            </div>
+
+            <div>
+                <label for="txtSerie">Serie: <textarea id="txtSerie" cols="30" rows="10"></textarea></label>
+            </div>
+
+            <div>
+                <button id="btnGenerarSerie">Generar Serie</button> 
+            </div>
+        </fieldset>
+    </form>
 </body>
 </html>
