@@ -1,0 +1,20 @@
+th,td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: chocolate;
+    color: white;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+tr:nth-child(even){
+    background-color: bisque;
+}
+
+td:hover{
+    background-color: aquamarine;
+}
