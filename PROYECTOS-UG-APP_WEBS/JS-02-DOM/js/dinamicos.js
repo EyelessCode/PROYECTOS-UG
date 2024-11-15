@@ -16,16 +16,18 @@ const ctx_select=document.getElementById('ctx_select')
 //     { codigo: 70, marca: "Mazda", modelo: "X3", anio: 2024 },
 // ]
 
-
 window.addEventListener('DOMContentLoaded',()=>{
+    //! Árbol de componentes 'DOMcontentloaded'
     //? crear a través de función 'createElement'
     const combo=document.createElement('select')
+    //! Crea el elemeto select
 
     //? iterar el arreglo de objetos de vehículos
     vehiculosDB.forEach(vehiculo => {
         //? craer un elemento option
 
         let opcion=document.createElement('option')
+        //! Crea el elemeto option
 
         opcion.value=vehiculo.codigo
         opcion.text=vehiculo.marca+' '+vehiculo.modelo+' '+vehiculo.anio
