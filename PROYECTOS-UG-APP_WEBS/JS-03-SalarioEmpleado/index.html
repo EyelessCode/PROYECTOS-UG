@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Cristhian Guedes">
+    <link rel="stylesheet" href="css/">
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <title>Rol de Empleado | Formulario</title>
 </head>
 <body>
+    <form action="">
+        <fieldset>
+            <div class="wrapper">
+                <div class="wrapperHeader">
+                    <header>
+                        <h1>
+                            Rol de Empleado
+                        </h1>
+                    </header>
+                </div>
     
+                <div class="wrapperBody">
+                    <div class="employeeCodeContainer">
+                        <label for="txtCodigo" id="codigoLabels">Código: </label>
+                        <input required type="text" placeholder="Código..." id="txtCodigo" name="codigo" aria-labelledby="codigoLabels">
+    
+                        <label for="txtNombres" id="nombreLabels">Nombres: </label>
+                        <input required type="text" id="txtNombres" placeholder="Nombres..." name="nombres" aria-labelledby="nombreLabels">
+                    </div>
+    
+                    <div class="MSHContainer">
+                        <div class="months">
+                            <!-- meses en JS -->
+                            <label for="txtSalario" id="salarioLabel">Salario: </label>
+                            <input required type="text" id="txtSalario" placeholder="Cantidad..." name="salario" aria-labelledby="salarioLabel">
+    
+                            <label for="txtHorasExtras" id="horaExtraLabel">Horas extras: </label>
+                            <input required type="text" id="txtHorasExtras" placeholder="Cantidad..." name="horaExtra" aria-labelledby="horasExtraLabel">
+                        </div>
+    
+                        <div class="reading">
+                            <label for="txtCostoHora" id="costoHoraLabel">Costo Hora: </label>
+                            <input type="text" readonly id="txtCostoHora" placeholder="14.86" name="costoHora" aria-labelledby="costoHoraLabel">
+                        
+                            <label for="txtPorcenAporta" id="porcenAportaLabel">% de Aportación: </label>
+                            <input readonly type="text" name="aportacion" id="txtPorcenAporta" aria-labelledby="porcenAportaLabel" placeholder="9.45">
+                        </div>
+    
+                        <div class="showResults">
+                            <label for="txtMontoAporta" id="montoAportacionLabel">Monto Aportación: </label>
+                            <input type="text" name="montoAportacion" id="txtMontoAporta" aria-labelledby="montoAportacionLabel" placeholder="Resultado...">
+                            
+                            <label for="txtNetoRecibir" id="netoRecibirLabel">Monto Aportación: </label>
+                            <input type="text" name="netoRecibir" id="txtNetoRecibir" aria-labelledby="netoRecibirLabel" placeholder="Resultado...">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="wrapperFooter">
+                    <button type="submit" value="calculacion" name="calculo" id="btnCalcular" accesskey="x">Calcular Salario</button>
+                    <button type="reset" value="cancelacion" name="cancelar" id="btnCancelar">Cancelar</button>
+                </div>
+            </div>   
+        </fieldset>
+    </form>
+
+    <footer>
+        © 2024 UNIVERSIDAD DE GUAYAQUIL. Todos los derechos reservados.
+    </footer>
 </body>
 </html>
