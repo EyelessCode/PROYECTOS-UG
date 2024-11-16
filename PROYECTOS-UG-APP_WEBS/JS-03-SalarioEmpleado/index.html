@@ -25,18 +25,19 @@
                 <div class="wrapperBody">
                     <div class="employeeCodeContainer">
                         <label for="txtCodigo" id="codigoLabels">Código: </label>
-                        <input  type="text" placeholder="Código..." id="txtCodigo" name="codigo" aria-labelledby="codigoLabels">
+                        <input required type="text" placeholder="Código..." id="txtCodigo" name="codigo" aria-labelledby="codigoLabels">
                             <!-- aqui -->
                         <label for="txtNombres" id="nombreLabels">Nombres: </label>
-                        <input  type="text" id="txtNombres" placeholder="Nombres..." name="nombres" aria-labelledby="nombreLabels">
+                        <input required type="text" id="txtNombres" placeholder="Nombres..." name="nombres" aria-labelledby="nombreLabels">
                     </div>
     
                     <div class="MSHContainer">
 
                         <!-- prueba en otro div -->
                         <!--! prueba definitiva - se queda -->
+                        
                         <div id="months">
-                            
+                        
                         </div>
                         <!-- FIN de prueba en otro div -->
         
@@ -52,11 +53,13 @@
                             <!--! No funcionó -->
 
                             <label for="txtSalario" id="salarioLabel">Salario: </label>
-                            <input  type="text" id="txtSalario" placeholder="Cantidad..." name="salario" aria-labelledby="salarioLabel">
+                            <input required type="text" id="txtSalario" placeholder="Cantidad..." name="salario" aria-labelledby="salarioLabel">
                             <!-- aqui -->
                             <label for="txtHorasExtras" id="horaExtraLabel">Horas extras: </label>
-                            <input  type="text" id="txtHorasExtras" placeholder="Cantidad..." name="horaExtra" aria-labelledby="horasExtraLabel">
+                            <input required type="text" id="txtHorasExtras" placeholder="Cantidad..." name="horaExtra" aria-labelledby="horasExtraLabel">
                         </div>
+                        
+
     
                         <div class="reading">
                             <label for="txtCostoHora" id="costoHoraLabel">Costo Hora: </label>
