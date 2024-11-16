@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cristhian Guedes">
-    <link rel="stylesheet" href="css/">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <script defer type="module" src="js/comboBox.js"></script>
+    <script defer type="module" src="js/mostrarResult.js"></script>
     <title>Rol de Empleado | Formulario</title>
 </head>
 <body>
-    <form action="">
+    <form>
         <fieldset>
             <div class="wrapper">
                 <div class="wrapperHeader">
@@ -23,42 +25,59 @@
                 <div class="wrapperBody">
                     <div class="employeeCodeContainer">
                         <label for="txtCodigo" id="codigoLabels">Código: </label>
-                        <input required type="text" placeholder="Código..." id="txtCodigo" name="codigo" aria-labelledby="codigoLabels">
-    
+                        <input  type="text" placeholder="Código..." id="txtCodigo" name="codigo" aria-labelledby="codigoLabels">
+                            <!-- aqui -->
                         <label for="txtNombres" id="nombreLabels">Nombres: </label>
-                        <input required type="text" id="txtNombres" placeholder="Nombres..." name="nombres" aria-labelledby="nombreLabels">
+                        <input  type="text" id="txtNombres" placeholder="Nombres..." name="nombres" aria-labelledby="nombreLabels">
                     </div>
     
                     <div class="MSHContainer">
-                        <div class="months">
+
+                        <!-- prueba en otro div -->
+                        <!--! prueba definitiva - se queda -->
+                        <div id="months">
+                            
+                        </div>
+                        <!-- FIN de prueba en otro div -->
+        
+
+                        <div class="salaryHour">
+                            <!-- prueba en otro div -->
                             <!-- meses en JS -->
+                            <!-- <select name="" id="">
+                                <option value="">xd</option>
+                                <option value="">xd</option>
+                            </select> -->
+                            <!-- fin de los meses -->
+                            <!--! No funcionó -->
+
                             <label for="txtSalario" id="salarioLabel">Salario: </label>
-                            <input required type="text" id="txtSalario" placeholder="Cantidad..." name="salario" aria-labelledby="salarioLabel">
-    
+                            <input  type="text" id="txtSalario" placeholder="Cantidad..." name="salario" aria-labelledby="salarioLabel">
+                            <!-- aqui -->
                             <label for="txtHorasExtras" id="horaExtraLabel">Horas extras: </label>
-                            <input required type="text" id="txtHorasExtras" placeholder="Cantidad..." name="horaExtra" aria-labelledby="horasExtraLabel">
+                            <input  type="text" id="txtHorasExtras" placeholder="Cantidad..." name="horaExtra" aria-labelledby="horasExtraLabel">
                         </div>
     
                         <div class="reading">
                             <label for="txtCostoHora" id="costoHoraLabel">Costo Hora: </label>
-                            <input type="text" readonly id="txtCostoHora" placeholder="14.86" name="costoHora" aria-labelledby="costoHoraLabel">
+                            <input value="14.86" type="text" readonly id="txtCostoHora" placeholder="14.86" name="costoHora" aria-labelledby="costoHoraLabel">
                         
                             <label for="txtPorcenAporta" id="porcenAportaLabel">% de Aportación: </label>
-                            <input readonly type="text" name="aportacion" id="txtPorcenAporta" aria-labelledby="porcenAportaLabel" placeholder="9.45">
+                            <input value="9.45" readonly type="text" name="aportacion" id="txtPorcenAporta" aria-labelledby="porcenAportaLabel" placeholder="9.45">
                         </div>
     
                         <div class="showResults">
                             <label for="txtMontoAporta" id="montoAportacionLabel">Monto Aportación: </label>
-                            <input type="text" name="montoAportacion" id="txtMontoAporta" aria-labelledby="montoAportacionLabel" placeholder="Resultado...">
+                            <input readonly type="text" name="montoAportacion" id="txtMontoAporta" aria-labelledby="montoAportacionLabel" placeholder="Resultado...">
                             
                             <label for="txtNetoRecibir" id="netoRecibirLabel">Monto Aportación: </label>
-                            <input type="text" name="netoRecibir" id="txtNetoRecibir" aria-labelledby="netoRecibirLabel" placeholder="Resultado...">
+                            <input readonly type="text" name="netoRecibir" id="txtNetoRecibir" aria-labelledby="netoRecibirLabel" placeholder="Resultado...">
                         </div>
                     </div>
                 </div>
     
                 <div class="wrapperFooter">
-                    <button type="submit" value="calculacion" name="calculo" id="btnCalcular" accesskey="x">Calcular Salario</button>
+                    <button type="button" value="calculacion" name="calculo" id="btnCalcular" accesskey="x">Calcular Salario</button>
                     <button type="reset" value="cancelacion" name="cancelar" id="btnCancelar">Cancelar</button>
                 </div>
             </div>   

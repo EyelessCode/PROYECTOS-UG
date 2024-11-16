@@ -1,4 +1,4 @@
-import { ulam } from "./series.js";
+import { ulam } from "./serie.js";
 
 //? Vamos a recuperar los widgets por su id
 
