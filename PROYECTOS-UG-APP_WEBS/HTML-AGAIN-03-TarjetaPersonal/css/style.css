@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    display: block;
+    text-align: center;
+}
+
+.wrapperContainer{
+    display: inline;
+}
+
+.containerHeader{
+    display: flex;
+    justify-content: center;
+}
+
+.logoLeft img{
+    
+    width: 150px;
+}
+
+.logoRight img{
+    width: 150px;
+
+}
+
+.profilePicture img{
+
+    width: 150px;
+
+}
+
+.profilePicture{
+    
+}
