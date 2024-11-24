@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cristhian Guedes">
+    <link rel="shortcut icon" href="images/" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bloque cliente</title>
+</head>
+<body>
+    <form action="">
+        <header>
+            <h1>ORDEN DE SERVICIO</h1>
+        </header>
+
+        <fieldset>
+            <legend>
+                BLOQUE <span>C</span>L<span>I</span>E<span>N</span>T<span>E</span>
+            </legend>
+            
+            <div class="wrapper">
+                <div class="containerCliente">
+                    <label for="txtNombre">Nombres: </label>
+                    <input type="text" name="nombre" id="txtNombre" placeholder="Nombres...">
+        
+                    <label for="txtApellido">Apellidos: </label>
+                    <input type="text" name="apellido" id="txtApellido" placeholder="Apellidos...">
+                
+                    <br>
+
+                    <label for="txtDireccion">Dirección: </label>
+                    <input type="text" name="direccion" id="txtDireccion" placeholder="Dirección...">
+                
+                    <label for="txtTelefono">Teléfono: </label>
+                    <input type="text" name="telefono" id="txtTelefono" placeholder="Teléfono...">
+                </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                BLOQUE <span>O</span>B<span>S</span>E<span>R</span>V<span>A</span>C<span>I</span>O<span>N</span>E<span>S</span>
+            </legend>
+
+            <div class="ConteinerObservacion">
+                <label for="txtObservacion">Observación: </label>
+                <textarea name="observacion" id="txtObservacion" cols="30" rows="10" placeholder="Ingrese información..."></textarea>
+            </div>
+        </fieldset>
+
+        <div class="containerFooter">
+            <button type="submit" id="btnSubmit">Guardar</button>
+            <button type="reset" id="btnEliminar">Eliminar</button>
+        </div>
+    </form>
+</body>
+</html>
