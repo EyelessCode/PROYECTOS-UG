@@ -37,6 +37,67 @@
                 </div>
         </fieldset>
 
+
+
+        <fieldset>
+            <div class="containerEspecificacion">
+                <legend>
+                    BLOQUE E<SPan>P</SPan>E<SPan>C</SPan>I<SPan>F</SPan>I<SPan>C</SPan>A<SPan>C</SPan>I<SPan>O</SPan>N
+                </legend> 
+
+                <label for="cmbEquipo">Equipo: </label>
+                <select title="Tipo de dispositivo" name="equipo" id="cmbEquipo">
+                    <option value="" selected disabled>Seleccione una equipo</option>
+                    <option value="computador">Computador</option>
+                    <option value="portatil">Portátil</option>
+                </select>
+
+                <label for="cmbMarca">Marca: </label>
+                <select title="Marca de su dispositivo" name="marca" id="cmbMarca">
+                    <option value="" selected disabled>Seleccione una marca</option>
+                    <option value="apple">Apple</option>
+                    <option value="lenovo">Lenovo</option>
+                    <option value="hp">HP</option>
+                    <option value="dell">Dell</option>
+                    <option value="acer">Acer</option>
+                    <option value="asus">Asus</option>
+                </select>
+
+                <br>
+
+                <label for="txtModelo">Modelo: </label>
+                <input readonly type="text" name="modelo" id="txtModelo" placeholder="Modelo..." value="S75-A71112">
+                
+                <label for="txtSerie">Serie: </label>
+                <input readonly type="text" name="serie" id="txtSerie" placeholder="Serie..." value="1e183695c">
+
+                <br>
+
+                <label>Posee Mouse: </label>
+                <label for="mouseSi">Sí </label>
+                <input type="radio" name="respuestaMouse" id="mouseSi" value="si">
+                <label for="mouseNo">No </label>
+                <input checked type="radio" name="respuestaMouse" id="mouseNo" value="no">
+
+                <br>
+
+                <label>Posee Teclado: </label>
+                <label for="tecladoSi">Sí </label>
+                <input type="radio" name="respuestaTeclado" id="tecladoSi" value="si">
+                <label for="tecladoNo">No </label>
+                <input checked type="radio" name="respuestaTeclado" id="tecladoNo" value="no">
+
+                <br>
+
+                <label>Posee Cámara: </label>
+                <label for="camaraSi">Sí </label>
+                <input type="radio" name="respuestaCamara" id="camaraSi" value="si">
+                <label for="camaraNo">No </label>
+                <input checked type="radio" name="respuestaCamara" id="camaraNo" value="no">
+            </div>
+        </fieldset> 
+
+
         <fieldset>
             <legend>
                 BLOQUE <span>O</span>B<span>S</span>E<span>R</span>V<span>A</span>C<span>I</span>O<span>N</span>E<span>S</span>
@@ -44,7 +105,7 @@
 
             <div class="ConteinerInconveniente">
                 <label for="txtInconveniente">Inconveniente: </label>
-                <textarea name="inconveniente" id="txtInconveniente" cols="30" rows="10" placeholder="Ingrese información..."></textarea>
+                <textarea title="Detalle los problemas que tiene con su dispositivo" name="inconveniente" id="txtInconveniente" cols="30" rows="10" placeholder="Ingrese información..."></textarea>
             </div>
         </fieldset>
 
