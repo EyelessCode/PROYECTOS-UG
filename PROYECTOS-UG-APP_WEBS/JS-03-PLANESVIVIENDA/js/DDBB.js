@@ -9,3 +9,9 @@ export const modeloList = [
 
 
 //? DATOS DE LOS PLANOS DE FINANCIAMIENTO
+export const planosList = [
+    { id: 1, nombre: "Plan A", plazo: 10, interesAnual: 0.04, interesEntrada: 0.12 },
+    { id: 2, nombre: "Plan B", plazo: 12, interesAnual: 0.045, interesEntrada: 0.15 },
+    { id: 3, nombre: "Plan C", plazo: 15, interesAnual: 0.05, interesEntrada: 0.27 },
+    { id: 4, nombre: "Plan D", plazo: 26, interesAnual: 0.055, interesEntrada: 0.20 }
+]

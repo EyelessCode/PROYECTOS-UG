@@ -1,22 +1,51 @@
-import { modeloList } from "./DDBB.js";
+import { modeloList, planosList } from "./DDBB.js";
 
-//! Recuperar los WIDGETS DE LA PÁGINA
+//! Recuperar los WIDGETS DE LA PÁGINA DEL 'SELECT'
 const cmbModelos = document.getElementById("cmbModelos");
 const txtTamanio = document.getElementById("txtTamanio");
 const txtDormitorios = document.getElementById("txtDormitorios");
 const txtBanio = document.getElementById("txtBanio");
 const txtPrecio = document.getElementById("txtPrecio");
 
+//? RECUPERAR LOS WIDGETS PARA EL SELECT DE PLANES
+const cmbPlanes = document.getElementById('cmbPlanes');
+
+const txtTasaAnual = document.getElementById('txtTasaAnual');
+const txtPorcentajeEntrada = document.getElementById('txtPorcentajeEntrada');
+const txtMeses = document.getElementById('txtMeses');
+
+const txtCuotaEntrada = document.getElementById('txtCuotaEntrada');
+const txtSaldo = document.getElementById('txtSaldo');
+const txtCuotaMensual = document.getElementById('txtCuotaMensual');
+
+const btnCalcularCuotas = document.getElementById('btnCalcularCuotas');
+const btnGenerarTabla = document.getElementById('btnGenerarTabla');
+
+
 //! EVENTO AL CARGAR EN LA VENTANA
 window.addEventListener("DOMContentLoaded", () => {
     //? CREAR LAS OPCIONES (json) DEL SELECT (DDBB.js)
     modeloList.forEach((modelo) => {
-        const option = document.createElement("option");
+        let option = document.createElement("option");
 
         option.value = modelo.id;
         option.textContent = modelo.nombre;
 
         cmbModelos.appendChild(option);
+    });
+
+    //! OPCIÒN POR DEFECTO
+    let optionDefault = document.createElement('option');
+    optionDefault.textContent = '-- Seleccione un modelo--';
+    optionDefault.value = '';
+    cmbPlanes.appendChild(optionDefault);
+
+    //? CREAR LAS OPCIONES (json) DEL SELECT (DDBB.js)
+    planosList.forEach((plano) => {
+        let option = document.createElement("option");
+        option.value = plano.id;
+        option.textContent = plano.nombre;
+        cmbPlanes.appendChild(option);
     });
 });
 
@@ -41,4 +70,19 @@ cmbModelos.addEventListener("change", () => {
 
     // alert(`modelo selecionado ${modeloSeleccion.id} - ${modeloSeleccion.nombre}`);
     // alert(`indice selecionado: ${indice} - códdigo: ${codigo}`);
+});
+
+//! EVENTO CHANGE DEL SELECT -> cmbPlanes
+cmbPlanes.addEventListener('change', () => {
+    // alert(`Opción seleccionada: ${cmbPlanes.selectedIndex} - ${cmbPlanes.value}`)
+    let indice = cmbPlanes.selectedIndex;
+    let codigoPlan = cmbPlanes.options[indice].value;
+
+    //? BUSCAR y obtener el plan de financiamineto de acuerdo al código del dicho plan
+    let planSeleccionado = planosList.find((plano) => plano.id === parseInt(codigoPlan));
+
+    //? CARGAR LOS DATOS DEL PLAN DE FINANCIAMIENTO EN LAS CAJAS DE TEXTO
+    txtTasaAnual.value = String(planSeleccionado.interesAnual.toFixed(2));
+    txtPorcentajeEntrada = String(planSeleccionado.interesEntrada.toFixed(2));
+    txtMeses.value = String(planSeleccionado.plazo * 12);
 });

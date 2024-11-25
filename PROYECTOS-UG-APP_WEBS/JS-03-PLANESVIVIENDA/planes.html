@@ -1,108 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <title>Vivienda | Cristhian Guedes</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Cristhian Guedes">
-    <link href="css/style.css" rel="stylesheet">
-</head>
+    <head>
+        <title>Vivienda | Cristhian Guedes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Cristhian Guedes">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
 
-<body>
-    <header>
-        <img src="" alt="Banner">
-    </header>
-    <section>
-        <main>
-            <div class="tarjeta">
+    <body>
+        <header>
+            <img src alt="Banner">
+        </header>
+        <section>
+            <main>
+                <div class="tarjeta">
 
-            </div>
-            <div class="formulario">
-                <fieldset>
-                    <legend>Modelos de vivienda</legend>
-                    <div>
-                        <label for="cmbModelos">Modelos: </label>
-                        <select name="modelo" id="cmbModelos">
-                            <!--! cargar de forma dinámica -->
-                        </select>
+                </div>
+                <div class="formulario">
+                    <fieldset>
+                        <legend>Modelos de vivienda</legend>
+                        <div>
+                            <label for="cmbModelos">Modelos: </label>
+                            <select name="modelo" id="cmbModelos">
+                                <!--! cargar de forma dinámica -->
+                            </select>
 
-                        <label for="txtTamanio">mts^2:</label>
-                        <input readonly type="text" name="tamanio" id="txtTamanio" maxlength="7"
-                            placeholder="Tamaño...">
-                    </div>
+                            <label for="txtTamanio">mts^2:</label>
+                            <input readonly type="text" name="tamanio"
+                                id="txtTamanio" maxlength="7"
+                                placeholder="Tamaño...">
+                        </div>
 
-                    <div>
-                        <label for="txtDormitorios">Dormitorios: </label>
-                        <input readonly type="text" name="dormitorio" id="txtDormitorios" maxlength="5">
+                        <div>
+                            <label for="txtDormitorios">Dormitorios: </label>
+                            <input readonly type="text" name="dormitorio"
+                                id="txtDormitorios" maxlength="5">
 
-                        <label for="txtBanio">Baños: </label>
-                        <input readonly type="text" name="banio" id="txtBanio" maxlength="5">
-                    </div>
+                            <label for="txtBanio">Baños: </label>
+                            <input readonly type="text" name="banio"
+                                id="txtBanio" maxlength="5">
+                        </div>
 
-                    <div>
-                        <label for="txtPrecio">Precios: </label>
-                        <input readonly type="text" name="precio" id="txtPrecio" maxlength="10">
+                        <div>
+                            <label for="txtPrecio">Precios: </label>
+                            <input readonly type="text" name="precio"
+                                id="txtPrecio" maxlength="10">
 
-                    </div>
-                </fieldset>
+                        </div>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Planes de Financiamiento</legend>
+                    <fieldset>
+                        <legend>Planes de Financiamiento</legend>
 
-                    <div>
-                        <label for="cmbPlanes">Planes: </label>
-                        <select name="plan" id="cmbPlanes">
-                            
-                        </select>
-                    </div>
+                        <div>
+                            <label for="cmbPlanes">Planes: </label>
+                            <select name="plan" id="cmbPlanes">
 
-                    <div>
-                        <label for="txtTasaAnual">% Tasa Anual: </label>
-                        <input readonly type="text" name="tasaAnual" id="txtTasaAnual">
+                            </select>
+                        </div>
 
-                        <label for="txtPorcentajeEntrada">% Entrada: </label>
-                        <input readonly type="text" name="porcentajeEntrada" id="txtPorcentajeEntrada">
+                        <div>
+                            <label for="txtTasaAnual">% Tasa Anual: </label>
+                            <input readonly type="text" name="tasaAnual"
+                                id="txtTasaAnual">
 
-                        <label for="txtMeses">Meses: </label>
-                        <input readonly type="text" name="meses" id="txtMeses">
-                    </div>
+                            <label for="txtPorcentajeEntrada">% Entrada:
+                            </label>
+                            <input readonly type="text" name="porcentajeEntrada"
+                                id="txtPorcentajeEntrada">
 
-                    <div>
-                        <label for="txtCuotaEntrada">Cuota Entrada: </label>
-                        <input readonly type="text" name="cuotaEntrada" id="txtCuotaEntrada">
+                            <label for="txtMeses">Meses: </label>
+                            <input readonly type="text" name="meses"
+                                id="txtMeses">
+                        </div>
 
-                        <label for="txtSaldo">Saldo: </label>
-                        <input readonly type="text" name="saldo" id="txtSaldo">
+                        <div>
+                            <label for="txtCuotaEntrada">Cuota Entrada: </label>
+                            <input readonly type="text" name="cuotaEntrada"
+                                id="txtCuotaEntrada">
 
-                        <label for="txtCuotaMensual">Meses: </label>
-                        <input readonly type="text" name="cuotaMensual" id="txtCuotaMensual">
-                    </div>
+                            <label for="txtSaldo">Saldo: </label>
+                            <input readonly type="text" name="saldo"
+                                id="txtSaldo">
 
-                    <div>
-                        <button id="btnCalcularCuotas">Calcular Coutas</button>
-                        <button id="btnGenerarTabla">Generar Tabla Amortización</button>
-                    </div>
-                </fieldset>
-            </div>
-        </main>
-        <aside>
+                            <label for="txtCuotaMensual">Meses: </label>
+                            <input readonly type="text" name="cuotaMensual"
+                                id="txtCuotaMensual">
+                        </div>
 
-        </aside>
-    </section>
-    <footer>
-        <p>
-            Urbanización ruta del Sol - 2024
+                        <div>
+                            <button id="btnCalcularCuotas">Calcular
+                                Coutas</button>
+                            <button id="btnGenerarTabla">Generar Tabla
+                                Amortización</button>
+                        </div>
+                    </fieldset>
+                </div>
+            </main>
+            <aside>
 
-        <div class="iconos">
-            <img src="" alt="social">
-            <img src="" alt="social">
-            <img src="" alt="social">
-        </div>
-        </p>
-    </footer>
+            </aside>
+        </section>
+        <footer>
+            <p>
+                Urbanización ruta del Sol - 2024
 
-    <script type="module" src="js/planes.js"></script>
-</body>
+                <div class="iconos">
+                    <img src alt="social">
+                    <img src alt="social">
+                    <img src alt="social">
+                </div>
+            </p>
+        </footer>
+
+        <script type="module" src="js/planes.js"></script>
+    </body>
 
 </html>
