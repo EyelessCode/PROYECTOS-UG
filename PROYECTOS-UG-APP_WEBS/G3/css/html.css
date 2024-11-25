@@ -1,0 +1,178 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: floralwhite;
+}
+
+header{
+    background-color: darkturquoise;
+    display: block;
+    text-align: center;
+    border-radius: 0 5% 75%;
+
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /*! Reponsivos */
+    width: 100vw;
+    background-color: darkcyan;
+    border-radius: 0 1px 85% 65%;
+
+}
+
+nav a{
+    padding: 10px 20px;
+    color: blueviolet;
+    font-size: 1.3em;
+    margin: 10px 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background-color: rgb(36, 116, 116);
+    border-radius: 0 5% 75%;
+}
+
+/* a{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blueviolet;
+    border-radius: 25px;
+    font-size: 1.4em;
+
+} */
+
+a:visited{
+    color: darkblue;
+}
+
+a:hover{
+    color: deeppink;
+    border-color: blueviolet;
+    border: 1px solid;
+    border-radius: 25px;
+    text-decoration: underline;
+    background-color: darkcyan;
+}
+
+a:active{
+    color: gold;
+}
+
+header h1{
+    font-size: 3em;
+    color: black;
+    transition: color 0.3s ease;
+    background-color: rgb(109, 255, 255);
+    border-radius: 100% 0 100px 0;
+
+    padding: 3.5vw 5vw;
+    
+}
+
+h1:hover{
+    color: deeppink;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 3fr;
+    gap: 5%;
+    margin: 60px;
+    justify-content: center;
+
+}
+
+.firstColumn{
+    grid-column: 1;
+    grid-row: 1;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+}
+
+.secondColumn{
+    grid-column: 2;
+    grid-row: 1;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.thirdColumn{
+    grid-column: 3;
+    grid-row: 1;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.firstColumn:hover{
+    border: 2px dashed red;
+}
+
+.secondColumn:hover{
+    border: 2px dashed darkcyan;
+}
+
+.thirdColumn:hover{
+    border: 2px dashed darkorange;
+}
+
+.firstColumn h2,
+.secondColumn h2,
+.thirdColumn h2{
+    text-align: center;
+    transition: color 0.3s ease;
+    font-size: 150%;
+}
+
+.firstColumn h2:hover{
+    color: red;
+
+}
+
+.secondColumn h2:hover{
+    color: cyan;
+}
+
+.thirdColumn h2:hover{
+    color: rgb(209, 178, 0);
+}
+
+.firstColumn p,
+.secondColumn p,
+.thirdColumn p{
+    text-align: justify;
+    font-size: 100%;
+}
+
+.firstColumn h2 span{
+    color: darkred;
+}
+
+.secondColumn h2 span{
+    color: darkcyan;
+}
+
+.thirdColumn h2 span{
+    color: darkgoldenrod;
+}
+
+footer p{
+    text-align: center;
+    font-size: 110%;
+}
