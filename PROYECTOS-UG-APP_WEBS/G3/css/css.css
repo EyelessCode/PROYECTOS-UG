@@ -1,0 +1,191 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(111, 133, 214);
+}
+
+header{
+    background-color: rgb(45, 45, 176);
+    display: block;
+    text-align: center;
+    border-radius: 0 5% 75%;
+
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /*! Reponsivos */
+    width: 100vw;
+    background-color: midnightblue;
+    border-radius: 0 1px 85% 65%;
+
+}
+
+nav a{
+    padding: 10px 20px;
+    color: aqua;
+    font-size: 1.3em;
+    margin: 10px 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background-color: rgb(41, 14, 64);
+    border-radius: 0 5% 75%;
+}
+
+/* a{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blueviolet;
+    border-radius: 25px;
+    font-size: 1.4em;
+
+} */
+
+a:visited{
+    color: dodgerblue;
+}
+
+a:hover{
+    color: rgb(175, 108, 238);
+    border: 1px solid aqua;
+    border-radius: 25px;
+    text-decoration: underline;
+    background-color: rgb(41, 14, 64);
+}
+
+a:active{
+    color: magenta;
+}
+
+header h1{
+    font-size: 3em;
+    color: black;
+    transition: color 0.3s ease;
+    background-color: rgb(64, 64, 252);
+    border-radius: 100% 0 100px 0;
+
+    padding: 3.5vw 5vw;
+    
+}
+
+h1:hover{
+    color: deepskyblue;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 0/5fr 0/5fr;
+    grid-template-rows: 0/5fr 0/5fr;
+    gap: 5%;
+    margin: 30px;
+}
+
+.firstColumnRow{
+    grid-column: 1;
+    grid-row: 1;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+}
+
+.secondColumnFirstRow{
+    grid-column: 2;
+    grid-row: 1;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.firstColumnSecondRow{
+    grid-column: 1;
+    grid-row: 2;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+}
+
+.secondColumnRow{
+    grid-column: 2;
+    grid-row: 2;
+    border: 2px solid;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* xd */
+
+.firstColumnRow:hover,
+.secondColumnFirstRow:hover,
+.firstColumnSecondRow:hover,
+.secondColumnRow:hover{
+    border: 3.5px dashed fuchsia;
+}
+/* dx */
+
+
+.firstColumnRow h2,
+.secondColumnFirstRow h2,
+.firstColumnSecondRow h2,
+.secondColumnRow h2{
+    text-align: center;
+    transition: color 0.3s ease;
+    font-size: 180%;
+    padding: 20px;
+}
+
+.firstColumnRow h2:hover,
+.secondColumnFirstRow h2:hover,
+.firstColumnSecondRow h2:hover,
+.secondColumnRow h2:hover{
+    /* color: rgb(23, 169, 169); */
+    /* color: fuchsia; */
+    color: cyan;
+
+}
+
+.firstColumnRow img,
+.secondColumnFirstRow img,
+.firstColumnSecondRow img,
+.secondColumnRow img{
+    max-width: 100%;
+    border: 2px solid;
+    border-radius: 350px;
+}
+
+.firstColumnRow p,
+.secondColumnFirstRow p,
+.firstColumnSecondRow p,
+.secondColumnRow p{
+    text-align: justify;
+    font-size: 200%;
+    padding-top: 15%;
+}
+
+.firstColumnRow span,
+.secondColumnFirstRow span,
+.firstColumnSecondRow span,
+.secondColumnRow span{
+    /* color: darkorchid; */
+    /* color: cyan; */
+    color: fuchsia;
+
+}
+
+footer p{
+    text-align: center;
+    font-size: 110%;
+    margin-top: 15vh;
+}
