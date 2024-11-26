@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: orange;
+}
+
+header{
+    background-color: yellow;
+    display: block;
+    text-align: center;
+    border-radius: 0 5% 75%;
+
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /*! Reponsivos */
+    width: 100vw;
+    background-color: orange;
+    border-radius: 0 1px 85% 65%;
+    /* background-image: url('/images/'); */
+
+}
+
+nav a{
+    padding: 10px 20px;
+    color: black;
+    font-size: 1.3em;
+    margin: 10px 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background-color: darkgoldenrod;
+    border-radius: 0 5% 75%;
+}
+
+/* a{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blueviolet;
+    border-radius: 25px;
+    font-size: 1.4em;
+
+} */
+
+a:visited{
+    color: darkmagenta;
+}
+
+a:hover{
+    color: white;
+    font-weight: bolder;
+    border: 1px solid red;
+    border-radius: 25px;
+    text-decoration: underline;
+    background-color: darkgoldenrod;
+}
+
+a:active{
+    color: magenta;
+    border-color: magenta;
+}
+
+header h1{
+    font-size: 3em;
+    color: black;
+    transition: color 0.3s ease;
+    background-color: orange;
+    border-radius: 100% 0 100px 0;
+
+    padding: 3.5vw 5vw;
+    
+}
+
+h1:hover{
+    color: beige;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-row: 1fr;
+    gap: 5%;
+    margin: 30px;
+}
+
+.firstcolumn{
+    grid-column: 1;
+    grid-row: 1;
+    border: 2px dashed;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+    transition: all 0.3s ease;
+
+}
+
+.secondColumn{
+    grid-column: 2;
+    grid-row: 1;
+    border: 2px dashed;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+    transition: all 0.3s ease;
+
+
+}
+
+.thirdColumn{
+    grid-column: 3;
+    grid-row: 1;
+    border: 2px dashed;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+
+    transition: all 0.3s ease;
+
+}
+
+.fourthColumn{
+    grid-column: 4;
+    grid-row: 1;
+    border: 2px dashed;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+
+
+
+    transition: all 0.3s ease;
+
+}
+
+/* xd */
+
+
+.firstcolumn:hover,
+.secondColumn:hover,
+.thirdColumn:hover,
+.fourthColumn:hover{
+    border: 2px solid fuchsia;
+    transform: rotate(1deg) translateY(-1%);
+
+    background-color: darkorange;
+}
+/* dx */
+
+
+.firstcolumn h2,
+.secondColumn h2,
+.thirdColumn h2,
+.fourthColumn h2{
+    text-align: center;
+    transition: color 0.3s ease;
+    font-size: 180%;
+    padding: 20px;
+}
+
+.firstcolumn h2:hover,
+.secondColumn h2:hover,
+.thirdColumn h2:hover,
+.fourthColumn h2:hover{
+    /* color: rgb(23, 169, 169); */
+    /* color: fuchsia; */
+    color: white;
+
+}
+
+.firstcolumn img,
+.secondColumn img,
+.thirdColumn img,
+.fourthColumn img{
+    max-width: 100%;
+    height: 100%;
+
+    border: 2px solid;
+    border-radius: 350px;
+    /* object-position: center; */
+}
+
+.imgEstructura,.imgTipado,
+.imgInterpretado,.imgOrientado{
+/*     display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.firstcolumn p,
+.secondColumn p,
+.thirdColumn p,
+.fourthColumn p{
+    text-align: justify;
+    font-size: 150%;
+    padding-top: 15%;
+}
+
+.firstcolumn span,
+.secondColumn span,
+.thirdColumn span,
+.fourthColumn span{
+    /* color: darkorchid; */
+    /* color: cyan; */
+    color: black;
+
+}
+
+footer p{
+    text-align: center;
+    font-size: 110%;
+    margin-top: 15vh;
+}

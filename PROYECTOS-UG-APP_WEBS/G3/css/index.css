@@ -94,52 +94,60 @@ h1:hover{
 .firstColumn{
     grid-column: 1;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
 
 }
 
 .secondColumn{
     grid-column: 2;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
 
 }
 
 .thirdColumn{
     grid-column: 3;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .firstColumn:hover{
-    border: 2px dashed red;
+    border: 2px solid red;
+    background-color: coral;
+    transform: rotate(1deg) translateX(-1%);
+
 }
 
 .secondColumn:hover{
-    border: 2px dashed darkcyan;
+    border: 2px solid darkcyan;
+    background-color: slateblue;
+    transform: rotate(1deg) translateX(-1%);
+
 }
 
 .thirdColumn:hover{
-    border: 2px dashed darkorange;
+    border: 2px solid darkorange;
+    background-color: rgb(152, 152, 0);
+    transform: rotate(1deg) translateX(-1%);
 }
 
 .firstColumn h2,
 .secondColumn h2,
 .thirdColumn h2{
     text-align: center;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 150%;
 }
 
@@ -153,7 +161,8 @@ h1:hover{
 }
 
 .thirdColumn h2:hover{
-    color: rgb(209, 178, 0);
+    /* color: rgb(209, 178, 0); */
+    color: yellow;
 }
 
 .firstColumn p,
@@ -168,11 +177,11 @@ h1:hover{
 }
 
 .secondColumn h2 span{
-    color: darkcyan;
+    color: cadetblue;
 }
 
 .thirdColumn h2 span{
-    color: darkgoldenrod;
+    color: rgb(211, 203, 87);
 }
 
 footer p{

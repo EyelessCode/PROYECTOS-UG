@@ -30,13 +30,16 @@ header nav{
 
 nav a{
     padding: 10px 20px;
-    color: rgb(163, 163, 163);
+    /* color: rgb(163, 163, 163); */
+    color: black;
     font-size: 1.3em;
     margin: 10px 30px;
     transition: all 0.3s ease;
     text-decoration: none;
     background-color: brown;
     border-radius: 0 5% 75%;
+    font-weight: bolder;
+
 }
 
 /* a{
@@ -50,11 +53,12 @@ nav a{
 } */
 
 a:visited{
-    color: hsla(0, 100%, 51%, 0.18);
+    color: hsl(0, 100%, 63%);
 }
 
 a:hover{
-    color: black;
+    /* color: black; */
+    color: rgb(163, 163, 163);
     font-weight: bolder;
     border-color: blueviolet;
     border: 1px solid;
@@ -95,57 +99,75 @@ h1:hover{
 .firstColumnRow{
     grid-column: 1;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 }
 
 .secondColumnFirstRow{
     grid-column: 2;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 
 }
 
 .thirdColumnFirstRow{
     grid-column: 3;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 
 }
 
 .firstColumnSecondRow{
     grid-column: 1;
     grid-row: 2;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 }
 
 .secondColumnRow{
     grid-column: 2;
     grid-row: 2;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
+    
 }
 
 .thirdColumnSecondRow{
     grid-column: 3;
     grid-row: 2;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
 }
 
 /* xd */
@@ -156,7 +178,9 @@ h1:hover{
 .firstColumnSecondRow:hover,
 .secondColumnRow:hover,
 .thirdColumnSecondRow:hover{
-    border: 2px dashed blueviolet;
+    border: 2px solid blueviolet;
+    background-color: tomato;
+    transform: rotate(1deg) translateX(-1%);
 }
 /* dx */
 
@@ -179,8 +203,7 @@ h1:hover{
 .firstColumnSecondRow h2:hover,
 .secondColumnRow h2:hover,
 .thirdColumnSecondRow h2:hover{
-    color: blueviolet;
-    
+    color: rgb(125, 38, 206);
 }
 
 .firstColumnRow img,
@@ -193,6 +216,14 @@ h1:hover{
     height: 100%;
     border: 2px solid;
     border-radius: 350px;
+}
+
+.imgTecnica,.imgFuncion,
+.imgEtiqueta,.imgSemantico,
+.imgDesventaja,.imgConclusion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .firstColumnRow p,

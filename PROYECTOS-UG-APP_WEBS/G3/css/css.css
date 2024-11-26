@@ -25,6 +25,7 @@ header nav{
     width: 100vw;
     background-color: midnightblue;
     border-radius: 0 1px 85% 65%;
+    background-image: url('/images/');
 
 }
 
@@ -63,6 +64,7 @@ a:hover{
 
 a:active{
     color: magenta;
+    border-color: magenta;
 }
 
 header h1{
@@ -82,47 +84,62 @@ h1:hover{
 
 .main{
     display: grid;
-    grid-template-columns: 0/5fr 0/5fr;
-    grid-template-rows: 0/5fr 0/5fr;
+    grid-template-columns: 0/8fr 0/8fr;
+    grid-template-rows: 0/8fr 0/8fr;
     gap: 5%;
     margin: 30px;
+
 }
 
 .firstColumnRow{
     grid-column: 1;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 }
 
 .secondColumnFirstRow{
     grid-column: 2;
     grid-row: 1;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+    transition: all 0.3s ease;
+
 
 }
 
 .firstColumnSecondRow{
     grid-column: 1;
     grid-row: 2;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+
+    transition: all 0.3s ease;
+
 }
 
 .secondColumnRow{
     grid-column: 2;
     grid-row: 2;
-    border: 2px solid;
+    border: 2px dashed;
     border-radius: 18px;
     padding: 20px;
     width: 100%;
+
+
+    transition: all 0.3s ease;
+
 }
 
 /* xd */
@@ -131,7 +148,10 @@ h1:hover{
 .secondColumnFirstRow:hover,
 .firstColumnSecondRow:hover,
 .secondColumnRow:hover{
-    border: 3.5px dashed fuchsia;
+    border: 2.5px solid fuchsia;
+
+    transform: rotate(1deg) translateY(1%);
+    background-color: darkslateblue;
 }
 /* dx */
 
@@ -160,9 +180,22 @@ h1:hover{
 .secondColumnFirstRow img,
 .firstColumnSecondRow img,
 .secondColumnRow img{
-    max-width: 100%;
+    max-width: 70%;
+    height: 100%;
+
     border: 2px solid;
     border-radius: 350px;
+    /* object-position: center; */
+}
+
+.imgGlobal,.imgPagina,
+.imgParcial,.imgEtiqueta{
+/*     display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .firstColumnRow p,
@@ -170,7 +203,7 @@ h1:hover{
 .firstColumnSecondRow p,
 .secondColumnRow p{
     text-align: justify;
-    font-size: 200%;
+    font-size: 150%;
     padding-top: 15%;
 }
 
