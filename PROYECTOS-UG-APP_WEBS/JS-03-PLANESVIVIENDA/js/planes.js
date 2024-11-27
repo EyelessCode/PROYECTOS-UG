@@ -1,4 +1,5 @@
 import { modeloList, planesList } from "./DDBB.js";
+import { cuotaEntrada,saldoEntrada,interesAnualEntrada,plazoEntrada,cuotaTotal } from "./logicaCalculo.js";
 
 //! Recuperar los WIDGETS DE LA PÁGINA DEL 'SELECT'
 const cmbModelos = document.getElementById("cmbModelos");
@@ -68,6 +69,10 @@ cmbModelos.addEventListener("change", () => {
     txtBanio.value = String(modeloSeleccion.banios);
     txtPrecio.value = String(modeloSeleccion.precio.toFixed(2));
 
+    txtCuotaEntrada.value='';
+    txtSaldo.value='';
+    txtCuotaMensual.value='';
+
     // alert(`modelo selecionado ${modeloSeleccion.id} - ${modeloSeleccion.nombre}`);
     // alert(`indice selecionado: ${indice} - códdigo: ${codigo}`);
 });
@@ -85,4 +90,66 @@ cmbPlanes.addEventListener('change', () => {
     txtTasaAnual.value = String(planSeleccionado.interesAnual.toFixed(2));
     txtPorcentajeEntrada.value = String(planSeleccionado.interesEntrada.toFixed(2));
     txtMeses.value = String(planSeleccionado.plazo * 12);
+
+    //! VARIABLES PARA ALMACENAR LOS DATOS DEL MODELO DE VIVIENDA Y DEL PLAN DE FINANCIAMIENTO
+    /*let precio=parseFloat(txtPrecio.value);
+    let entrada=parseFloat(txtCuotaEntrada.value);
+    let interes=parseFloat(interesAnual) */
+    
+    txtCuotaEntrada.value='';
+    txtSaldo.value='';
+    txtCuotaMensual.value='';
+
+    btnCalcularCuotas.addEventListener('click',()=>{
+        let indice = cmbModelos.selectedIndex;
+        let codigo = cmbModelos.options[indice].value;
+        let modeloSeleccionado = modeloList.find((modelo) => modelo.id === parseFloat(codigo));
+    
+        // let i = cmbModelos.selectedIndex;
+        // let codigo = cmbModelos.options[indice].value;
+        // let plan = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
+    
+        //? OTRO INTENTO DE CALCULAR CUOTAS
+        let precioVariable=parseFloat(txtPrecio.value);
+
+        // const entrada=cuotaEntrada(planSeleccionado.interesEntrada,modeloSeleccionado.precio).toFixed(2);
+        const entrada=cuotaEntrada(planSeleccionado.interesEntrada,precioVariable).toFixed(2);
+        const saldo=saldoEntrada(precioVariable,entrada).toFixed(2);
+        // const interes=interesAnualEntrada(planSeleccionado.interesAnual).toFixed(2);
+        // const cuotaMensual=plazoEntrada(txtSaldo.value,interes,txtMeses.value).toFixed(2);
+        // const cuotaTotal=cuotaTotal()
+
+
+
+        // const mes=plazoEntrada(txtMeses.value);
+
+        // const cuotaMensual=cuotaMensual(planSeleccionado.interesAnual,modeloSeleccionado
+        //     .precio,planSeleccionado.plazo).toFixed(2);
+    
+        txtCuotaEntrada.value=String(entrada);
+        txtSaldo.value=String(saldo);
+        // txtCuotaMensual.value=String(cuotaTotal);
+    });
 });
+
+
+
+
+/* n=(plazo*12)
+i=(%entrada/12)
+v=(cuotaEntrada-precio)
+cuotaEntrada=(precio*%entrada)
+
+c=v*(((1+i)^n*i)/((1+i)^n-1)) */
+// let plan = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
+
+// //! VARIABLES PARA ALMACENAR LOS DATOS DEL MODELO DE VIVIENDA Y DEL PLAN DE FINANCIAMIENTO
+// let p=parseFloat(txtPrecio.value);
+// let e=parseFloat(txtCuotaEntrada.value);
+
+// //todo: CARGAR DATOS CALCULADOS
+// const entrada=cuotaEntrada(plan.interesEntrada,p).toFixed(2);
+// const saldo=saldoEntrada(p,e).toFixed(2);
+
+// txtCuotaEntrada.value=entrada;
+// txtSaldo.value=saldo;
