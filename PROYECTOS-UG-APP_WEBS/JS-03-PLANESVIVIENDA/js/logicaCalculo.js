@@ -19,19 +19,26 @@ export function plazoEntrada(meses){
     return plazoMeses;
 }
 
-export function cuotaTotal(capitalPrestamo,interes,mes) {
+export function cuotaTotal(x,y,z) {
     // let cuotaEntrada=precioVivienda*porcentajeEntrada;
     // let capitalPrestamo=precioVivienda-cuotaEntrada;
     // let interes=interesAnual/12;
+    // const test=
+    // capitalPrestamo*((((1+interes)*(mes*12))*interes)
+    // /((1+interes)*(mes*12))-1);
     const test=
-    capitalPrestamo*((((1+interes)*(mes*12))*interes)
-    /((1+interes)*(mes*12))-1);
+    x*((((1+y)*(z*12))*y)
+    /((1+y)*(z*12))-1);
 
     // let test=
     // v*((((1+i)*n)*i)
     // /((1+i)*n)-1);
 
-    return test;
+    if(test==0||isNaN||test==null){
+        return 0;
+    }else{
+        return test;
+    }
 }
 
 /* n=(plazo*12)

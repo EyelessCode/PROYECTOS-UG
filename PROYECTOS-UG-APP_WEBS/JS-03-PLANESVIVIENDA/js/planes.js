@@ -110,14 +110,17 @@ cmbPlanes.addEventListener('change', () => {
         // let plan = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
     
         //? OTRO INTENTO DE CALCULAR CUOTAS
-        let precioVariable=parseFloat(txtPrecio.value);
+        // let precioVariable=parseFloat(txtPrecio.value);
 
-        // const entrada=cuotaEntrada(planSeleccionado.interesEntrada,modeloSeleccionado.precio).toFixed(2);
-        const entrada=cuotaEntrada(planSeleccionado.interesEntrada,precioVariable).toFixed(2);
-        const saldo=saldoEntrada(precioVariable,entrada).toFixed(2);
-        // const interes=interesAnualEntrada(planSeleccionado.interesAnual).toFixed(2);
-        // const cuotaMensual=plazoEntrada(txtSaldo.value,interes,txtMeses.value).toFixed(2);
-        // const cuotaTotal=cuotaTotal()
+        const entrada=cuotaEntrada(planSeleccionado.interesEntrada,modeloSeleccionado.precio).toFixed(2);
+        // const entrada=cuotaEntrada(planSeleccionado.interesEntrada,precioVariable).toFixed(2);
+        const saldo=saldoEntrada(modeloSeleccionado.precio,entrada).toFixed(2);
+        // const saldo=saldoEntrada(precioVariable,entrada).toFixed(2);
+        const interes=interesAnualEntrada(planSeleccionado.interesAnual).toFixed(2);
+        const cuotaMensual=plazoEntrada(txtSaldo.value,interes,txtMeses.value).toFixed(2);
+        // const cuotaTotal=cuotaTotal(saldo,interes,cuotaMensual);
+        const putamadre=cuotaTotal(saldo,interes,cuotaMensual);
+        
 
 
 
@@ -128,6 +131,9 @@ cmbPlanes.addEventListener('change', () => {
     
         txtCuotaEntrada.value=String(entrada);
         txtSaldo.value=String(saldo);
+        txtCuotaMensual.value=String(putamadre);
+
+        // const cuotaTotal=cuotaTotal(saldo,interes,cuotaMensual);
         // txtCuotaMensual.value=String(cuotaTotal);
     });
 });
