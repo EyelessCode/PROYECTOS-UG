@@ -1,4 +1,4 @@
-import { modeloList, planosList } from "./DDBB.js";
+import { modeloList, planesList } from "./DDBB.js";
 
 //! Recuperar los WIDGETS DE LA PÁGINA DEL 'SELECT'
 const cmbModelos = document.getElementById("cmbModelos");
@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     cmbPlanes.appendChild(optionDefault);
 
     //? CREAR LAS OPCIONES (json) DEL SELECT (DDBB.js)
-    planosList.forEach((plano) => {
+    planesList.forEach((plano) => {
         let option = document.createElement("option");
         option.value = plano.id;
         option.textContent = plano.nombre;
@@ -79,10 +79,10 @@ cmbPlanes.addEventListener('change', () => {
     let codigoPlan = cmbPlanes.options[indice].value;
 
     //? BUSCAR y obtener el plan de financiamineto de acuerdo al código del dicho plan
-    let planSeleccionado = planosList.find((plano) => plano.id === parseInt(codigoPlan));
+    let planSeleccionado = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
 
     //? CARGAR LOS DATOS DEL PLAN DE FINANCIAMIENTO EN LAS CAJAS DE TEXTO
     txtTasaAnual.value = String(planSeleccionado.interesAnual.toFixed(2));
-    txtPorcentajeEntrada = String(planSeleccionado.interesEntrada.toFixed(2));
+    txtPorcentajeEntrada.value = String(planSeleccionado.interesEntrada.toFixed(2));
     txtMeses.value = String(planSeleccionado.plazo * 12);
 });

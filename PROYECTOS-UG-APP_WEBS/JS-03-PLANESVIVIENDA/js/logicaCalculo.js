@@ -6,7 +6,7 @@ const txtPrecio = document.getElementById("txtPrecio");
 
 export function calculoCuotas(tasaInteresCuotaEntrada,precioVivienda){
     let cuotaEntrada=precioVivienda*tasaInteresCuotaEntrada;
-    let planSeleccionado=planosList.
+    // let planSeleccionado=planosList.
     
     return cuotaEntrada;
 };
