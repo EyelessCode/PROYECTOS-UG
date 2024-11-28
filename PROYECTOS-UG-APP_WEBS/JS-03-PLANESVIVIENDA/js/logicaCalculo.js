@@ -1,45 +1,76 @@
-
-export function cuotaEntrada(porcentajeEntrada,precioVivienda) {
-    let cuotaEntrada=precioVivienda*porcentajeEntrada;
+export function cuotaEntrada(porcentajeEntrada, precioVivienda) {
+    let cuotaEntrada = precioVivienda * porcentajeEntrada;
     return cuotaEntrada;
-};
+}
 
-export function saldoEntrada(precioVivienda,cuotaEntrada) {
-    let capitalPrestamo=precioVivienda-cuotaEntrada;
-    return capitalPrestamo
-};
+export function saldoEntrada(precioVivienda, cuotaEntrada) {
+    let capitalPrestamo = precioVivienda - cuotaEntrada;
+    return capitalPrestamo;
+}
 
-export function interesAnualEntrada(interesAnual) {
-    let interes=interesAnual/12;
+export function interesMensual(interesAnual) {
+    let interes = interesAnual / 12;
     return interes;
-};
-
-export function plazoEntrada(meses){
-    let plazoMeses=meses*12;
-    return plazoMeses;
 }
 
-export function cuotaTotal(x,y,z) {
-    // let cuotaEntrada=precioVivienda*porcentajeEntrada;
-    // let capitalPrestamo=precioVivienda-cuotaEntrada;
-    // let interes=interesAnual/12;
-    // const test=
-    // capitalPrestamo*((((1+interes)*(mes*12))*interes)
-    // /((1+interes)*(mes*12))-1);
-    const test=
-    x*((((1+y)*(z*12))*y)
-    /((1+y)*(z*12))-1);
-
-    // let test=
-    // v*((((1+i)*n)*i)
-    // /((1+i)*n)-1);
-
-    if(test==0||isNaN||test==null){
-        return 0;
-    }else{
-        return test;
-    }
+export function cuotaMensual(capitalPrestamo, interesMensual, plazoEnMeses) {
+    return capitalPrestamo * (interesMensual * Math.pow(1 + interesMensual, plazoEnMeses))
+    / (Math.pow(1 + interesMensual, plazoEnMeses) - 1);
 }
+
+
+
+
+
+
+
+// export function cuotaEntrada(porcentajeEntrada,precioVivienda) {
+//     let cuotaEntrada=(precioVivienda*porcentajeEntrada);
+//     return cuotaEntrada;
+// };
+
+// export function saldoEntrada(precioVivienda,cuotaEntrada) {
+//     let capitalPrestamo=(precioVivienda-cuotaEntrada);
+//     return capitalPrestamo
+// };
+
+// export function interesAnualEntrada(interesAnual) {
+//     let interes=(interesAnual/12);
+//     return interes;
+// };
+
+// export function plazoEntrada(meses){
+//     let plazoMeses=(meses*12);
+//     return plazoMeses;
+// }
+
+// export function cuotaMensual(capitalPrestamo,interesMensual,plazoEnMeses) {
+//     return capitalPrestamo * (interesMensual * Math.pow(1 + interesMensual, plazoEnMeses)) / (Math.pow(1 + interesMensual, plazoEnMeses) - 1);
+// }
+
+
+// export function cuotaTotal(x,y,z) {
+//     // let cuotaEntrada=precioVivienda*porcentajeEntrada;
+//     // let capitalPrestamo=precioVivienda-cuotaEntrada;
+//     // let interes=interesAnual/12;
+//     // const test=
+//     // capitalPrestamo*((((1+interes)*(mes*12))*interes)
+//     // /((1+interes)*(mes*12))-1);
+
+//     const test=
+//     x*((((1+y)*(z*12))*y)
+//     /((1+y)*(z*12))-1);
+
+//     // let test=
+//     // v*((((1+i)*n)*i)
+//     // /((1+i)*n)-1);
+
+//     if(test==0||isNaN||test==null){
+//         return 0;
+//     }else{
+//         return test;
+//     }
+// }
 
 /* n=(plazo*12)
 i=(%entrada/12)

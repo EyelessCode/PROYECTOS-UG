@@ -1,5 +1,5 @@
 import { modeloList, planesList } from "./DDBB.js";
-import { cuotaEntrada,saldoEntrada,interesAnualEntrada,plazoEntrada,cuotaTotal } from "./logicaCalculo.js";
+import { cuotaEntrada, saldoEntrada, interesMensual,cuotaMensual } from "./logicaCalculo.js";
 
 //! Recuperar los WIDGETS DE LA PÁGINA DEL 'SELECT'
 const cmbModelos = document.getElementById("cmbModelos");
@@ -69,9 +69,9 @@ cmbModelos.addEventListener("change", () => {
     txtBanio.value = String(modeloSeleccion.banios);
     txtPrecio.value = String(modeloSeleccion.precio.toFixed(2));
 
-    txtCuotaEntrada.value='';
-    txtSaldo.value='';
-    txtCuotaMensual.value='';
+    txtCuotaEntrada.value = '';
+    txtSaldo.value = '';
+    txtCuotaMensual.value = '';
 
     // alert(`modelo selecionado ${modeloSeleccion.id} - ${modeloSeleccion.nombre}`);
     // alert(`indice selecionado: ${indice} - códdigo: ${codigo}`);
@@ -95,48 +95,64 @@ cmbPlanes.addEventListener('change', () => {
     /*let precio=parseFloat(txtPrecio.value);
     let entrada=parseFloat(txtCuotaEntrada.value);
     let interes=parseFloat(interesAnual) */
-    
-    txtCuotaEntrada.value='';
-    txtSaldo.value='';
-    txtCuotaMensual.value='';
 
-    btnCalcularCuotas.addEventListener('click',()=>{
-        let indice = cmbModelos.selectedIndex;
-        let codigo = cmbModelos.options[indice].value;
-        let modeloSeleccionado = modeloList.find((modelo) => modelo.id === parseFloat(codigo));
-    
-        // let i = cmbModelos.selectedIndex;
-        // let codigo = cmbModelos.options[indice].value;
-        // let plan = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
-    
-        //? OTRO INTENTO DE CALCULAR CUOTAS
-        // let precioVariable=parseFloat(txtPrecio.value);
+    txtCuotaEntrada.value = '';
+    txtSaldo.value = '';
+    txtCuotaMensual.value = '';
 
-        const entrada=cuotaEntrada(planSeleccionado.interesEntrada,modeloSeleccionado.precio).toFixed(2);
-        // const entrada=cuotaEntrada(planSeleccionado.interesEntrada,precioVariable).toFixed(2);
-        const saldo=saldoEntrada(modeloSeleccionado.precio,entrada).toFixed(2);
-        // const saldo=saldoEntrada(precioVariable,entrada).toFixed(2);
-        const interes=interesAnualEntrada(planSeleccionado.interesAnual).toFixed(2);
-        const cuotaMensual=plazoEntrada(txtSaldo.value,interes,txtMeses.value).toFixed(2);
-        // const cuotaTotal=cuotaTotal(saldo,interes,cuotaMensual);
-        const putamadre=cuotaTotal(saldo,interes,cuotaMensual);
+    btnCalcularCuotas.addEventListener('click', () => {
+        let precio = parseFloat(txtPrecio.value);
+        let porcentajeEntrada = parseFloat(txtPorcentajeEntrada.value);
+        let interesAnual = parseFloat(txtTasaAnual.value);
+        let meses = parseInt(txtMeses.value);
+        let entrada = cuotaEntrada(porcentajeEntrada, precio);
+        let saldo = saldoEntrada(precio, entrada);
+        let interes = interesMensual(interesAnual);
+        let cuota = cuotaMensual(saldo, interes, meses);
         
-
-
-
-        // const mes=plazoEntrada(txtMeses.value);
-
-        // const cuotaMensual=cuotaMensual(planSeleccionado.interesAnual,modeloSeleccionado
-        //     .precio,planSeleccionado.plazo).toFixed(2);
-    
-        txtCuotaEntrada.value=String(entrada);
-        txtSaldo.value=String(saldo);
-        txtCuotaMensual.value=String(putamadre);
-
-        // const cuotaTotal=cuotaTotal(saldo,interes,cuotaMensual);
-        // txtCuotaMensual.value=String(cuotaTotal);
+        txtCuotaEntrada.value = entrada.toFixed(2);
+        txtSaldo.value = saldo.toFixed(2);
+        txtCuotaMensual.value = cuota.toFixed(2);
     });
 });
+
+
+
+
+
+// let indice = cmbModelos.selectedIndex;
+// let codigo = cmbModelos.options[indice].value;
+// let modeloSeleccionado = modeloList.find((modelo) => modelo.id === parseFloat(codigo));
+
+// // let i = cmbModelos.selectedIndex;
+// // let codigo = cmbModelos.options[indice].value;
+// // let plan = planesList.find((planes) => planes.id === parseFloat(codigoPlan));
+
+// //? OTRO INTENTO DE CALCULAR CUOTAS
+// // let precioVariable=parseFloat(txtPrecio.value);
+
+// const entrada=cuotaEntrada(planSeleccionado.interesEntrada,modeloSeleccionado.precio).toFixed(2);
+// // const entrada=cuotaEntrada(planSeleccionado.interesEntrada,precioVariable).toFixed(2);
+// const saldo=saldoEntrada(modeloSeleccionado.precio,entrada).toFixed(2);
+// // const saldo=saldoEntrada(precioVariable,entrada).toFixed(2);
+// const interes=interesAnualEntrada(planSeleccionado.interesAnual).toFixed(2);
+// const mes=plazoEntrada(txtSaldo.value,interes,txtMeses.value).toFixed(2);
+// // const cuotaTotal=cuotaTotal(saldo,interes,mes);
+
+
+
+
+// // const mes=plazoEntrada(txtMeses.value);
+
+// // const cuotaMensual=cuotaMensual(planSeleccionado.interesAnual,modeloSeleccionado
+// //     .precio,planSeleccionado.plazo).toFixed(2);
+
+// txtCuotaEntrada.value=String(entrada);
+// txtSaldo.value=String(saldo);
+
+// const cuotaTotal=cuotaTotal(saldo,interes,cuotaMensual);
+// txtCuotaMensual.value=String(cuotaTotal);
+
 
 
 
