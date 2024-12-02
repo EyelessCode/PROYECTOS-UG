@@ -1,0 +1,75 @@
+body{
+   margin: 0;
+   padding: 0;
+   box-sizing: content-box;
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+}
+
+header{
+   width: 100%;
+}
+
+.ctx-main{
+   display: flex;
+   justify-content: space-between;
+}
+
+.card{
+   padding-left: 50px;
+}
+
+.card h2{
+   text-align: center;
+   color: rgb(173, 89, 199);
+}
+
+#card-titulo{
+   background-color: rgb(240, 216, 172);
+}
+
+select{
+   background-color: rgb(247, 247, 164);
+   width: 100px;
+}
+
+
+fieldset{
+   border: 1px solid violet;
+}
+
+legend{
+   background-color: rgb(194, 146, 240); 
+   border: 1px solid #6c0a57;
+   color: white;
+}
+
+input{
+   background-color: lightgrey;
+}
+
+.input-calculado{
+   background-color: #afecee;
+}
+
+button{
+   background-color: #2081d0;
+   color: white;
+   padding: 7px;
+}
+
+footer{
+   display: flex;
+   color: green;
+   justify-content: space-around;
+   align-items: center;
+   background-color: bisque;
+   color: rgb(55, 221, 55);
+}
+
+
+.images-redes{
+   width: 30px;
+   height: 30px;
+}

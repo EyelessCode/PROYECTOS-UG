@@ -48,6 +48,12 @@ window.addEventListener("DOMContentLoaded", () => {
         option.textContent = plano.nombre;
         cmbPlanes.appendChild(option);
     });
+
+    /* !Aquí estamos creando las opciones de diferentes combobox,
+    el 1ro es de 'modelos', el 2do es de 'planes'; por lo que,
+    todo estos eventos (ambos combobox) de la ventana (window)
+    deberá permanecer acá adentro. Se les hace un 'foreach' con
+    la lista importada ya que así instalamos los valores. */
 });
 
 //! EVENTO CHANGE DEL SELECT -> cmbModelos

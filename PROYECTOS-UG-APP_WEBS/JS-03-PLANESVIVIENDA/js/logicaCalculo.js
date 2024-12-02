@@ -13,8 +13,8 @@ export function interesMensual(interesAnual) {
     return interes;
 }
 
-export function cuotaMensual(capitalPrestamo, interesMensual, plazoEnMeses) {
-    return capitalPrestamo * (interesMensual * Math.pow(1 + interesMensual, plazoEnMeses))
+export function cuotaMensual(saldoEntrada, interesMensual, plazoEnMeses) {
+    return saldoEntrada * (interesMensual * Math.pow(1 + interesMensual, plazoEnMeses))
     / (Math.pow(1 + interesMensual, plazoEnMeses) - 1);
 }
 
