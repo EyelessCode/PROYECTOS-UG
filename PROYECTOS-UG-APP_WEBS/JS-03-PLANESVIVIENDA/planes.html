@@ -7,11 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Cristhian Guedes">
         <link href="css/financia.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
     </head>
 
     <body>
         <header>
-            <img src alt="Banner">
+            <!-- <img src="images/banner1.webp" alt="Banner"> -->
+            <h1>
+                ADQUIERE TU VIVIENDA
+            </h1>
         </header>
         <section>
             <main>
@@ -26,7 +30,7 @@
                         <div>
                             <label for="cmbModelos">Modelos: </label>
                             <select name="modelo" id="cmbModelos">
-                                <option value="">-- SELECCIONE --</option>
+                                <option value>-- SELECCIONE --</option>
                                 <!--! cargar de forma dinámica -->
                             </select>
 
@@ -60,7 +64,7 @@
                         <div>
                             <label for="cmbPlanes">Planes: </label>
                             <select name="plan" id="cmbPlanes">
-                                <option value="">-- SELECCIONE --</option>
+                                <option value>-- SELECCIONE --</option>
                             </select>
                         </div>
 
@@ -94,16 +98,17 @@
                         </div>
 
                         <!-- <div> -->
-<!--                             <button id="btnCalcularCuotas">
+                        <!--                             <button id="btnCalcularCuotas">
                                 Calcular Coutas
                             </button> -->
 
-<!--                             <button id="btnGenerarTabla">
+                        <!--                             <button id="btnGenerarTabla">
                                 Generar Tabla Amortización
                             </button> -->
 
                         <div class="button-borders">
-                            <button class="primary-button" id="btnCalcularCuotas">
+                            <button class="primary-button"
+                                id="btnCalcularCuotas">
                                 Calcular Cuotas
                             </button>
 
@@ -120,19 +125,37 @@
                 </div>
             </main>
             <aside>
+                <fieldset>
+                    <legend>
+                        Área de navegación
+                    </legend>
 
+                    <nav>
+                        <ul>
+                            <li><a href="#">Main</a></li>
+                            <li><a href="#">Catálogo</a></li>
+                            <li><a href="#">Cotización</a></li>
+                            <li><a href="#">Financiamiento</a></li>
+                        </ul>
+                    </nav>
+                </fieldset>
             </aside>
         </section>
         <footer>
             <p>
                 Urbanización ruta del Sol - 2024
-
-                <div class="iconos">
-                    <img class="images-redes" src="images/social-media/facebook-icon.svg" alt="facebook-social">
-                    <img class="images-redes" src="images/social-media/instagram-icon.svg" alt="instagram-social">
-                    <img class="images-redes" src="images/social-media/x-icon.svg" alt="x-social">
-                </div>
             </p>
+
+            <div class="iconos">
+                <a href="https://www.facebook.com/"><img class="images-redes"
+                        src="images/social-media/facebook-icon.svg"
+                        alt="facebook-social"></a>
+                <a href="https://www.instagram.com/"><img class="images-redes"
+                        src="images/social-media/instagram-icon.svg"
+                        alt="instagram-social"></a>
+                <a href="https://www.x.com/"><img class="images-redes"
+                        src="images/social-media/x-icon.svg" alt="x-social"></a>
+            </div>
         </footer>
 
         <script defer type="module" src="js/planes.js"></script>
