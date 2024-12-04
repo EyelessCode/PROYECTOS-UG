@@ -2,6 +2,11 @@ import { modeloList, planesList } from "./DDBB.js";
 import { cuotaEntrada, saldoEntrada, interesMensual,cuotaMensual } from "./logicaCalculo.js";
 
 //! Recuperar los WIDGETS DE LA PÁGINA DEL 'SELECT'
+const tarjetaTitulo=document.getElementById('tarjetaTitulo');
+const tarjetaImagen=document.getElementById('tarjetaImagen');
+const tarjetaPie=document.getElementById('tarjetaPie');
+
+
 const cmbModelos = document.getElementById("cmbModelos");
 const txtTamanio = document.getElementById("txtTamanio");
 const txtDormitorios = document.getElementById("txtDormitorios");
@@ -20,6 +25,7 @@ const txtSaldo = document.getElementById('txtSaldo');
 const txtCuotaMensual = document.getElementById('txtCuotaMensual');
 
 const btnCalcularCuotas = document.getElementById('btnCalcularCuotas');
+const btnRestaurar = document.getElementById('btnRestaurar');
 const btnGenerarTabla = document.getElementById('btnGenerarTabla');
 
 
@@ -36,10 +42,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     //! OPCIÒN POR DEFECTO
-    let optionDefault = document.createElement('option');
+/*     let optionDefault = document.createElement('option');
     optionDefault.textContent = '-- Seleccione un modelo--';
     optionDefault.value = '';
-    cmbPlanes.appendChild(optionDefault);
+    cmbPlanes.appendChild(optionDefault); */
 
     //? CREAR LAS OPCIONES (json) DEL SELECT (DDBB.js)
     planesList.forEach((plano) => {
@@ -75,12 +81,48 @@ cmbModelos.addEventListener("change", () => {
     txtBanio.value = String(modeloSeleccion.banios);
     txtPrecio.value = String(modeloSeleccion.precio.toFixed(2));
 
-    txtCuotaEntrada.value = '';
-    txtSaldo.value = '';
-    txtCuotaMensual.value = '';
+    txtTasaAnual.value='0.00';
+    txtPorcentajeEntrada.value='0.00';
+    txtMeses.value='0';
+    txtCuotaEntrada.value='0.00';
+    txtSaldo.value='0.00';
+    txtCuotaMensual.value='0.00';
 
     // alert(`modelo selecionado ${modeloSeleccion.id} - ${modeloSeleccion.nombre}`);
     // alert(`indice selecionado: ${indice} - códdigo: ${codigo}`);
+
+    switch (modeloSeleccion.nombre) {
+        case "Emilia":
+            tarjetaTitulo.textContent='Villa - Emilia'
+            tarjetaImagen.src='/images/villas/emilia.jpg'
+            tarjetaPie.textContent='Precio: 89 589,00'
+            break;
+            case "Geranio":
+            tarjetaTitulo.textContent='Villa - Geranio'
+            tarjetaImagen.src='/images/villas/geranio.jpg'
+            tarjetaPie.textContent='Precio: 78 650,00'
+            break;
+        case "Carlota":
+            tarjetaTitulo.textContent='Villa - Carlota'
+            tarjetaImagen.src='/images/villas/carlota.jpg'
+            tarjetaPie.textContent='Precio: 80 000,00'
+            break;
+        case "Girasol":
+            tarjetaTitulo.textContent='Villa - Girasol'
+            tarjetaImagen.src='/images/villas/girasol.jpg'
+            tarjetaPie.textContent='Precio: 92 890,00'
+            break;
+        case "Ceibo":
+            tarjetaTitulo.textContent='Villa - Ceibo'
+            tarjetaImagen.src='/images/villas/ceibo.jpg'
+            tarjetaPie.textContent='Precio: 120 000,00'
+            break;
+/*         case "-- SELECCIONE --":
+            tarjetaTitulo.textContent=''
+            tarjetaImagen.src=''
+            tarjetaPie.textContent=''
+            break; */
+    }
 });
 
 //! EVENTO CHANGE DEL SELECT -> cmbPlanes
@@ -98,15 +140,12 @@ cmbPlanes.addEventListener('change', () => {
     txtMeses.value = String(planSeleccionado.plazo * 12);
 
     //! VARIABLES PARA ALMACENAR LOS DATOS DEL MODELO DE VIVIENDA Y DEL PLAN DE FINANCIAMIENTO
-    /*let precio=parseFloat(txtPrecio.value);
+/*     let precio=parseFloat(txtPrecio.value);
     let entrada=parseFloat(txtCuotaEntrada.value);
     let interes=parseFloat(interesAnual) */
 
-    txtCuotaEntrada.value = '';
-    txtSaldo.value = '';
-    txtCuotaMensual.value = '';
-
     btnCalcularCuotas.addEventListener('click', () => {
+    
         let precio = parseFloat(txtPrecio.value);
         let porcentajeEntrada = parseFloat(txtPorcentajeEntrada.value);
         let interesAnual = parseFloat(txtTasaAnual.value);
@@ -119,7 +158,44 @@ cmbPlanes.addEventListener('change', () => {
         txtCuotaEntrada.value = entrada.toFixed(2);
         txtSaldo.value = saldo.toFixed(2);
         txtCuotaMensual.value = cuota.toFixed(2);
+
+/*         if (true) {
+        let precio = parseFloat(txtPrecio.value);
+        let porcentajeEntrada = parseFloat(txtPorcentajeEntrada.value);
+        let interesAnual = parseFloat(txtTasaAnual.value);
+        let meses = parseInt(txtMeses.value);
+        let entrada = cuotaEntrada(porcentajeEntrada, precio);
+        let saldo = saldoEntrada(precio, entrada);
+        let interes = interesMensual(interesAnual);
+        let cuota = cuotaMensual(saldo, interes, meses);
+        
+        txtCuotaEntrada.value = entrada.toFixed(2);
+        txtSaldo.value = saldo.toFixed(2);
+        txtCuotaMensual.value = cuota.toFixed(2);
+        } else {
+            alert("Por favor, ingrese el número de meses")
+        } */
     });
+});
+
+
+btnRestaurar.addEventListener('click',()=>{
+    cmbModelos.value='';
+    cmbPlanes.value='';
+    txtTamanio.value='0';
+    txtDormitorios.value='0';
+    txtBanio.value='0';
+    txtPrecio.value='0.00';
+    txtTasaAnual.value='0.00';
+    txtPorcentajeEntrada.value='0.00';
+    txtMeses.value='0';
+    txtCuotaEntrada.value='0.00';
+    txtSaldo.value='0.00';
+    txtCuotaMensual.value='0.00';
+    // txtCuotaMensual.value='.00';
+    tarjetaTitulo.textContent=''
+    tarjetaImagen.src=''
+    tarjetaPie.textContent=''
 });
 
 

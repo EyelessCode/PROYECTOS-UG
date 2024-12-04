@@ -20,18 +20,23 @@ main {
    padding-left: 50px;
 }
 
+.tarjeta>img{
+   width: 25vw;
+}
+
 .tarjeta h2 {
    text-align: center;
    color: rgb(173, 89, 199);
 }
 
-#tarjeta-titulo {
+#tarjetaTitulo {
    background-color: rgb(240, 216, 172);
 }
 
 select {
    background-color: rgb(247, 247, 164);
-   width: 100px;
+   /* width: 100px; */
+   text-align: center;
 }
 
 fieldset {
