@@ -8,6 +8,14 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "vmArgs": "--module-path C:\\Users\\LENOVO\\Documents\\javafx-sdk-23.0.1\\lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "vista.App",
+            "projectName": "JavaFX-UG-04-Mostrar_la_tabla_de_resultados_conductores_931bbdde"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "vmArgs": "--module-path C:\\Users\\Cristhian\\Documents\\javafx-sdk-22.0.1\\lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "vista.App",
             "projectName": "UG-04-Mostrar_la_tabla_de_resultados_conductores_942deb54"
