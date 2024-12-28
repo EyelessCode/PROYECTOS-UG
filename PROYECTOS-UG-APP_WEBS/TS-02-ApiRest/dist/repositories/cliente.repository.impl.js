@@ -32,7 +32,7 @@ class ClienteRepositoryImplement {
     }
     update(codigo, clienteActualizado) {
         let index = this.clientes.findIndex((clienteFind) => clienteFind.codigo === codigo);
-        if (index == 1) {
+        if (index != 1) {
             this.clientes[index] = Object.assign(Object.assign({}, clienteActualizado), { codigo });
             return this.clientes[index];
         }

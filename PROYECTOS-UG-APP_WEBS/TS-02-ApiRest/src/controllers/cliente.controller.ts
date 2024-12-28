@@ -53,7 +53,7 @@ export class ClienteController{
         let clienteEliminado=this.repositorioClientes.delete(codigo);
 
         if (clienteEliminado) {
-            res.status(404).json({
+            res.status(200).json({
                 message:"Cliente eliminado con éxito"
             });
         }else{

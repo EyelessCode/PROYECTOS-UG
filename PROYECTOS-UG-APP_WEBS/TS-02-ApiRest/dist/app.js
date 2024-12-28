@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cliente_router_1 = __importDefault(require("../src/routes/cliente.router"));
+const cliente_router_1 = __importDefault(require("./routes/cliente.router"));
 const app = (0, express_1.default)();
 const PORT = 4000;
 app.use(express_1.default.json());
-app.use('api', cliente_router_1.default);
+app.use('/api', cliente_router_1.default);
 app.listen(PORT, () => console.log(`Servidor escuchando ${PORT}`));

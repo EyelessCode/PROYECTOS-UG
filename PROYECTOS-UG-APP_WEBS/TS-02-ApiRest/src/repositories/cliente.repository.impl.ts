@@ -38,7 +38,7 @@ export class ClienteRepositoryImplement implements IClienteRepository{
     update(codigo: number, clienteActualizado: Cliente): Cliente | undefined {
         // throw new Error('Method not implemented.');
         let index=this.clientes.findIndex((clienteFind)=>clienteFind.codigo===codigo);
-        if(index==1){
+        if(index!=1){
             this.clientes[index]={... clienteActualizado,codigo};
             return this.clientes[index];
         }

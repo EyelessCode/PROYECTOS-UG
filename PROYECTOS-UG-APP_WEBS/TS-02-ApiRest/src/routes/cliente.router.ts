@@ -5,7 +5,7 @@ const router=Router();
 const controller=new ClienteController();
 
 router.get('/clientes',controller.obtenerTodo);
-router.get('/clientes\:codigo',controller.obtenerCodigo);
+router.get('/clientes/:codigo',controller.obtenerCodigo);
 router.post('/clientes/',controller.crear);
 router.put('/clientes/:codigo',controller.actualizar);
 router.delete('/clientes/:codigo',controller.eliminar);

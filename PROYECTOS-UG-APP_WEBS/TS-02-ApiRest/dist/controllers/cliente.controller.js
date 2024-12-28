@@ -9,7 +9,7 @@ class ClienteController {
             res.json(cliente);
         };
         this.obtenerCodigo = (req, res) => {
-            let codigo = Number(req.params.codigo);
+            let codigo = parseInt(req.params.codigo);
             let cliente = this.repositorioClientes.getByCodigo(codigo);
             if (cliente) {
                 res.json(cliente);
@@ -25,7 +25,7 @@ class ClienteController {
             res.status(201).json(cliente);
         };
         this.actualizar = (req, res) => {
-            let codigo = Number(req.params.codigo);
+            let codigo = parseInt(req.params.codigo);
             let clienteActualizado = this.repositorioClientes.update(codigo, req.body);
             if (clienteActualizado) {
                 res.json(clienteActualizado);
@@ -37,10 +37,10 @@ class ClienteController {
             }
         };
         this.eliminar = (req, res) => {
-            let codigo = Number(req.params.codigo);
+            let codigo = parseInt(req.params.codigo);
             let clienteEliminado = this.repositorioClientes.delete(codigo);
             if (clienteEliminado) {
-                res.status(404).json({
+                res.status(200).json({
                     message: "Cliente eliminado con éxito"
                 });
             }
