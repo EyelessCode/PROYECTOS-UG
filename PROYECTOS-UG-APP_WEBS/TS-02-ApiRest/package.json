@@ -1,12 +1,12 @@
 {
-  "name": "01",
+  "name": "ts-01-apirest",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
-    "start": "node /dist/app.js",
-    "dev":"nodemon dist/app.ts"
+    "start": "node dist/app.js",
+    "dev": "nodemon dist/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,8 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

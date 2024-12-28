@@ -15,7 +15,7 @@ export class ClienteController{
     }
 
     obtenerCodigo=(req:Request,res:Response):void=>{
-        let codigo=Number(req.params.codigo);
+        let codigo=parseInt(req.params.codigo);
 
         let cliente=this.repositorioClientes.getByCodigo(codigo);
 
@@ -34,7 +34,7 @@ export class ClienteController{
     }
 
     actualizar=(req:Request,res:Response):void=>{
-        let codigo=Number(req.params.codigo);
+        let codigo=parseInt(req.params.codigo);
 
         let clienteActualizado=this.repositorioClientes.update(codigo,req.body);
 
@@ -48,7 +48,7 @@ export class ClienteController{
     }
 
     eliminar=(req:Request,res:Response):void=>{
-        let codigo=Number(req.params.codigo);
+        let codigo=parseInt(req.params.codigo);
 
         let clienteEliminado=this.repositorioClientes.delete(codigo);
 
