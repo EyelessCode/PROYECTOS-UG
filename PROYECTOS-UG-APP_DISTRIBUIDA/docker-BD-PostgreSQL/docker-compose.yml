@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  test-service:
+    container_name: test-container
+    image: bitnami/postgresql:latest
+    env_file:
+      .env
+    environment:
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_REPLICATION_USER: ${POSTGRESQL_REPLICATION_USER}
+      POSTGRESQL_REPLICATION_PASSWORD: ${POSTGRESQL_REPLICATION_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+      POSTGRESQL_REPLICATION_MODE: master
+    ports:
+      - "5433:5432"
+    volumes:
+      - test-container:/var/lib/postgresql/data
+  test-service2:
+    container_name: test-container2
+    image: bitnami/postgresql:latest
+    env_file:
+      .env
+    environment:
+      POSTGRESQL_REPLICATION_MODE: slave
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_REPLICATION_USER: ${POSTGRESQL_REPLICATION_USER}
+      POSTGRESQL_REPLICATION_PASSWORD: ${POSTGRESQL_REPLICATION_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+      POSTGRESQL_MASTER_HOST: ${POSTGRESQL_MASTER_HOST}
+      POSTGRESQL_MASTER_PORT_NUMBER: ${POSTGRESQL_MASTER_PORT_NUMBER}
+    ports:
+      - "5434:5432"
+    volumes:
+      - test-container2:/var/lib/postgresql/data
+  test-service3:
+    container_name: test-container3
+    image: bitnami/postgresql:latest
+    env_file:
+      .env
+    environment:
+      POSTGRESQL_REPLICATION_MODE: slave
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_REPLICATION_USER: ${POSTGRESQL_REPLICATION_USER}
+      POSTGRESQL_REPLICATION_PASSWORD: ${POSTGRESQL_REPLICATION_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+      POSTGRESQL_MASTER_HOST: ${POSTGRESQL_MASTER_HOST}
+      POSTGRESQL_MASTER_PORT_NUMBER: ${POSTGRESQL_MASTER_PORT_NUMBER}
+    ports:
+      - "5435:5432"
+    volumes:
+      - test-container3:/var/lib/postgresql/data
+volumes:
+  test-container:
+  test-container2:
+  test-container3:
