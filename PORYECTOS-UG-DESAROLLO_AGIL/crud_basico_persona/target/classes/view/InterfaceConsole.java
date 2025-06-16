@@ -1,4 +1,4 @@
-package ui;
+package view;
 import java.util.Scanner;
 
 import ug.exercise.infrastructure.controllers.ControllerPerson;
