@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HolaMundo</title>
-</head>
-<body>
-    <main>
-        <div>
-            <label for="txtLimite">Límite: </label>
-            <input type="text" name="limite" id="txtLimite">
-        </div>
-        <div>
-            <label for="txtSerie">Serie: </label>
-            <textarea name="serie" id="txtSerie" rows="10" cols="50"></textarea>
-        </div>
-        <button type="button" id="btnCalcular">Calcular</button>
-        <script type="module" src="fibonnaci.js"></script>
-    </main>
-</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cristhian Guedes">
+        <meta name="description" content="Proyecto ligero en clase.">
+        <meta name="keywords" content="JavaScript, HTML.">
+        <title>HolaMundo</title>
+    </head>
+    <body>
+        <form id="form">
+            <div>
+                <label for="txtLimite">Límite: </label>
+                <input type="text" name="limite" id="txtLimite" required>
+            </div>
+            <div>
+                <label for="txtSerie">Serie: </label>
+                <textarea name="serie" id="txtSerie" rows="10"
+                    cols="50" readonly></textarea>
+            </div>
+            <div>
+                <button type="button" id="btnCalcular">Calcular</button>
+            </div>
+            <script type="module" src="/js/fibonnaci.js"></script>
+        </form>
+    </body>
 </html>

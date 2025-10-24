@@ -6,15 +6,18 @@ let btnCalcular=document.getElementById("btnCalcular")
 
 btnCalcular.addEventListener("click",()=>{
     let limite=txtLimite.value
+    if(isNaN(limite)||limite<=2){
+        txtSerie.value="Por favor ingrese un número mayor a 2."
+        return;
+    }
     // console.log(limite);
     let serie=fibonacciWithLimit(parseInt(limite))
     // console.log(serie);
-    let cadenaSerie = ''
-    txtSerie.innerHTML=''
+    // let cadenaSerie = '';
+    /* for (let indice in serie) {
+        cadenaSerie += serie[indice] + ", ";
+    } */
 
-    for (let indice in serie) {
-        cadenaSerie = cadenaSerie + String(serie[indice]) + " "    
-    }
-
-    txtSerie.value=serie
+    txtSerie.value=""
+    txtSerie.value = serie.join(", ");
 })
