@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1{
+    font-size: 4em;
+    text-align: center;
+    margin: 10px auto;
+
+    >span{
+        text-decoration: underline;
+    }
+}
+
+body{
+    height: 100dvh;
+    width: 100dvw;
+    background-color: antiquewhite;
+}
+
+body form{
+    margin: 10px;
+    outline: black solid 5px;
+    border-radius: 50px;
+    padding: 15px;
+    div{
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 5px;
+
+        >label{
+            font-size: 2.4em;
+            font-weight: bolder;
+            margin-right: 10px;
+        }
+        >input{
+            font-size: 2em;
+            padding: 0 10px 0 17px;
+            outline: black solid 2.5px;
+            width: 178px;
+        }
+        >textarea{
+            outline: gray solid 2.5px;
+            background-color: rgb(198, 198, 198);
+            resize: none;
+            font-weight: bold;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            width: 100%;
+        }
+        >input,textarea{
+            border-style: none;
+            border-radius: 50px;
+        }
+        >button{
+            padding: 50px 120px;
+            border-radius: 15% 15% 50% 50%;
+            font-size: 3em;
+            text-transform: uppercase;
+            border-style: none;
+            /* outline: black 7px; */
+            background-color: rgb(227, 227, 98);
+            cursor: pointer;
+        }
+        >button:hover{
+            background-color: yellow;
+            transition: 0.1s ease-in;
+        }
+    }
+    /* div:nth-child(1){
+        background-color: red;
+    }
+    div:nth-child(2){
+        flex-flow: column;
+        >textarea{
+            font-size: 1.2em;
+        }
+    } */
+}
+
+@media (min-width:768px) {
+    /* body{
+        background-color: aqua;
+    } */
+
+    body form{
+        margin: 15px 120px;
+        >div{
+            >label{
+                font-size: 2em;
+            }
+            >input{
+                width: 178px;
+                font-size: 1.4em;
+                padding: 10px 25px;
+            }
+        }
+        >div:nth-child(2){
+            margin: 0 20px;
+        }
+    }
+}
+
+@media (min-width:992px) {
+    body form{
+        margin: 20px 195px;
+        >div{
+            >label{
+                font-size: 3em;
+            }
+            >input{
+                width: 178px;
+                font-size: 1.8em;
+                padding: 10px 15px;
+            }
+            >textarea{
+                font-size: 1.5em;
+            }
+        }
+        >div:nth-child(2){
+            margin: 0 20px;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    body form{
+        margin: 20px 450px 0;
+        >div{
+            padding: 7.5px 5px;
+            >label{
+                font-size: 3.3em;
+            }
+            >input{
+                width: 178px;
+                font-size: 2.2em;
+                padding: 10px 15px;
+            }
+            >textarea{
+                font-size: 1.9em;
+                width: 420px;
+            }
+        }
+        >div:nth-child(2){
+            margin: 0 60px;
+        }
+    }
+}
