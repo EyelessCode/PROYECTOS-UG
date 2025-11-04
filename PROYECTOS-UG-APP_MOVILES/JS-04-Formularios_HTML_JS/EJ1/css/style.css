@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100dvh;
+    min-width: 100dvw;
+    background-color: aquamarine;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    scroll-behavior: smooth;
+}
+
+body header{
+    display: block;
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    margin: 0 105px 10px 105px;
+    padding: 15px 0 15px 0;
+    border-radius: 0 0 50px 50px;
+    background-color: darkcyan;
+    >h1{
+        font-weight: bold;
+    }
+}
+
+main article{
+    background-color: cadetblue;
+    outline: 5px black solid;
+    /* margin: auto 95px; */
+    width: 320px;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+article form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    >div{
+        margin: 5px 0;
+    }
+
+    div>h3{
+        font-size: 2.5rem;
+    }
+    div:nth-child(2){
+        margin: 10px 0;
+        >label{
+            font-size: 1.2rem;
+        }
+        >input{
+            width: 75px;
+            font-size: 1rem;
+            border-radius: 25px;
+            padding: 0 0 0 7.5px;
+            border-style: none;
+            outline: 2px solid;
+        }
+    }
+    div:nth-child(3){
+        >textArea{
+            resize: none;
+            padding: 0 15px 0 10px;
+            font-size: 1rem;
+            outline: 2px solid;
+            background-color: rgb(228, 228, 228);
+        }
+    }
+    div>button{
+        background-color: greenyellow;
+        padding: 15px 45px;
+        border-radius: 50px;
+        border-style: none;
+        cursor: pointer;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+
+    div>#resultado-directo{
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 5px;
+    }
+}
+
+body footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom:7.5px;
+    h4>span{
+        color: darkviolet;
+        text-decoration: underline;
+    }
+}
+
+@media (min-width:768px) {
+    body header{
+        margin: 0 200px 10px 200px;
+        h1{
+            font-size: 4rem;
+        }
+    }
+    main article{
+        width: 390px;
+    }
+    article form{
+        div>h3{
+            font-size: 2.9rem;
+        }
+        div:nth-child(2){
+            >label{
+                font-size: 1.6rem;
+            }
+            >input{
+                width: 105px;
+                font-size: 1.3rem;
+                padding: 0 0 0 10px;
+            }
+        }
+        div:nth-child(3){
+            >textArea{
+                font-size: 1.25rem;
+            }
+        }
+        div>button{
+            padding: 17px 65px;
+            font-size: 1.5rem;
+        }
+    }
+}

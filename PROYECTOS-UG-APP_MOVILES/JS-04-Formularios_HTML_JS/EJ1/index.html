@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Cristhian Guedes">
+        <meta name="description" content="Una página para hacer factorial de los números.">
+        <meta name="keyword" content="JavaScript, HTML, CSS">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Factorial</h1>
+        </header>
+        <main>
+            <article>
+                <form>
+                    <div>
+                        <h3>Haz un <span>Factorial</span></h3>
+                    </div>
+                    <div>
+                        <label for="txtFact">Número: </label>
+                        <input type="text" name="factorial" id="txtFact">
+                    </div>
+                    <div id="div-second">
+                        <!-- <label for="txtResultado"></label> -->
+                        <textarea name="resultado" id="txtResultado" readonly rows="12"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" id="btnCalcular">Calcular</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+        <script type="module" src="./js/factorial.js"></script>
+        <footer>
+            <h4>Hecho por <span>Cristhian Guedes</span></h4>
+        </footer>
+    </body>
+</html>
